@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Timer_Manager : MonoBehaviour
 {
-    public GameObject GM;
     public float GameTime_sec = 0;
     public int GameTime_H = 0;
+    public bool isBossdead = false;
     public Text TimeText;
     public GameObject Timer_UI;
+    public GameObject GM;
     
     void Start()
     {
@@ -21,8 +22,25 @@ public class Timer_Manager : MonoBehaviour
         if(GameTime_H >= 5){
             gameObject.GetComponent<Timer_Manager>().enabled = false;
             Timer_UI.SetActive(false);
-            GM.GetComponent<GameManager>().Survied();
-            
+            GM.GetComponent<GameManager>().Survied();   
+        }
+        if(GameTime_H == 2 && !isBossdead){
+            Debug.Log("보스출현");
+            GM.GetComponent<GameManager>().OnBlock();
+            if(GameTime_sec > 30){
+                GM.GetComponent<GameManager>().OffBlock();
+                isBossdead = true;
+            }
+        }
+        if(GameTime_H == 3 && isBossdead){isBossdead = false;}
+
+        if(GameTime_H == 4 && !isBossdead){
+            Debug.Log("보스출현");
+            GM.GetComponent<GameManager>().OnBlock();
+            if(GameTime_sec > 30){
+                GM.GetComponent<GameManager>().OffBlock();
+                isBossdead = true;
+            }
         }
         GameTime_sec += Time.deltaTime;
         if(GameTime_sec >= 60f){

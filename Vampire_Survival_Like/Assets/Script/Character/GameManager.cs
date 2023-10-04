@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
     public GameObject GameOver_UI;
     public GameObject Survied_UI;
     public GameObject Enemy;
+    public GameObject Block_Player;
 
 void Awake()
 {
     instance = this;
     GameOver_UI.SetActive(false);
     Survied_UI.SetActive(false);
+    Block_Player.SetActive(false);
 }
 
 public void Player_damage(){
@@ -42,4 +44,14 @@ public void Survied(){
 public void RestartClick(){
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+public void OnBlock(){
+    Block_Player.SetActive(true);
+    Block_Player.transform.SetParent(null);
+}
+public void OffBlock(){
+    Block_Player.transform.parent = player.transform;
+    Block_Player.transform.localPosition = Vector3.zero;
+    Block_Player.transform.localScale = Vector3.one;
+    Block_Player.SetActive(false);
+}
 }
