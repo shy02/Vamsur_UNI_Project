@@ -40,4 +40,9 @@ public class Player : MonoBehaviour
             spriter.flipX = inputVec.x < 0;
         }
     }
+
+    public float GetPlayerSpeed(float speed){      
+        speed = this.speed;
+        return speed;  
+    }
 }
