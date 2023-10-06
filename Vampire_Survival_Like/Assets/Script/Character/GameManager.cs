@@ -12,8 +12,11 @@ public class GameManager : MonoBehaviour
     public float Player_HP = 100f;
     public GameObject GameOver_UI;
     public GameObject Survied_UI;
+    public GameObject Danger_UI;
     public GameObject Enemy;
     public GameObject Block_Player;
+
+    private bool isDangerous = false;
 
 void Awake()
 {
@@ -21,6 +24,18 @@ void Awake()
     GameOver_UI.SetActive(false);
     Survied_UI.SetActive(false);
     Block_Player.SetActive(false);
+}
+
+void Update()
+{
+    if(Player_HP <= 30 && !isDangerous){
+        isDangerous = true;
+        Danger_UI.GetComponent<Dangerous_UI>().Danger();
+    }
+    if(Player_HP > 30 && isDangerous){
+        isDangerous = false;
+        Danger_UI.GetComponent<Dangerous_UI>().NoDanger();
+    }
 }
 
 public void Player_damage(){
