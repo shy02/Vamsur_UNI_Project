@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
+    public float enemyHP;
+    public float enemy_maxHP;
     public Rigidbody2D target;
     bool isLive;
 
@@ -39,4 +41,12 @@ public class Enemy : MonoBehaviour
         //타겟의 x위치가 몹의 x위치보다 오른쪽에 있을 때 스프라이트 뒤집기.
         spriter.flipX = target.position.x > rigid.position.x;
     }
+
+    private void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        enemyHP = enemy_maxHP;
+    }
+
 }
