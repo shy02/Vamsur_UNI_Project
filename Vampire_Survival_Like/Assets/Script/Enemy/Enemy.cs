@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
-    public GameObject gameManager;
-    public Rigidbody2D target;
+    private GameObject gameManager;
+    private Rigidbody2D target;
     bool isLive;
 
     SpriteRenderer spriter;
@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
+        gameManager = GameObject.Find("GameManager");
+        target = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
     
     private void OnCollisionStay2D(Collision2D other) {

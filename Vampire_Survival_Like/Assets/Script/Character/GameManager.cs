@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public PoolManger pool;
+    public PoolManager pool;
     public Player player;
     public float Player_HP = 100f;
     public GameObject GameOver_UI;
@@ -26,7 +26,7 @@ void Awake()
     Block_Player.SetActive(false);
 }
 
-void Update()
+/*void Update()
 {
     if(Player_HP <= 30 && !isDangerous){
         isDangerous = true;
@@ -36,7 +36,7 @@ void Update()
         isDangerous = false;
         Danger_UI.GetComponent<Dangerous_UI>().NoDanger();
     }
-}
+}*/
 
 public void Player_damage(){
     Player_HP--;

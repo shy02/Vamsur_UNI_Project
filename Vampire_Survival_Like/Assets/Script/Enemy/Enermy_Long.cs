@@ -11,7 +11,7 @@ public class Enermy_Long : MonoBehaviour
     public GameObject Bullet;
     public Transform pos;
     Rigidbody2D rigid;
-    public Rigidbody2D target;
+    private Rigidbody2D target;
 
 
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class Enermy_Long : MonoBehaviour
     {
         spriter = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
+        target = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
     public float cooltime;
     public float currenttime;
