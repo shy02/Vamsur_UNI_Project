@@ -19,7 +19,8 @@ public class Dangerous_UI : MonoBehaviour
     }
     void Update()
     { 
-        if(isDangerous){
+        if(!GameManager.instance.GetComponent<Pause_>().nowPause){   
+            if(isDangerous){
             if(p < 1 && !isfull){
             p += 0.007f;
             color.a = p;
@@ -33,6 +34,8 @@ public class Dangerous_UI : MonoBehaviour
              if(p < 0.3) isfull = false;
             }
         }
+        }
+        
     }
 
     public void Danger(){

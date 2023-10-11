@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
     {
         for (int index =0; index < count; index++)
         {
-            Transform bullet =GameManager.instance.pool.Get(prefabId).transform;
+            Transform bullet =GameManager.instance.Player_pool.Get(prefabId).transform;
             bullet.parent = transform;
 
             Vector3 rotVec = Vector3.forward * 360 * index / count;

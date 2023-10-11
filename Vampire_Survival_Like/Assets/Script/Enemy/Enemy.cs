@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private float em_health = 100f;
     // Start is called before the first frame update
     public float speed;
     private GameObject gameManager;
@@ -38,7 +39,25 @@ public class Enemy : MonoBehaviour
         target.velocity = Vector2.zero;
 
     }
-    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Bullet"))
+            return;
+
+
+        em_health -= collision.GetComponent<Bullet>().damage;
+
+        if(em_health <= 0)
+        {
+            Dead();
+        }
+
+    }
+    void Dead()
+    {
+        Destroy(gameObject);
+    }
+
     private void LateUpdate()
     {
         spriter.flipX = target.position.x > rigid.position.x;

@@ -13,7 +13,7 @@ public class EXP_Bar_Slider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        recently_Exp += 2;
+        recently_Exp += 2 * Time.deltaTime;
         if(recently_Exp < Max_EXP)EXP_Slider.value = recently_Exp / Max_EXP;
         if(recently_Exp > Max_EXP){
             EXP_Slider.value = 0;

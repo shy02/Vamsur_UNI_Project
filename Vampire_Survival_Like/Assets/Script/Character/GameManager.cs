@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public PoolManager pool;
+    public PoolManager Player_pool;
     public Player player;
     public float Player_HP = 100f;
     public GameObject GameOver_UI;
@@ -26,7 +27,7 @@ void Awake()
     Block_Player.SetActive(false);
 }
 
-/*void Update()
+void Update()
 {
     if(Player_HP <= 30 && !isDangerous){
         isDangerous = true;
@@ -36,7 +37,10 @@ void Awake()
         isDangerous = false;
         Danger_UI.GetComponent<Dangerous_UI>().NoDanger();
     }
-}*/
+    if(Input.GetKeyDown(KeyCode.T)){
+        gameObject.GetComponent<Pause_>().Pause();
+    }
+}
 
 public void Player_damage(){
     Player_HP--;
