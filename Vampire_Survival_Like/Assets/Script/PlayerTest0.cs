@@ -8,6 +8,7 @@ public class PlayerTest0 : MonoBehaviour
     public float speed;
 
     Rigidbody2D rigid;
+
     // 초기화
     void Awake()
     {
