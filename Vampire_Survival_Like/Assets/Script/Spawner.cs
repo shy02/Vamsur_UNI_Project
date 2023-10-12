@@ -32,11 +32,11 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         GameObject enemy = GameManager.instance.pool.Get(0);
-        enemy.transform.position = spawnPoint[Random.Range(0, spawnPoint.Length)].position;
+        enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
     void Spawn_Elete()
     {
         GameObject enemy = GameManager.instance.pool.Get(1);
-        enemy.transform.position = spawnPoint[Random.Range(0, spawnPoint.Length)].position;
+        enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
 }

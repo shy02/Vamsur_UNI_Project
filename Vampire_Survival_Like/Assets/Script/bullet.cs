@@ -7,29 +7,51 @@ public class bullet : MonoBehaviour
     public float speed;
     public float distance;
     public LayerMask isLayer;
+    Rigidbody2D rigid, target;
+
+    float time = 0;
+
+    Transform playerPos;
+
+    private void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("DestroyBullet", 2);
+        speed = 0.1f;
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * -1f , distance, isLayer);
+        Vector2 director = target.position - rigid.position;
 
-        if (raycast.collider != null)
-        {
-            if(raycast.collider.tag == "Player")
-            Debug.Log("마즘");
-        DestroyBullet();
-        }
-        
-        transform.Translate(transform.right * -1f * speed * Time.deltaTime);
+        rigid.MovePosition(rigid.position + director.normalized * speed);
+
+        rigid.velocity = Vector2.zero;
+
+        //time += Time.deltaTime;
+        //if (time > 5.0f)
+        //{
+        //}
+
     }
-    void DestroyBullet()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
-        Debug.Log(transform.right + this.gameObject.name);
+        if (collision != null)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Destroy(gameObject);
+                Debug.Log("충돌!");
+            }
+        }
     }
+
+
 }

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Enermy_Long : MonoBehaviour
 {
-    public float distance;
-    public LayerMask isLayer;
-    public float speed;
-    public float atkDistance;
     public GameObject Bullet;
-    public Transform pos;
-    Rigidbody2D rigid;
+    public Transform pos; //생성위치
     public Rigidbody2D target;
 
+    //public float distance;
+    public float speed; //몹 속도
+    public float atkDistance; //공격 거리
+    public float cooltime; //공격 속도
+    float currenttime;
+
+    SpriteRenderer spriter;
+    Rigidbody2D rigid;
 
     // Start is called before the first frame update
     void Start()
@@ -20,35 +23,39 @@ public class Enermy_Long : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
     }
-    public float cooltime;
-    public float currenttime;
-    SpriteRenderer spriter;
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //타겟 포지션 - 몹 포지션 = 플레이어로 향하는 방향
         Vector2 director = target.position - rigid.position;
-        RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * -1f, distance, isLayer);
 
-        if (raycast.collider != null)
+        //방향 * 몹스피드 * 시간 = 다음에 갈 위치
+        Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
+
+        //다음에 가야할 위치로 움직이기
+        if (director.magnitude > atkDistance) //director.magnitude = 타겟과의 거리
         {
-            if(Vector2.Distance(transform.position, raycast.collider.transform.position) < atkDistance)
+            rigid.MovePosition(rigid.position + next);
+        }
+        else if (director.magnitude <= atkDistance)
+        {
+            if (currenttime >= cooltime)
             {
-                if(currenttime <= 0)
-                {
-                    GameObject Bulletcopy = Instantiate(Bullet, pos.position, transform.rotation);
-                    currenttime = cooltime;
-                }
+                Vector3 spawnPosition = transform.position;
+                Instantiate(Bullet, spawnPosition, Quaternion.identity);
+                currenttime = 0;
             }
-            else
+            else if (currenttime < cooltime)
             {
-                transform.position = Vector3.MoveTowards(transform.position, raycast.collider.transform.position, Time.deltaTime * speed);
+                currenttime += Time.deltaTime;
             }
-            currenttime -= Time.deltaTime;
+            //물리적인 속도를 없애 무브포지션과의 충돌 없애기
+            rigid.velocity = Vector2.zero;
         }
     }
     void LateUpdate()
     {
-        spriter.flipX = target.position.x < rigid.position.x;
+        spriter.flipX = target.position.x > rigid.position.x;
     }
 }
