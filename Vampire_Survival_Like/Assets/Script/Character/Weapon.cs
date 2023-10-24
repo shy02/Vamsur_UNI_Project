@@ -22,8 +22,6 @@ public class Weapon : MonoBehaviour
         {
             case 0:
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
-
-
                 break;
             default:
                 break;
@@ -36,8 +34,6 @@ public class Weapon : MonoBehaviour
             case 0:
                 speed = 150;
                 Batch();
-
-
                 break;
             default:
                 break;
@@ -54,7 +50,7 @@ public class Weapon : MonoBehaviour
             bullet.Rotate(rotVec);
             bullet.Translate(bullet.up * 1.5f, Space.World);
              
-            bullet.GetComponent<Bullet>().Init(damage, -1); // -1 is infinity per. 무한 공
+            bullet.GetComponent<cbullet>().Init(damage, -1); // -1 is infinity per. 무한 공
 
         }
     }

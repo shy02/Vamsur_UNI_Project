@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
     public Transform[] spawnPoint;
-
+    public GameObject parent;
+    public GameObject Boss;
+    int enemy_count=0;
     float timer;
-    int timer_e;
+
+    public GameObject[] enemyPrefab;
+    List<GameObject>[] pools; 
+
     void Awake()
     {
-        spawnPoint = GetComponentsInChildren<Transform>(); 
+        spawnPoint = GetComponentsInChildren<Transform>();
+        pools = new List<GameObject>[enemyPrefab.Length];
+
+        for (int index = 0; index < pools.Length; index++)
+        {
+            pools[index] = new List<GameObject>();
+        }
     }
     void Update()
     {
@@ -19,24 +29,28 @@ public class Spawner : MonoBehaviour
         if (timer > 1f)
         {
             timer = 0;
-            timer_e += 1;
+            enemy_count += 1;
             Spawn();
         }
-        if (timer_e> 20)
+        if (enemy_count >= 20)
         {
             Spawn_Elete();
-            timer_e = 0;
+            enemy_count = 0;
         }
     }
 
     void Spawn()
     {
-        GameObject enemy = GameManager.instance.pool.Get(0);
-        enemy.transform.position = spawnPoint[Random.Range(0, spawnPoint.Length)].position;
+        GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length)].position, Quaternion.identity,transform);
+        enemy.transform.parent = parent.transform;
     }
     void Spawn_Elete()
     {
-        GameObject enemy = GameManager.instance.pool.Get(1);
-        enemy.transform.position = spawnPoint[Random.Range(0, spawnPoint.Length)].position;
+        GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length)].position, Quaternion.identity, transform);
+        elete_enemy.transform.parent = parent.transform;
+    }
+    public void Spawn_Boss()
+    {
+        Boss.SetActive(true);
     }
 }

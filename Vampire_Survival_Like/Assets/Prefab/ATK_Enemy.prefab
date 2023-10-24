@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 917304259360089264}
   - component: {fileID: 917304259360089265}
   - component: {fileID: 917304259360089262}
-  - component: {fileID: 917304259360089263}
-  - component: {fileID: 917304259360089266}
   - component: {fileID: 917304259360089269}
+  - component: {fileID: 7153343922701258497}
+  - component: {fileID: 5040257287025392248}
   m_Layer: 0
   m_Name: ATK_Enemy
   m_TagString: Enemy
@@ -109,41 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &917304259360089263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917304259360089260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8b1db1d1a85ca4da634ab1b09bf7f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 10
-  isLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  speed: 5
-  atkDistance: 10
-  Bullet: {fileID: 3771510800519163883, guid: 410e3cfbd605b6d4aa1894baca784de8, type: 3}
-  pos: {fileID: 917304259360089264}
-  cooltime: 2
-  currenttime: 0
---- !u!114 &917304259360089266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917304259360089260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0bd56e9c0e2c64ea4789507f8635c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!61 &917304259360089269
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,3 +135,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1875, y: 1.625}
   m_EdgeRadius: 0
+--- !u!114 &7153343922701258497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917304259360089260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0bd56e9c0e2c64ea4789507f8635c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+--- !u!114 &5040257287025392248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917304259360089260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8b1db1d1a85ca4da634ab1b09bf7f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 0}
+  pos: {fileID: 0}
+  target: {fileID: 0}
+  speed: 3
+  atkDistance: 10
+  cooltime: 1

@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public PoolManager pool;
     public PoolManager Player_pool;
     public Player player;
     public float Player_HP = 100f;
@@ -44,7 +43,6 @@ void Update()
 
 public void Player_damage(){
     Player_HP--;
-    Debug.Log(Player_HP);
 }
 public float getPlayer_HP(float hp){
     hp = Player_HP;

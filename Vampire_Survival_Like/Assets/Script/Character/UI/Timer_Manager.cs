@@ -10,11 +10,15 @@ public class Timer_Manager : MonoBehaviour
     public Text TimeText;
     public GameObject Timer_UI;
     public GameObject GM;
+    public GameObject Spawner_Boss;
+
+    private bool Bossishere = false;
     
     void Start()
     {
         Timer_UI.SetActive(true);
         gameObject.GetComponent<Timer_Manager>().enabled = true;
+        Bossishere = false;
     }
     // Update is called once per frameS
     void Update()
@@ -25,23 +29,36 @@ public class Timer_Manager : MonoBehaviour
             GM.GetComponent<GameManager>().Survied();   
         }
         if(GameTime_H == 2 && !isBossdead){
-            Debug.Log("보스출현");
-            GM.GetComponent<GameManager>().OnBlock();
-            if(GameTime_sec > 30){
-                GM.GetComponent<GameManager>().OffBlock();
-                isBossdead = true;
+            if (!Bossishere)
+            {
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                Bossishere = true;
             }
-        }
-        if(GameTime_H == 3 && isBossdead){isBossdead = false;}
 
-        if(GameTime_H == 4 && !isBossdead){
-            Debug.Log("보스출현");
-            GM.GetComponent<GameManager>().OnBlock();
+            //GM.GetComponent<GameManager>().OnBlock();
             if(GameTime_sec > 30){
-                GM.GetComponent<GameManager>().OffBlock();
+                //GM.GetComponent<GameManager>().OffBlock();
+
                 isBossdead = true;
             }
         }
+        if(GameTime_H == 3 && isBossdead){isBossdead = false; Bossishere = false; }
+
+        if(GameTime_H == 4 && !isBossdead)
+        {
+            if (!Bossishere)
+            {
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                Bossishere = true;
+            }
+            //GM.GetComponent<GameManager>().OnBlock();
+            if(GameTime_sec > 30){
+                //GM.GetComponent<GameManager>().OffBlock();
+                isBossdead = true;
+            }
+        }
+
+        if (GameTime_H == 5 && isBossdead) { isBossdead = false; Bossishere = false; }
         GameTime_sec += Time.deltaTime;
         if(GameTime_sec >= 60f){
             GameTime_H++;

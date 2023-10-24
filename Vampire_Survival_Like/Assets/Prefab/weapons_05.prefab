@@ -121,8 +121,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5597803579143036942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a964486fb194647a2932187df84fed, type: 3}
+  m_Script: {fileID: 11500000, guid: 840987786861f244cbf32e94ab66934e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  prefabId: 0
   damage: 10
-  per: 0
+  count: 3
+  speed: 150

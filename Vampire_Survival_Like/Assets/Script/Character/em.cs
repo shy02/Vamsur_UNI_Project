@@ -36,7 +36,7 @@ public class em : MonoBehaviour
             return;
 
 
-        health -= collision.GetComponent<Bullet>().damage;
+        health -= collision.GetComponent<cbullet>().damage;
 
         if(health > 0)
         {
