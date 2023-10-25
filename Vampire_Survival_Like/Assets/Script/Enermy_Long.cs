@@ -24,6 +24,11 @@ public class Enermy_Long : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
+    private void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

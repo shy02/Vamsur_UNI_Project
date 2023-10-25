@@ -1,0 +1,13 @@
+##추가된 점##
+Boss 스크립트에 공격 관련 함수들 추가
+Boss 스크립트에 스턴건 공격 추가
+Boss 스크립트에 일정시간 이후 교도관(원거리 공격 몹) 둘 소환
+
+Enermy_Long 스크립트에 OnEnable되었을 시 타겟 자동 설정
+
+stungun_Bullet 스크립트 추가
+stungun_Bulllet 이미지 추가
+
+##변경된 점##
+bullet의 속도와 총알을 발사하는 방식 변경
+Enermy_Long의 공격 사정거리 변경
