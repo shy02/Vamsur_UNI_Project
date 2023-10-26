@@ -13,7 +13,7 @@ public class _Enemy : MonoBehaviour
 
     SpriteRenderer spriter;
     Rigidbody2D rigid;
-    
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -21,9 +21,9 @@ public class _Enemy : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         target = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
-    
+
     private void OnCollisionStay2D(Collision2D other) {
-        if(other.collider.gameObject.CompareTag("Player")){
+        if (other.collider.gameObject.CompareTag("Player")) {
             gameManager.GetComponent<GameManager>().Player_damage();
         }
     }
@@ -47,7 +47,7 @@ public class _Enemy : MonoBehaviour
 
         em_health -= collision.GetComponent<cbullet>().damage;
 
-        if(em_health <= 0)
+        if (em_health <= 0)
         {
             Dead();
         }
@@ -58,8 +58,17 @@ public class _Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+
+    public void Slow()      //바나나밟으면 속도 감소 (추가)
+    {
+
+        rigid.velocity *= 0.2f;
+
+        }
     private void LateUpdate()
     {
         spriter.flipX = target.position.x > rigid.position.x;
     }
+
+
 }

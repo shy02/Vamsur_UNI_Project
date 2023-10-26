@@ -12987,6 +12987,7 @@ GameObject:
   - component: {fileID: 684795622}
   - component: {fileID: 684795621}
   - component: {fileID: 684795627}
+  - component: {fileID: 684795628}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -13163,6 +13164,23 @@ MonoBehaviour:
   damage: 10
   count: 2
   speed: 5
+--- !u!114 &684795628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684795620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7f7932e38464f6cb2ac1d6dd526686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bana_num: 0
+  maxNum: 5
+  p1: {fileID: 454562279}
+  p2: {fileID: 1702089217}
+  Banana_prefab: {fileID: 3351983660392212328, guid: 8aa8c4965f0724e4593ec3c8c17869ac, type: 3}
 --- !u!1 &730007596
 GameObject:
   m_ObjectHideFlags: 0

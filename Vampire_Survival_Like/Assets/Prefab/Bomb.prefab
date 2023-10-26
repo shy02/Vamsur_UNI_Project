@@ -130,3 +130,4 @@ MonoBehaviour:
   - {fileID: 1367815132, guid: d25ca0a3d6cea6a43b9e308781be88ad, type: 3}
   stepTime: 3
   eraseTime: 0.08
+  BombSp: {fileID: 0}

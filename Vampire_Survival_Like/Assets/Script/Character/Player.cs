@@ -43,8 +43,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public float GetPlayerSpeed(float speed){      
+    public float GetPlayerSpeed(float speed)
+    {
         speed = this.speed;
-        return speed;  
+        return speed;
     }
 }
