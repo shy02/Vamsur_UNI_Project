@@ -1,0 +1,19 @@
+Spawner 스크립트 변경점
+##추가된 점 ##
+public GameObject[] enemyPrefab; 
+List<GameObject>[] pools;
+
+void Awake()
+{
+  pools = new List<GameObject>[enemyPrefab.Length];
+
+        for (int index = 0; index < pools.Length; index++)
+        {
+            pools[index] = new List<GameObject>();
+        }
+} 
+
+##변경점##
+
+void Spawn()의 함수 내용
+void SpawnElete()의 함수 내용

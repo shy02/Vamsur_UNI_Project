@@ -41,9 +41,9 @@ public class Weapon : MonoBehaviour
     }
     void Batch()
     {
-        for (int index =0; index < count; index++)
+        /*for (int index =0; index < count; index++)
         {
-            Transform bullet =GameManager.instance.Player_pool.Get(prefabId).transform;
+            //Transform bullet =GameManager.instance.Player_pool.Get(prefabId).transform;
             bullet.parent = transform;
 
             Vector3 rotVec = Vector3.forward * 360 * index / count;
@@ -52,6 +52,6 @@ public class Weapon : MonoBehaviour
              
             bullet.GetComponent<cbullet>().Init(damage, -1); // -1 is infinity per. 무한 공
 
-        }
+        }*/
     }
 }

@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public PoolManager Player_pool;
     public Player player;
     public float Player_HP = 100f;
     public GameObject GameOver_UI;
@@ -70,5 +69,9 @@ public void OffBlock(){
     Block_Player.transform.localPosition = Vector3.zero;
     Block_Player.transform.localScale = Vector3.one;
     Block_Player.SetActive(false);
+}
+public void SkillTime(){
+    gameObject.GetComponent<Pause_>().nowPause = true;
+    
 }
 }
