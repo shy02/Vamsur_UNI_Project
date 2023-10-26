@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class EXP_Bar_Slider : MonoBehaviour
 {
+    public GameObject GM;
     public Slider EXP_Slider;
     private float Max_EXP = 100f;
     private float recently_Exp = 0f;
     private int LV = 0;
 
     // Update is called once per frame
+    void Start(){
+    }
     void Update()
     {
         recently_Exp += 2 * Time.deltaTime;
         if(recently_Exp < Max_EXP)EXP_Slider.value = recently_Exp / Max_EXP;
         if(recently_Exp > Max_EXP){
+            GM.GetComponent<GameManager>().SkillTime();
             EXP_Slider.value = 0;
             recently_Exp = 0;
             LV++;
