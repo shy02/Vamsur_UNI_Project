@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject Danger_UI;
     public GameObject Enemy;
     public GameObject Block_Player;
-    public GameObject Skill_Data;
 
     private bool isDangerous = false;
 
