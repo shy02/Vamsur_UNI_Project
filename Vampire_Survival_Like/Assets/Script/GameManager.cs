@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
 void Awake()
 {
     instance = this;
-    GameOver_UI.SetActive(false);
-    Survied_UI.SetActive(false);
-    Block_Player.SetActive(false);
+//    GameOver_UI.SetActive(false);
+//    Survied_UI.SetActive(false);
+//    Block_Player.SetActive(false);
 }
 
 /*void Update()

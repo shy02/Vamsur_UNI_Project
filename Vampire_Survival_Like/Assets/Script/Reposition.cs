@@ -23,7 +23,7 @@ public class Reposition : MonoBehaviour
             case "Enemy":
                 if (coll.enabled)
                 {
-                    transform.Translate(playerDir*20+new Vector3(Random.Range(-3f,3f),Random.Range(-3f,3f),0)); //ÇÃ·¹ÀÌ¾îÀÇ ¹Ý´ëÆí¿¡ ³ªÅ¸³ª±â
+                    transform.Translate(playerDir*20+new Vector3(Random.Range(-3f,3f),Random.Range(-3f,3f),0)); //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½
                 }
                 break;
         }

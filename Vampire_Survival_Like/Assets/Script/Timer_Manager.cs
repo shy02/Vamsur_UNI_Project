@@ -64,6 +64,6 @@ public class Timer_Manager : MonoBehaviour
             GameTime_H++;
             GameTime_sec = 0;
         }
-        TimeText.text = string.Format("{0:D2}:{1:D2}",GameTime_H,(int)GameTime_sec);
+//        TimeText.text = string.Format("{0:D2}:{1:D2}",GameTime_H,(int)GameTime_sec);
     }
 }
