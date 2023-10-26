@@ -10,9 +10,18 @@ public class Enemy : MonoBehaviour
     public float enemy_maxHP;
     public Rigidbody2D target;
     bool isLive;
+    public GameObject Drop_exp;
 
     SpriteRenderer spriter;
     Rigidbody2D rigid;
+
+    private void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        isLive = true;
+        enemyHP = enemy_maxHP;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +51,10 @@ public class Enemy : MonoBehaviour
         spriter.flipX = target.position.x > rigid.position.x;
     }
 
-    private void OnEnable()
+    private void OnDestroy()
     {
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        isLive = true;
-        enemyHP = enemy_maxHP;
+      Vector3 spawnPosition = transform.position;//bullet의 소환 위치를 정의하기 위해 ver3사용
+      Debug.Log(spawnPosition);
+      Instantiate(Drop_exp, spawnPosition, Quaternion.identity);
     }
-
 }

@@ -17,22 +17,22 @@ public class Enermy_Long : MonoBehaviour
     SpriteRenderer spriter;
     Rigidbody2D rigid;
 
+    private void OnEnable()
+    {
+       // target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         spriter = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
-    }
-
-    private void OnEnable()
-    {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        
         Vector2 director = target.position - rigid.position;//플레이어로 향하는 방향 = 타겟 포지션 - 몹 포지션
         Vector2 next = director.normalized * speed * Time.fixedDeltaTime; //다음에 갈 위치 = 방향 * 몹스피드 * 델타시간
        
@@ -46,7 +46,7 @@ public class Enermy_Long : MonoBehaviour
             if (currenttime >= cooltime) //쿨타임 >= 현재시간
             {
                 Vector3 spawnPosition = transform.position;//bullet의 소환 위치를 정의하기 위해 ver3사용
-                Instantiate(Bullet, spawnPosition, Quaternion.identity);//bullet 소환
+                Instantiate(Bullet, spawnPosition, Quaternion.identity,transform);//bullet 소환
                 currenttime = 0;//시간 초기화
             }
             else if (currenttime < cooltime)
@@ -56,9 +56,12 @@ public class Enermy_Long : MonoBehaviour
             //물리적인 속도를 없애 무브포지션과의 충돌 없애기
             rigid.velocity = Vector2.zero;
         }
+        spriter.flipX = target.position.x > rigid.position.x;
+
     }
-    void LateUpdate()
+    private void LateUpdate()
     {
-        spriter.flipX = target.position.x > rigid.position.x; //스프라이터를 플레이어 위치 x값보다 작다면 뒤집어라
+        //타겟의 x위치가 몹의 x위치보다 오른쪽에 있을 때 스프라이트 뒤집기.
+    //    spriter.flipX = target.position.x > rigid.position.x;
     }
 }
