@@ -19,7 +19,10 @@ public class Timer_Manager : MonoBehaviour
     // Update is called once per frameS
     void Update()
     {
-        if(GameTime_H >= 5){
+        if (!GameManager.instance.isLive)
+            return;
+
+        if (GameTime_H >= 5){
             gameObject.GetComponent<Timer_Manager>().enabled = false;
             Timer_UI.SetActive(false);
             GM.GetComponent<GameManager>().Survied();   

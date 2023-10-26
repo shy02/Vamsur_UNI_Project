@@ -13,6 +13,9 @@ public class EXP_Bar_Slider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.isLive)
+            return;
+
         recently_Exp += 2 * Time.deltaTime;
         if(recently_Exp < Max_EXP)EXP_Slider.value = recently_Exp / Max_EXP;
         if(recently_Exp > Max_EXP){

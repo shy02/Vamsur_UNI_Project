@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (!GameManager.instance.isLive)
+            return;
+
         Vector2 director = target.position - rigid.position;
 
         Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
