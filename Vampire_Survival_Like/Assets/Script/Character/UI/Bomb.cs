@@ -27,7 +27,7 @@ public class Bomb : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy") || other.CompareTag("Boss")){
-            other.GetComponent<_Enemy>().Dead();
+            other.GetComponent<Enemy>().Dead();
         }
     }
 

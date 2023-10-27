@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
     void Spawn(float time)
     {
         GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity,transform);
-        Destroy(enemy, 5f);
+        //Destroy(enemy, 5f);
 
     }
     void Spawn_Elete()

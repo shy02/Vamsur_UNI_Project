@@ -50,7 +50,6 @@ public class Boss : MonoBehaviour
         
         if (attack_time >= 3&&isattack==false)
         {
-            Debug.Log(distance);
             if (distance <= attack_range)
             {
                 isattack = true;

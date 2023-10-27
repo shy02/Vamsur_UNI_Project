@@ -173,7 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2addb9c9136c5499b7bf1d84a1aaae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  L_Point: []
+  L_Point:
+  - {fileID: 2224417783037654412}
+  - {fileID: 2224417783311876054}
   s_bullet: {fileID: 8329358929289875004, guid: 3d2146464444bf44a94c2f952cf640ff, type: 3}
   Enemy_L: {fileID: 4651971390040888927, guid: 4c62f94ae6e2a3e41a4726120aa49213, type: 3}
   boss_HP: 0

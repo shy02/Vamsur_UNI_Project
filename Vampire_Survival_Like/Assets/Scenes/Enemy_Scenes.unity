@@ -339,9 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c008178346204b4bacbe2f1329bf736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 8790346474752905020, guid: a8163891fef54b5419279a59c9f18581, type: 3}
-  - {fileID: 8816670546972088716, guid: 6c69ea808390af447b24b1411b6f3e1b, type: 3}
 --- !u!4 &476989863
 Transform:
   m_ObjectHideFlags: 0
@@ -417,13 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880c013fb7bebc649a9431ca30fbad51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameTime_sec: 0
-  GameTime_H: 0
-  isBossdead: 0
-  TimeText: {fileID: 0}
-  Timer_UI: {fileID: 688105378}
-  GM: {fileID: 816628640}
-  Spawner_Boss: {fileID: 799920905}
 --- !u!4 &688105380
 Transform:
   m_ObjectHideFlags: 0
@@ -558,12 +548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7765b8ee515cb48b596fa0d3275474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: []
-  enemyPrefab:
-  - {fileID: 8790346474752905020, guid: a8163891fef54b5419279a59c9f18581, type: 3}
-  - {fileID: 8816670546972088716, guid: 6c69ea808390af447b24b1411b6f3e1b, type: 3}
-  bossPrefab:
-  - {fileID: 2224417783285068984, guid: 0aa9292d99c7c864eb4abcc23f3d977b, type: 3}
 --- !u!1 &816628640
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,14 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d5d5587c79a424bb54f623402af826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 476989862}
-  player: {fileID: 1306823498}
-  Player_HP: 100
-  GameOver_UI: {fileID: 0}
-  Survied_UI: {fileID: 0}
-  Danger_UI: {fileID: 0}
-  Enemy: {fileID: 8790346474752905020, guid: a8163891fef54b5419279a59c9f18581, type: 3}
-  Block_Player: {fileID: 0}
 --- !u!4 &816628642
 Transform:
   m_ObjectHideFlags: 0
@@ -831,8 +807,8 @@ GameObject:
   - component: {fileID: 1306823495}
   - component: {fileID: 1306823494}
   - component: {fileID: 1306823497}
-  - component: {fileID: 1306823498}
   - component: {fileID: 1306823499}
+  - component: {fileID: 1306823500}
   m_Layer: 6
   m_Name: Test_Player
   m_TagString: Player
@@ -945,20 +921,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.8, y: 1.6}
   m_Direction: 0
---- !u!114 &1306823498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306823493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e81a722263917841a0b92c54d0fac57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputVec: {x: 0, y: 0}
-  speed: 5
 --- !u!95 &1306823499
 Animator:
   serializedVersion: 5
@@ -979,6 +941,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1306823500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306823493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4123915351d8f41bbd922b238bb8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputVec: {x: 0, y: 0}
+  speed: 5
 --- !u!1 &1329947617
 GameObject:
   m_ObjectHideFlags: 0

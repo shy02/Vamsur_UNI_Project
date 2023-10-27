@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7281023641292627452}
   - component: {fileID: 7281023641292627425}
   - component: {fileID: 7281023641292627450}
-  - component: {fileID: 6890254409485603910}
+  - component: {fileID: 8155947077805261073}
   m_Layer: 0
   m_Name: JF_Enemy
   m_TagString: Enemy
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1875, y: 1.625}
   m_EdgeRadius: 0
---- !u!114 &6890254409485603910
+--- !u!114 &8155947077805261073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7281023641292627424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0bd56e9c0e2c64ea4789507f8635c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1841aa3c093f39c40adda65f91831dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  Drop_exp: {fileID: 4781619605307930995, guid: d783c83cfbae1f142948dcdb4eb1e448, type: 3}
