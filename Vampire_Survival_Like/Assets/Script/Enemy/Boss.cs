@@ -47,7 +47,6 @@ public class Boss : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, target.position);
-        
         if (attack_time >= 3&&isattack==false)
         {
             Debug.Log(distance);

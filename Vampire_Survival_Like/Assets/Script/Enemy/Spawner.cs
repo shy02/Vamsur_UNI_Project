@@ -19,6 +19,14 @@ public class Spawner : MonoBehaviour
         spawnPoint = GetComponentsInChildren<Transform>();
         pools = new List<GameObject>[enemyPrefab.Length];
         b_pools=new List<GameObject>[bossPrefab.Length];
+
+        for (int index = 0; index < pools.Length; index++)
+        {
+            pools[index] = new List<GameObject>();
+        }
+        for(int index =0; index<b_pools.Length;index++){
+            b_pools[index]=new List<GameObject>();
+        }
     }
     void Update()
     {
@@ -38,15 +46,15 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity,transform);
+        GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity,transform);
     }
     void Spawn_Elete()
     {
-        GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity, transform);
+        GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity, transform);
     }
     public void Spawn_Boss()
     {
         //Boss.SetActive(true);
-        GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity);
+        GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity,transform);
     }
 }

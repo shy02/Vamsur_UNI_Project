@@ -13,6 +13,8 @@ public class DataManager : MonoBehaviour
         public string name;
         public string explain;
         public int Level;
+        public Sprite skill_Icon;
+        public GameObject SkillObject;
     }
 
     [SerializeField]

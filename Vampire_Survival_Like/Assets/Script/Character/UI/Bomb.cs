@@ -15,7 +15,7 @@ public class Bomb : MonoBehaviour
     void Start()
     {
         SpRender = GetComponent<SpriteRenderer>();
-        BombSp = GameObject.Find("spawer Player Weapone");
+        BombSp = GameObject.Find("Manager").transform.GetChild(1).GetChild(0).gameObject;
         box = GetComponent<BoxCollider2D>();
         box.enabled = false;
         
