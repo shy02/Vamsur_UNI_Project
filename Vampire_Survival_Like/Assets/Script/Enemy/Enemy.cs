@@ -8,9 +8,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 2;
     private GameObject gameManager;
+    public GameObject Drop_exp;
     private Rigidbody2D target;
     bool isLive;
-    public GameObject Drop_exp;
 
     SpriteRenderer spriter;
     Rigidbody2D rigid;
