@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour
     public GameObject Drop_exp;
     private Rigidbody2D target;
     bool isLive;
-    public GameObject Drop_exp;
 
     SpriteRenderer spriter;
     Rigidbody2D rigid;
@@ -61,7 +60,6 @@ public class Enemy : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
-<<<<<<< Updated upstream
         Drop_Exp();
     }
 
@@ -69,9 +67,6 @@ public class Enemy : MonoBehaviour
     {
         Vector3 spawnPosition = transform.position;
         Debug.Log(spawnPosition);
-=======
-        Vector3 spawnPosition = transform.position;//bullet의 소환 위치를 정의하기 위해 ver3사용
->>>>>>> Stashed changes
         Instantiate(Drop_exp, spawnPosition, Quaternion.identity);
     }
 
