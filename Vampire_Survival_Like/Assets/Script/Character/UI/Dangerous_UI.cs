@@ -16,6 +16,7 @@ public class Dangerous_UI : MonoBehaviour
         color = gameObject.GetComponent<Image>().color;
         color.a = p;
         gameObject.GetComponent<Image>().color = color;
+        this.gameObject.SetActive(true);
     }
     void Update()
     { 

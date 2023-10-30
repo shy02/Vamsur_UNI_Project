@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    public GameObject GM;
     public GameObject Up;
     public GameObject Upgrade;
     public GameObject Data;
     public GameObject SkillLayOut;
     public GameObject BuffLayOut;
+    public GameObject Ui;
     public int index;
     // Start is called before the first frame update
     void Start()
     {
-        Upgrade.SetActive(true);
+        
+        Ui = Instantiate(Upgrade);
+        GM.GetComponent<Pause_>().Pause();
+    }
+    
+    public void StartUI(){
+        Ui = Instantiate(Upgrade);
     }
 
     public void SelectOp1(){
@@ -32,6 +40,8 @@ public class SkillManager : MonoBehaviour
     }
 
     public void SelectFunction(){
+
+        if(!Data.GetComponent<DataManager>().skill[index].isFirst){
         GameObject SkillUI = Instantiate(Up);
         if(index >= 8){
             SkillUI.transform.SetParent(BuffLayOut.transform);
@@ -40,6 +50,11 @@ public class SkillManager : MonoBehaviour
             SkillUI.transform.SetParent(SkillLayOut.transform);
         }
         Data.GetComponent<DataManager>().skill[index].SkillObject.SetActive(true);
-        Upgrade.SetActive(false);
+            SkillUI.GetComponent<Chage_Icon_Image>().setIcon(Data.GetComponent<DataManager>().skill[index].skill_Icon);
+        }
+
+        Destroy(Ui);
+        GM.GetComponent<Pause_>().Pause();
     }
+
 }

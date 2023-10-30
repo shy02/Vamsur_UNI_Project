@@ -15,6 +15,7 @@ public class DataManager : MonoBehaviour
         public int Level;
         public Sprite skill_Icon;
         public GameObject SkillObject;
+        public bool isFirst;
     }
 
     [SerializeField]

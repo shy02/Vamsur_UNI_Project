@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class UpgradeUI : MonoBehaviour
 {
     public GameObject Data;
-    public GameObject GM;
     public GameObject op1;
     public GameObject op2;
     public GameObject op3;
+    public GameObject SkillManager;
 
     public List<int>Num = new List<int>(){0,1,2,3,4,5,6,7,8,9};
-    private int[] ran = new int[3];
+    private static int[] ran = new int[3];
     private int index;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
+        Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
+        SkillManager = GameObject.Find("Manager").transform.GetChild(1).gameObject;
         Random_Num(0);
         Random_Num(1);
         Random_Num(2);
@@ -28,6 +30,7 @@ public class UpgradeUI : MonoBehaviour
         Option_Setting(op1, 0);//op1 setting
         Option_Setting(op2, 1);//op2 setting
         Option_Setting(op3, 2);//op3 setting
+
     }
 
     public void Random_Num(int n){
@@ -40,7 +43,20 @@ public class UpgradeUI : MonoBehaviour
         obj.transform.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = Data.GetComponent<DataManager>().skill[ran[num]].explain;
     }
 
-    public int GetRan(int index){
-        return ran[index];
+    public int GetRan(int i){
+        Debug.Log(ran[0]);
+        Debug.Log(ran[1]);
+        Debug.Log(ran[2]);
+        return ran[i];
+    }
+
+    public void Button1Click(){
+        SkillManager.GetComponent<SkillManager>().SelectOp1();
+    }
+    public void Button2Click(){
+        SkillManager.GetComponent<SkillManager>().SelectOp2();
+    }
+    public void Button3Click(){
+        SkillManager.GetComponent<SkillManager>().SelectOp3();
     }
 }

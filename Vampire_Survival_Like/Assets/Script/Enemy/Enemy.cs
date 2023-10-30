@@ -2,24 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private float em_health = 100f;
     // Start is called before the first frame update
-    public float speed;
+    public float speed = 2;
     private GameObject gameManager;
     private Rigidbody2D target;
     bool isLive;
+    public GameObject Drop_exp;
 
     SpriteRenderer spriter;
     Rigidbody2D rigid;
     
+    private void OnEnable()
+    {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         gameManager = GameObject.Find("GameManager");
-        target = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
     
     private void OnCollisionStay2D(Collision2D other) {
@@ -45,7 +49,7 @@ public class _Enemy : MonoBehaviour
             return;
 
 
-        em_health -= collision.GetComponent<cbullet>().damage;
+        //em_health -= collision.GetComponent<bullet>().damage;
 
         if(em_health <= 0)
         {
@@ -56,6 +60,14 @@ public class _Enemy : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
+        Drop_Exp();
+    }
+
+    private void Drop_Exp()
+    {
+        Vector3 spawnPosition = transform.position;
+        Debug.Log(spawnPosition);
+        Instantiate(Drop_exp, spawnPosition, Quaternion.identity);
     }
 
     private void LateUpdate()
