@@ -139,6 +139,6 @@ MonoBehaviour:
   Bullet: {fileID: 3771510800519163883, guid: 410e3cfbd605b6d4aa1894baca784de8, type: 3}
   pos: {fileID: 0}
   target: {fileID: 0}
-  speed: 0
-  atkDistance: 0
-  cooltime: 0
+  speed: 2
+  atkDistance: 5
+  cooltime: 3
