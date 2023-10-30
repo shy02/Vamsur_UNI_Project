@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8816670546972088712}
   - component: {fileID: 8816670546972088713}
   - component: {fileID: 3567916695434228908}
-  - component: {fileID: 8089524306122851231}
+  - component: {fileID: 8942071894650186961}
   m_Layer: 0
   m_Name: Elete_Enemy
   m_TagString: Enemy
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a67d05baf426445bdf8db5b3fcc289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8089524306122851231
+--- !u!114 &8942071894650186961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8816670546972088716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0bd56e9c0e2c64ea4789507f8635c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e61b03d7d072e040966bc3797fa3480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
+  Drop_exp: {fileID: 8153309968320466148, guid: f024e1eb50942264390d2087c33ad165, type: 3}

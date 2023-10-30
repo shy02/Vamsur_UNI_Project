@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject Danger_UI;
     public GameObject Enemy;
     public GameObject Block_Player;
-    public GameObject Skill_Data;
+    public GameObject SkillManager;
 
     private bool isDangerous = false;
 
@@ -72,7 +72,7 @@ public void OffBlock(){
     Block_Player.SetActive(false);
 }
 public void SkillTime(){
-    gameObject.GetComponent<Pause_>().nowPause = true;
-    
+    gameObject.GetComponent<Pause_>().Pause();
+    SkillManager.GetComponent<SkillManager>().StartUI();   
 }
 }
