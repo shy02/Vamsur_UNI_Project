@@ -7,6 +7,7 @@ public class _Enemy : MonoBehaviour
     private float em_health = 100f;
     // Start is called before the first frame update
     public float speed;
+    public float _speed;
     private GameObject gameManager;
     private Rigidbody2D target;
     bool isLive;
@@ -16,6 +17,7 @@ public class _Enemy : MonoBehaviour
 
     void Start()
     {
+        _speed = speed;
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         gameManager = GameObject.Find("GameManager");
@@ -62,9 +64,14 @@ public class _Enemy : MonoBehaviour
     public void Slow()      //바나나밟으면 속도 감소 (추가)
     {
 
-        rigid.velocity *= 0.2f;
-
+        speed *= 0.2f;
+        Invoke("BackSpeed", 2f);
         }
+
+    public void BackSpeed()
+    {
+        speed = _speed;
+    }
     private void LateUpdate()
     {
         spriter.flipX = target.position.x > rigid.position.x;
