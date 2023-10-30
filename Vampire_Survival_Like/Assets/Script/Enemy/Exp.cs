@@ -5,12 +5,14 @@ using UnityEngine;
 public class Exp : MonoBehaviour
 {
     public bool isclose;
+    //private GameObject gameManager;
+
+    private Rigidbody2D target;
     float speed = 8;
-    GameObject target;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        target = transform.parent.gameObject;
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,15 @@ public class Exp : MonoBehaviour
         if (isclose)
         {
             transform.position = Vector3.MoveTowards(transform.position,target.transform.position, speed * Time.deltaTime);
+        }
+        
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            GameManager.instance.EXP_UI.GetComponent<EXP_Bar_Slider>().Exp_Up();
         }
     }
 }

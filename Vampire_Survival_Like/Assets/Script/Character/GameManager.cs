@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject GameOver_UI;
     public GameObject Survied_UI;
     public GameObject Danger_UI;
+    public GameObject EXP_UI;
     public GameObject Enemy;
     public GameObject Block_Player;
 
