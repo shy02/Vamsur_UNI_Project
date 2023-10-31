@@ -35,9 +35,9 @@ public class Timer_Manager : MonoBehaviour
                 Bossishere = true;
             }
 
-            //GM.GetComponent<GameManager>().OnBlock();
+            GM.GetComponent<GameManager>().OnBlock();
             if(GameTime_sec > 30){
-                //GM.GetComponent<GameManager>().OffBlock();
+                GM.GetComponent<GameManager>().OffBlock();
 
                 isBossdead = true;
             }
@@ -51,9 +51,9 @@ public class Timer_Manager : MonoBehaviour
                 Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
                 Bossishere = true;
             }
-            //GM.GetComponent<GameManager>().OnBlock();
+            GM.GetComponent<GameManager>().OnBlock();
             if(GameTime_sec > 30){
-                //GM.GetComponent<GameManager>().OffBlock();
+                GM.GetComponent<GameManager>().OffBlock();
                 isBossdead = true;
             }
         }

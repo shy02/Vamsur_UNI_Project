@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    SpriteRenderer spriter;
     Animator animator;
     float timer;
 
@@ -29,8 +30,10 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        animator.SetBool("isfirst", false);
+        //animator = GetComponent<Animator>();
+        //animator.SetBool("isfirst", false);
+        spriter = GetComponent<SpriteRenderer>();
+
 
         L_Point = GetComponentsInChildren<Transform>();
         rigid = GetComponent<Rigidbody2D>();
@@ -53,19 +56,22 @@ public class Boss : MonoBehaviour
         attack_time += Time.deltaTime;
 
         //보스이동
-        Vector2 director = target.position - rigid.position;
+        if (Vector3.Distance(transform.position, target.position) > 7)
+        {
+            Vector2 director = target.position - rigid.position;
 
-        Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
+            Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
 
-        rigid.MovePosition(rigid.position + next);
+            rigid.MovePosition(rigid.position + next);
+        }
 
 // 공격범위 이동
-        transform.GetChild(2).localPosition = director.normalized; 
+        /*transform.GetChild(2).localPosition = director.normalized; 
 
         if (timer > 1)
         {
             animator.SetBool("isfirst", false);
-        }
+        }*/
        
 
         float distance = Vector3.Distance(transform.position, target.position);
@@ -104,6 +110,7 @@ public class Boss : MonoBehaviour
         }
 
 
+
     }
 
     IEnumerator atk_area()
@@ -111,5 +118,9 @@ public class Boss : MonoBehaviour
         area.enabled = true;
         yield return new WaitForSeconds(2f);
         area.enabled = false;
+    }
+    private void LateUpdate()
+    {
+        spriter.flipX = target.position.x < rigid.position.x;
     }
 }
