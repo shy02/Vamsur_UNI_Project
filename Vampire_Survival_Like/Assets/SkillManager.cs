@@ -50,9 +50,10 @@ public class SkillManager : MonoBehaviour
             SkillUI.transform.SetParent(SkillLayOut.transform);
         }
         Data.GetComponent<DataManager>().skill[index].SkillObject.SetActive(true);
-            SkillUI.GetComponent<Chage_Icon_Image>().setIcon(Data.GetComponent<DataManager>().skill[index].skill_Icon);
+        SkillUI.GetComponent<Chage_Icon_Image>().setIcon(Data.GetComponent<DataManager>().skill[index].skill_Icon);
+        Data.GetComponent<DataManager>().skill[index].isFirst = true;
         }
-
+        Data.GetComponent<DataManager>().skill[index].Level++;
         Destroy(Ui);
         GM.GetComponent<Pause_>().Pause();
     }
