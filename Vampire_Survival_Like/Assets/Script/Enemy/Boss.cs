@@ -11,19 +11,19 @@ public class Boss : MonoBehaviour
     Rigidbody2D bossPos;
     Rigidbody2D rigid;
 
-    public Transform[] L_Point; //�̸� ��ȯ ��ġ
-    public BoxCollider2D area; //���ݹ���
+    public Transform[] L_Point; // 쫄몹 생성위치
+    public BoxCollider2D area; // 근접 공격 범위
 
     public GameObject s_bullet;
     public GameObject Enemy_L;
 
-    public int boss_HP; //���� �ʱ� ü��
-    public int current_boss_HP; // ���� ���� ü��
+    public int boss_HP; // 보스 초기 체력
+    public int current_boss_HP; // 보스 현재 체력
     float timer;
-    public float spawn_police_time; //�̸� ��ȯ �ð�
-    float attack_time; //���� ������
-    bool isattack = false; //���� ����
-    public float attack_range = 7; //���� ����
+    public float spawn_police_time; // 쫄몹 생성 시간
+    float attack_time; // 
+    bool isattack = false; // 공격 여부
+    public float attack_range = 7; // 공격 범위
     
     public float speed = 3;
 
@@ -42,7 +42,7 @@ public class Boss : MonoBehaviour
 
         boss_HP = 200;
         current_boss_HP = boss_HP;
-        area.enabled = false; // ���ݹ��� ��Ȱ��ȭ
+        area.enabled = false; // 공격 범위 비활성화
     }
     
     // Update is called once per frame
@@ -52,41 +52,40 @@ public class Boss : MonoBehaviour
         spawn_police_time += Time.deltaTime;
         attack_time += Time.deltaTime;
 
-        //�����̵�
+        
+        //보스 이동
+        Vector2 director = target.position - rigid.position;
         if (Vector3.Distance(transform.position, target.position) > 7)
         {
-            Vector2 director = target.position - rigid.position;
 
             Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
-
             rigid.MovePosition(rigid.position + next);
         }
-
-// ���ݹ��� �̵�
-        /*transform.GetChild(2).localPosition = director.normalized; 
-
+        //공격범위 이동
+        transform.GetChild(2).localPosition = director.normalized;
+        /*
         if (timer > 1)
         {
             animator.SetBool("isfirst", false);
         }*/
-       
 
-        //�÷��̾���� �Ÿ�
+
+        //플레이어와의 거리
         float distance = Vector3.Distance(transform.position, target.position); 
 
         if (attack_time >= 3 && isattack == false)
         {
             if (distance <= attack_range)
             {
-                //��������
+                //근접 공격
                 isattack = true;
                 Debug.Log("melle attack");
-                StopCoroutine("atk_area"); //�ڷ�ƾ �Լ�
+                StopCoroutine("atk_area"); //코루틴 함수로 공격범위 제어
                 StartCoroutine("atk_area");
             }
             else if (distance > attack_range)
             {
-                //���ϰ� ����
+                //스턴건 공격
                 isattack = true;
                 Debug.Log("stungun attack");
                 Instantiate(s_bullet, bossPos.position, Quaternion.identity);
@@ -94,7 +93,7 @@ public class Boss : MonoBehaviour
 
             if (spawn_police_time >= 20)
             {
-                //��� ��ȯ
+                //쫄몹 소환
                 isattack = true;
                 Instantiate(Enemy_L, L_Point[1].position, Quaternion.identity);
                 Instantiate(Enemy_L, L_Point[2].position, Quaternion.identity);
@@ -110,8 +109,8 @@ public class Boss : MonoBehaviour
 
     IEnumerator atk_area()
     {
-        area.enabled = true; // ���� ���� Ȱ��ȭ
-        yield return new WaitForSeconds(2f); // 2���� ��Ȱ��ȭ
+        area.enabled = true; // 공격범위 활성화
+        yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
     }
     private void LateUpdate()
