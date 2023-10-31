@@ -72,6 +72,6 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
-        spriter.flipX = target.position.x > rigid.position.x;
+        spriter.flipX = target.position.x < rigid.position.x;
     }
 }

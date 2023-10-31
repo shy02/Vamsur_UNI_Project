@@ -38,17 +38,15 @@ public class Spawner : MonoBehaviour
 
     void Spawn(float time)
     {
-        GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity,transform);
-        //Destroy(enemy, 5f);
+        GameObject enemy = Instantiate(enemyPrefab[Random.Range(0,2)], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity,transform);
 
     }
     void Spawn_Elete()
     {
-        GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity, transform);
+        GameObject elete_enemy = Instantiate(enemyPrefab[2], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity, transform);
     }
     public void Spawn_Boss()
     {
-        //Boss.SetActive(true);
         GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity);
     }
 }

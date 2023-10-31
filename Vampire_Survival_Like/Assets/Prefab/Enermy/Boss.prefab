@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 4e894217d1921ad43bf14f8f97fdde15, type: 3}
+  m_Sprite: {fileID: 1898792965, guid: 2b76a2a0e6748b747bd81ab02111f5b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,7 +130,7 @@ Animator:
   m_GameObject: {fileID: 2224417783285068984}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 32114d9e3062c1746ba08cb3465e685b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7c16b22114291054fb2504c6932c1229, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -176,11 +176,13 @@ MonoBehaviour:
   L_Point:
   - {fileID: 2224417783037654412}
   - {fileID: 2224417783311876054}
+  area: {fileID: 0}
   s_bullet: {fileID: 8329358929289875004, guid: 3d2146464444bf44a94c2f952cf640ff, type: 3}
   Enemy_L: {fileID: 4651971390040888927, guid: 4c62f94ae6e2a3e41a4726120aa49213, type: 3}
   boss_HP: 0
   current_boss_HP: 0
   spawn_police_time: 0
+  speed: 3
 --- !u!1 &2224417783311876055
 GameObject:
   m_ObjectHideFlags: 0

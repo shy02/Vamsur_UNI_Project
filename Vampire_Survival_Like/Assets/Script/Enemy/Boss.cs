@@ -4,33 +4,36 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    SpriteRenderer spriter;
     Animator animator;
 
     Rigidbody2D target;
     Rigidbody2D bossPos;
     Rigidbody2D rigid;
 
-    public Transform[] L_Point; //ÂÌ¸÷ ¼ÒÈ¯ À§Ä¡
-    public BoxCollider2D area; //°ø°Ý¹üÀ§
+    public Transform[] L_Point; //ï¿½Ì¸ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½Ä¡
+    public BoxCollider2D area; //ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½
 
     public GameObject s_bullet;
     public GameObject Enemy_L;
 
-    public int boss_HP; //º¸½º ÃÊ±â Ã¼·Â
-    public int current_boss_HP; // º¸½º ÇöÀç Ã¼·Â
+    public int boss_HP; //ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½ Ã¼ï¿½ï¿½
+    public int current_boss_HP; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½
     float timer;
-    public float spawn_police_time; //ÂÌ¸÷ ¼ÒÈ¯ ½Ã°£
-    float attack_time; //°ø°Ý µô·¹ÀÌ
-    bool isattack = false; //°ø°Ý À¯¹«
-    public float attack_range = 7; //°ø°Ý ¹üÀ§
+    public float spawn_police_time; //ï¿½Ì¸ï¿½ ï¿½ï¿½È¯ ï¿½Ã°ï¿½
+    float attack_time; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    bool isattack = false; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float attack_range = 7; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     
     public float speed = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        animator.SetBool("isfirst", false);
+        //animator = GetComponent<Animator>();
+        //animator.SetBool("isfirst", false);
+        spriter = GetComponent<SpriteRenderer>();
+
 
         L_Point = GetComponentsInChildren<Transform>();
         rigid = GetComponent<Rigidbody2D>();
@@ -39,7 +42,7 @@ public class Boss : MonoBehaviour
 
         boss_HP = 200;
         current_boss_HP = boss_HP;
-        area.enabled = false; // °ø°Ý¹üÀ§ ºñÈ°¼ºÈ­
+        area.enabled = false; // ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
     }
     
     // Update is called once per frame
@@ -49,34 +52,41 @@ public class Boss : MonoBehaviour
         spawn_police_time += Time.deltaTime;
         attack_time += Time.deltaTime;
 
-        //º¸½º ¹æÇâ
-        Vector2 director = target.position - rigid.position;
-        Vector2 next = director.normalized * speed * Time.deltaTime;
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
+        if (Vector3.Distance(transform.position, target.position) > 7)
+        {
+            Vector2 director = target.position - rigid.position;
 
-        // °ø°Ý¹üÀ§ ÀÌµ¿
-        transform.GetChild(2).localPosition = director.normalized;
+            Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
+
+            rigid.MovePosition(rigid.position + next);
+        }
+
+// ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+        /*transform.GetChild(2).localPosition = director.normalized; 
 
         if (timer > 1)
         {
             animator.SetBool("isfirst", false);
-        }
+        }*/
+       
 
-        //ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®
+        //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
         float distance = Vector3.Distance(transform.position, target.position); 
 
         if (attack_time >= 3 && isattack == false)
         {
             if (distance <= attack_range)
             {
-                //±ÙÁ¢°ø°Ý
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 isattack = true;
                 Debug.Log("melle attack");
-                StopCoroutine("atk_area"); //ÄÚ·çÆ¾ ÇÔ¼ö
+                StopCoroutine("atk_area"); //ï¿½Ú·ï¿½Æ¾ ï¿½Ô¼ï¿½
                 StartCoroutine("atk_area");
             }
             else if (distance > attack_range)
             {
-                //½ºÅÏ°Ç °ø°Ý
+                //ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
                 isattack = true;
                 Debug.Log("stungun attack");
                 Instantiate(s_bullet, bossPos.position, Quaternion.identity);
@@ -84,7 +94,7 @@ public class Boss : MonoBehaviour
 
             if (spawn_police_time >= 20)
             {
-                //°æ°ü ¼ÒÈ¯
+                //ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
                 isattack = true;
                 Instantiate(Enemy_L, L_Point[1].position, Quaternion.identity);
                 Instantiate(Enemy_L, L_Point[2].position, Quaternion.identity);
@@ -93,17 +103,19 @@ public class Boss : MonoBehaviour
             attack_time = 0;
             isattack = false;
         }
-        else if(attack_time < 3 && isattack == false)
-        {
-            //º¸½º ÀÌµ¿
-            rigid.MovePosition(rigid.position + next);
-        }
+
+
+
     }
 
     IEnumerator atk_area()
     {
-        area.enabled = true; // °ø°Ý ¹üÀ§ È°¼ºÈ­
-        yield return new WaitForSeconds(2f); // 2ÃÊÈÄ ºñÈ°¼ºÈ­
+        area.enabled = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
+        yield return new WaitForSeconds(2f); // 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         area.enabled = false;
+    }
+    private void LateUpdate()
+    {
+        spriter.flipX = target.position.x < rigid.position.x;
     }
 }
