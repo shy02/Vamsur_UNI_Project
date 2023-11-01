@@ -69,7 +69,6 @@ public class Enemy : MonoBehaviour
     private void Drop_Exp()
     {
         Vector3 spawnPosition = transform.position;
-        Debug.Log(spawnPosition);
         Instantiate(Drop_exp, spawnPosition, Quaternion.identity);
     }
 
