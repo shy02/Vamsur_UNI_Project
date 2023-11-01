@@ -1,0 +1,9 @@
+## 변경된 점 ##
+Boss_Snake 스크립트에 보스 이동에 조건 추가
+Boss_Snake 스크립트에 독안개 패턴 추가
+
+##추가된 점 ##
+Prison_Ground 이미지 추가
+Snake_tail, Snake_Fog 임시 이미지 추가
+
+Snake_Fog 스크립트 추가
