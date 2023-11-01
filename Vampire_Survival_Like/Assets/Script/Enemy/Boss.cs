@@ -52,17 +52,17 @@ public class Boss : MonoBehaviour
         spawn_police_time += Time.deltaTime;
         attack_time += Time.deltaTime;
 
-        
         //보스 이동
         Vector2 director = target.position - rigid.position;
         if (Vector3.Distance(transform.position, target.position) > 7)
         {
-
             Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
             rigid.MovePosition(rigid.position + next);
         }
+
         //공격범위 이동
         transform.GetChild(2).localPosition = director.normalized;
+
         /*
         if (timer > 1)
         {
@@ -73,6 +73,7 @@ public class Boss : MonoBehaviour
         //플레이어와의 거리
         float distance = Vector3.Distance(transform.position, target.position); 
 
+        //공격
         if (attack_time >= 3 && isattack == false)
         {
             if (distance <= attack_range)
@@ -102,9 +103,6 @@ public class Boss : MonoBehaviour
             attack_time = 0;
             isattack = false;
         }
-
-
-
     }
 
     IEnumerator atk_area()
@@ -113,6 +111,7 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
     }
+
     private void LateUpdate()
     {
         spriter.flipX = target.position.x < rigid.position.x;
