@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,7 @@ public class Weapon : MonoBehaviour
     }
     public void Init()
     {
-        switch(id)
+        switch (id)
         {
             case 0:
                 speed = 150;
@@ -41,16 +42,16 @@ public class Weapon : MonoBehaviour
     }
     void Batch()
     {
-        for (int index =0; index < count; index++)
+        for (int index = 0; index < count; index++)
         {
-            Transform bullet =GameManager.instance.Player_pool.Get(prefabId).transform;
-            bullet.parent = transform;
+            Transform Book = GameManager.instance.pool.Get(prefabId).transform;
+            Book.parent = transform;
 
             Vector3 rotVec = Vector3.forward * 360 * index / count;
-            bullet.Rotate(rotVec);
-            bullet.Translate(bullet.up * 1.5f, Space.World);
-             
-            bullet.GetComponent<cbullet>().Init(damage, -1); // -1 is infinity per. 무한 공
+            Book.Rotate(rotVec);
+            Book.Translate(Book.up * 1.5f, Space.World);
+
+            Book.GetComponent<Book>().Init(damage, -1); // -1 is infinity per. 무한 공
 
         }
     }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public PoolManager Player_pool;
+    public PoolManager pool;
     public Player player;
     public float Player_HP = 100f;
     public GameObject GameOver_UI;
