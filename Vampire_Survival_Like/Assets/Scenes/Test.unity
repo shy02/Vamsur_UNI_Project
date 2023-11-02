@@ -375,6 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871e043a4db2f3b48806174ebd5b49e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 6475813597777073301, guid: b8bbd9fe161ab4b4fbdf71ee2500ca0e, type: 3}
+  bullet: {fileID: 6353741926325020313, guid: b8bbd9fe161ab4b4fbdf71ee2500ca0e, type: 3}
   pos: {fileID: 1184908112}
-  cooltime: 0.3
+  cooltime: 0
