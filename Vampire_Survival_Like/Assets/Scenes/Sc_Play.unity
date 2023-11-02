@@ -6594,6 +6594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 684795627}
   Player_HP: 100
+  stage: 0
   GameOver_UI: {fileID: 1858589366}
   Survied_UI: {fileID: 1987123212}
   Danger_UI: {fileID: 337790065}
@@ -28349,6 +28350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameTime_sec: 0
   GameTime_H: 0
+  stage: 0
   isBossdead: 0
   TimeText: {fileID: 1390007540}
   Timer_UI: {fileID: 1390007537}
@@ -29754,9 +29756,14 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 7281023641292627424, guid: 64e2b6108c93cac4a889c3affdb1cb73, type: 3}
   - {fileID: 7281023641292627424, guid: aa71b1ee72879bc4a9b43bda7f15202b, type: 3}
+  - {fileID: 8221868634355398877, guid: 94ee47dee40916345bd030948a78f852, type: 3}
+  - {fileID: 6855181786670546250, guid: a1edc9c81ae4adf438f65fab817499de, type: 3}
+  elete_enemyPrefab:
   - {fileID: 8816670546972088716, guid: 844a2a04351c1bd45a1411cfc3411b9a, type: 3}
+  - {fileID: 3999438464242457554, guid: caeabe406c2897a41bf61b41d436f741, type: 3}
   bossPrefab:
   - {fileID: 2224417783285068984, guid: 37a13b8baa2583e4daa47472803564cd, type: 3}
+  - {fileID: 7491276532175866133, guid: 9b567955919199a4c957f1a3993ebf02, type: 3}
 --- !u!4 &1861240756
 Transform:
   m_ObjectHideFlags: 0

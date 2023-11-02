@@ -10,15 +10,16 @@ public class Spawner : MonoBehaviour
     float timer;
 
     public GameObject[] enemyPrefab;
+    public GameObject[] elete_enemyPrefab;
     public GameObject[] bossPrefab;
-    List<GameObject>[] pools;
-    List<GameObject>[] b_pools;
+    //List<GameObject>[] pools;
+    //List<GameObject>[] b_pools;
 
     void Awake()
     {
         spawnPoint = GetComponentsInChildren<Transform>();
-        pools = new List<GameObject>[enemyPrefab.Length];
-        b_pools=new List<GameObject>[bossPrefab.Length];
+        //pools = new List<GameObject>[enemyPrefab.Length];
+        //b_pools=new List<GameObject>[bossPrefab.Length];
     }
     void Update()
     {
@@ -27,26 +28,26 @@ public class Spawner : MonoBehaviour
         {
             timer = 0;
             enemy_count += 1;
-            Spawn(timer);
+            Spawn(GameManager.instance.stage);
         }
         if (enemy_count >= 20)
         {
-            Spawn_Elete();
+            Spawn_Elete(GameManager.instance.stage);
             enemy_count = 0;
         }
     }
 
-    void Spawn(float time)
+    void Spawn(int stage)
     {
-        GameObject enemy = Instantiate(enemyPrefab[Random.Range(0,2)], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity,transform);
-
+        int index = stage * 2;
+        GameObject enemy = Instantiate(enemyPrefab[Random.Range(index,index+2)], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity,transform);
     }
-    void Spawn_Elete()
+    void Spawn_Elete(int stage)
     {
-        GameObject elete_enemy = Instantiate(enemyPrefab[2], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity, transform);
+        GameObject elete_enemy = Instantiate(elete_enemyPrefab[stage], spawnPoint[Random.Range(1, spawnPoint.Length-2)].position, Quaternion.identity, transform);
     }
-    public void Spawn_Boss()
+    public void Spawn_Boss(int stage)
     {
-        GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity);
+        GameObject boss = Instantiate(bossPrefab[stage],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity);
     }
 }

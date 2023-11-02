@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Player player;
     public float Player_HP = 100f;
+    public int stage = 0;
     public GameObject GameOver_UI;
     public GameObject Survied_UI;
     public GameObject Danger_UI;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7411541576083040457}
   - component: {fileID: 4226450459007699474}
   m_Layer: 0
-  m_Name: silverwolf_0
+  m_Name: Elete_SilverWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

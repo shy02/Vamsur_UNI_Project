@@ -99,6 +99,7 @@ public class Boss_Snake : MonoBehaviour
             }
         }
     }
+
     private void LateUpdate()
     {
         spriter.flipX = target.position.x < rigid.position.x;

@@ -22,44 +22,55 @@ public class Timer_Manager : MonoBehaviour
     }
     // Update is called once per frameS
     void Update()
-    {
+    {/*
         if(GameTime_H >= 5){
             gameObject.GetComponent<Timer_Manager>().enabled = false;
             Timer_UI.SetActive(false);
             GM.GetComponent<GameManager>().Survied();   
-        }
-        if(GameTime_H == 2 && !isBossdead){
+        }*/
+        //1stage 보스 소환
+        if(GameTime_H == 5 && !isBossdead&& GameManager.instance.stage==0){
             if (!Bossishere)
             {
-                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss(GameManager.instance.stage);
                 Bossishere = true;
+                GameManager.instance.Enemy.SetActive(false);
             }
 
             GM.GetComponent<GameManager>().OnBlock();
-            if(GameTime_sec > 30){
-                GM.GetComponent<GameManager>().OffBlock();
-
-                isBossdead = true;
-            }
         }
-        if(GameTime_H == 3 && isBossdead){isBossdead = false; Bossishere = false; }
-
-        if(GameTime_H == 4 && !isBossdead)
+        if(GameTime_H == 5 && isBossdead && Bossishere&&GameManager.instance.stage ==0)
+        {
+            isBossdead = false; 
+            Bossishere = false;
+            GameManager.instance.stage = 1;
+            GM.GetComponent<GameManager>().OffBlock();
+            GameManager.instance.Enemy.SetActive(true);
+        }
+        //2stage 보스 소환
+        if (GameTime_H == 10 && !isBossdead && GameManager.instance.stage == 1)
         {
             if (!Bossishere)
             {
-                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss(GameManager.instance.stage);
                 Bossishere = true;
+                GameManager.instance.Enemy.SetActive(false);
             }
-            GM.GetComponent<GameManager>().OnBlock();
-            if(GameTime_sec > 30){
-                GM.GetComponent<GameManager>().OffBlock();
-                isBossdead = true;
-            }
-        }
 
-        if (GameTime_H == 5 && isBossdead) { isBossdead = false; Bossishere = false; }
-        GameTime_sec += Time.deltaTime;
+            GM.GetComponent<GameManager>().OnBlock();
+        }
+        if (GameTime_H == 10 && isBossdead && Bossishere && GameManager.instance.stage == 1)
+        {
+            isBossdead = false;
+            Bossishere = false;
+            GameManager.instance.stage = 2;
+            GM.GetComponent<GameManager>().OffBlock();
+            GameManager.instance.Enemy.SetActive(true);
+        }
+        if (!Bossishere)
+        {
+            GameTime_sec += Time.deltaTime;
+        }
         if(GameTime_sec >= 60f){
             GameTime_H++;
             GameTime_sec = 0;
