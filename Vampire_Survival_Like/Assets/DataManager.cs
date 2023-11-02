@@ -7,6 +7,7 @@ using System.IO;
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
+    
     [Serializable]
     public struct Skills
     {

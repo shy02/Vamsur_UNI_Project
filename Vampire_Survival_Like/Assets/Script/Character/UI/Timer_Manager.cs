@@ -13,50 +13,41 @@ public class Timer_Manager : MonoBehaviour
     public GameObject Spawner_Boss;
 
     private bool Bossishere = false;
+    int stage;
     
     void Start()
     {
         Timer_UI.SetActive(true);
         gameObject.GetComponent<Timer_Manager>().enabled = true;
         Bossishere = false;
+        stage=1;
     }
     // Update is called once per frameS
     void Update()
     {
-        if(GameTime_H >= 5){
+        /*if(GameTime_H >= 5){
             gameObject.GetComponent<Timer_Manager>().enabled = false;
             Timer_UI.SetActive(false);
             GM.GetComponent<GameManager>().Survied();   
-        }
-        if(GameTime_H == 2 && !isBossdead){
+        }*/
+        if(GameTime_H == 5 && !isBossdead){
             if (!Bossishere)
             {
-                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss(stage);
                 Bossishere = true;
+                gameObject.GetComponent<Timer_Manager>().enabled=false;
+                GameManager.instance.Enemy.SetActive(false);
             }
 
-            //GM.GetComponent<GameManager>().OnBlock();
+            GM.GetComponent<GameManager>().OnBlock();
             if(GameTime_sec > 30){
-                //GM.GetComponent<GameManager>().OffBlock();
+                GM.GetComponent<GameManager>().OffBlock();
 
                 isBossdead = true;
             }
         }
-        if(GameTime_H == 3 && isBossdead){isBossdead = false; Bossishere = false; }
-
-        if(GameTime_H == 4 && !isBossdead)
-        {
-            if (!Bossishere)
-            {
-                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-                Bossishere = true;
-            }
-            //GM.GetComponent<GameManager>().OnBlock();
-            if(GameTime_sec > 30){
-                //GM.GetComponent<GameManager>().OffBlock();
-                isBossdead = true;
-            }
-        }
+        
+        
 
         if (GameTime_H == 5 && isBossdead) { isBossdead = false; Bossishere = false; }
         GameTime_sec += Time.deltaTime;
@@ -64,6 +55,8 @@ public class Timer_Manager : MonoBehaviour
             GameTime_H++;
             GameTime_sec = 0;
         }
+        
         TimeText.text = string.Format("{0:D2}:{1:D2}",GameTime_H,(int)GameTime_sec);
+        
     }
 }

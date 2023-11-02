@@ -34,7 +34,7 @@ public class Bomb : MonoBehaviour
         if(other.CompareTag("Enemy") || other.CompareTag("Boss")){
             LV = Data.GetComponent<DataManager>().skill[5].Level;
             dmg = 15 + 5 *(LV-1);
-            other.GetComponent<Enemy>().GetDamage(dmg+100);
+            other.GetComponent<Enemy>().GetDamage(dmg);
             Debug.Log(dmg);
         }
     }

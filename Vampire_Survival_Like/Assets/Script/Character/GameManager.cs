@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Player player;
+    public PoolManager pool;
     public float Player_HP = 100f;
     public GameObject GameOver_UI;
     public GameObject Survied_UI;
     public GameObject Danger_UI;
+    public GameObject EXP_UI;
     public GameObject Enemy;
     public GameObject Block_Player;
     public GameObject SkillManager;

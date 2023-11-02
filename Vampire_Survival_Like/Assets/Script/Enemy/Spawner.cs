@@ -55,10 +55,9 @@ public class Spawner : MonoBehaviour
         GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity, transform);
         elete_enemy.transform.SetParent(parent.transform);
     }
-    public void Spawn_Boss()
+    public void Spawn_Boss(int stage)
     {
-        //Boss.SetActive(true);
-        GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity,transform);
-        boss.transform.SetParent(parent.transform);
+        GameObject boss = Instantiate(bossPrefab[stage-1],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity,transform);
+        //boss.transform.SetParent(parent.transform);
     }
 }
