@@ -42,8 +42,9 @@ void Update()
     }
 }
 
-public void Player_damage(){
-    Player_HP--;
+public void Player_damage(float damage){
+        //Player_HP--;
+        Player_HP = Player_HP - damage;
 }
 public float getPlayer_HP(float hp){
     hp = Player_HP;

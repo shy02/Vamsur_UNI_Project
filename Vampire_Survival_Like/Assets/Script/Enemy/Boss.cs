@@ -9,7 +9,6 @@ public class Boss : MonoBehaviour
 
     Rigidbody2D target;
     Rigidbody2D bossPos;
-    Rigidbody2D rigid;
 
     public Transform[] L_Point; // 쫄몹 생성위치
     public BoxCollider2D area; // 근접 공격 범위
@@ -30,13 +29,9 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //animator = GetComponent<Animator>();
-        //animator.SetBool("isfirst", false);
         spriter = GetComponent<SpriteRenderer>();
 
-
         L_Point = GetComponentsInChildren<Transform>();
-        rigid = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         bossPos = GetComponent<Rigidbody2D>();
 
@@ -53,11 +48,11 @@ public class Boss : MonoBehaviour
         attack_time += Time.deltaTime;
 
         //보스 이동
-        Vector2 director = target.position - rigid.position;
+        Vector2 director = target.position - bossPos.position;
         if (Vector3.Distance(transform.position, target.position) > 7)
         {
             Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
-            rigid.MovePosition(rigid.position + next);
+            bossPos.MovePosition(bossPos.position + next);
         }
 
         //공격범위 이동
@@ -114,6 +109,6 @@ public class Boss : MonoBehaviour
 
     private void LateUpdate()
     {
-        spriter.flipX = target.position.x < rigid.position.x;
+        spriter.flipX = target.position.x < bossPos.position.x;
     }
 }

@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D other) {
         if(other.collider.gameObject.CompareTag("Player")){
-            gameManager.GetComponent<GameManager>().Player_damage();
+            gameManager.GetComponent<GameManager>().Player_damage(1);
         }
     }
     void FixedUpdate()

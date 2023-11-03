@@ -6,7 +6,8 @@ public class Stungun_Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private float speed = 500000f;
+    private float speed = 300000f;
+    private float p_speed;
     Rigidbody2D s_bullet, target;
 
     private void OnEnable()
@@ -34,8 +35,19 @@ public class Stungun_Bullet : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                Destroy(gameObject);
+                GameManager.instance.Player_damage(5);
+                p_speed = GameManager.instance.player.speed;
+                Debug.Log(p_speed);
+                GameManager.instance.player.speed = 0;
+                Invoke("Player_Speed_Return", 3f);
+                gameObject.SetActive(false);
             }
         }
+    }
+    
+    void Player_Speed_Return()
+    {
+        GameManager.instance.player.speed = p_speed;
+        Destroy(gameObject);
     }
 }

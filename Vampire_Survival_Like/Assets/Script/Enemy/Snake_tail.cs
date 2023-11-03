@@ -42,6 +42,6 @@ public class Snake_tail : MonoBehaviour
     public void OnTriggerStay2D(Collider2D other)
     {    
         if (other.CompareTag("Player"))
-            GameManager.instance.GetComponent<GameManager>().Player_damage();
+            GameManager.instance.GetComponent<GameManager>().Player_damage(10);
     }
 }
