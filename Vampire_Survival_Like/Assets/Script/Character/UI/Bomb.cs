@@ -11,6 +11,7 @@ public class Bomb : MonoBehaviour
     private float LV;
     private GameObject Data;
     public GameObject BombSp;
+    public GameObject BombEff;
     BoxCollider2D box;
     SpriteRenderer SpRender;
 
@@ -52,6 +53,7 @@ public class Bomb : MonoBehaviour
 
     public void Erase(){
         BombSp.GetComponent<BobSpawner>().minusNum();
+        GameObject eff = Instantiate(BombEff, gameObject.transform.position , gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }

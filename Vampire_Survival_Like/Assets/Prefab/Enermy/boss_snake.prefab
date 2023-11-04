@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8541160173442505037}
   - component: {fileID: 998330816887743825}
   - component: {fileID: 8288803986363708882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boss_snake
   m_TagString: Boss
   m_Icon: {fileID: 0}
