@@ -12,8 +12,8 @@ public class Boss_Snake : MonoBehaviour
     public GameObject tail;
     public GameObject snake_fog;
 
-    public int boss_HP; //보스 초기 체력
-    public int current_boss_HP; // 보스 현재 체력
+    public float boss_HP; //보스 초기 체력
+    public float current_boss_HP; // 보스 현재 체력
     float timer;
     float fog_time;
     float attack_time; //공격 딜레이 타이머
@@ -99,7 +99,10 @@ public class Boss_Snake : MonoBehaviour
             }
         }
     }
-
+    public void Boss_Damage(float dmg)
+    {
+        boss_HP = boss_HP - dmg;
+    }
     private void LateUpdate()
     {
         spriter.flipX = target.position.x < rigid.position.x;

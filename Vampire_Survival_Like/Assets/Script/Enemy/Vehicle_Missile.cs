@@ -5,27 +5,28 @@ using UnityEngine;
 public class Vehicle_Missile : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float speed = 100000f;
+    private float speed = 4f;
     Rigidbody2D v_missile, target;
-    Vector3 lookDir;
 
     private void OnEnable()
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        v_missile = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
-        v_missile = GetComponent<Rigidbody2D>(); 
-        Vector2 director = target.position - v_missile.position;
-        v_missile.AddForce(v_missile.position + director.normalized * speed * Time.deltaTime);
-        v_missile.velocity = Vector2.zero;
         Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        Vector2 director = target.position - v_missile.position;
+        Vector2 looking = target.position - v_missile.position;
+        float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        v_missile.MovePosition(v_missile.position + director.normalized * speed * Time.deltaTime);
+        v_missile.velocity = Vector2.zero;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

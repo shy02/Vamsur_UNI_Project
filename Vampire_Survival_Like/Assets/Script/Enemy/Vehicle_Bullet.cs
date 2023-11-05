@@ -19,7 +19,7 @@ public class Vehicle_Bullet : MonoBehaviour
         v_bullet.AddForce(v_bullet.position + director.normalized * speed * Time.deltaTime);
         v_bullet.velocity = Vector2.zero;
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame

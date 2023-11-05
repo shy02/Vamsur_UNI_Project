@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     SpriteRenderer spriter;
-    Animator animator;
 
     Rigidbody2D target;
     Rigidbody2D bossPos;
@@ -16,8 +15,8 @@ public class Boss : MonoBehaviour
     public GameObject s_bullet;
     public GameObject Enemy_L;
 
-    public int boss_HP; // 보스 초기 체력
-    public int current_boss_HP; // 보스 현재 체력
+    public float boss_HP; // 보스 초기 체력
+    public float current_boss_HP; // 보스 현재 체력
     float timer;
     public float spawn_police_time; // 쫄몹 생성 시간
     float attack_time; // 
@@ -57,13 +56,6 @@ public class Boss : MonoBehaviour
 
         //공격범위 이동
         transform.GetChild(2).localPosition = director.normalized;
-
-        /*
-        if (timer > 1)
-        {
-            animator.SetBool("isfirst", false);
-        }*/
-
 
         //플레이어와의 거리
         float distance = Vector3.Distance(transform.position, target.position); 
