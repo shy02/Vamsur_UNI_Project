@@ -38,7 +38,7 @@ public class Boss_vehicle : MonoBehaviour
         colltime += Time.deltaTime;
         dmg_reduce += Time.deltaTime;
         float distance = Vector3.Distance(transform.position, target.position);
-        if (distance <= close_range && colltime >=5)
+        if (distance <= close_range && colltime >=5) //일정 거리 이내 왔을 때 물대포
         {
             Vector2 looking = target.position - bossPos.position;
             float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
@@ -47,7 +47,7 @@ public class Boss_vehicle : MonoBehaviour
         }
         if (attack_time >= 2 && isattack == false)
         {
-            if (distance<=attack_range) //일정 거리 이내 왔을 때 물대포
+            if (distance<=attack_range)
             {
                 int attack_pattern = Random.Range(1, 4);
                 Debug.Log(attack_pattern);
@@ -92,6 +92,13 @@ public class Boss_vehicle : MonoBehaviour
     void Skill_On()
     {
         GameManager.instance.Skill_Manager.SetActive(true);
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.Player_damage(1);
+        }
     }
     private void LateUpdate()
     {

@@ -23,7 +23,7 @@ public class Boss_Snake : MonoBehaviour
     bool fog_area = false;
 
     int random_;
-    public float speed = 3;
+    float speed = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -102,6 +102,13 @@ public class Boss_Snake : MonoBehaviour
     public void Boss_Damage(float dmg)
     {
         boss_HP = boss_HP - dmg;
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.Player_damage(1);
+        }
     }
     private void LateUpdate()
     {

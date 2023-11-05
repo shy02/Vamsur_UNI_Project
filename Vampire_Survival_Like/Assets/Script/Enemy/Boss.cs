@@ -98,7 +98,13 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
     }
-
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.Player_damage(1);
+        }
+    }
     private void LateUpdate()
     {
         spriter.flipX = target.position.x < bossPos.position.x;

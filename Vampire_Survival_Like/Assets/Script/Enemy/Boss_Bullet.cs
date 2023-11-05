@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vehicle_Bullet : MonoBehaviour
+public class Boss_Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
     private float speed = 500000f;

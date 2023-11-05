@@ -29734,7 +29734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1861240755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29764,6 +29764,8 @@ MonoBehaviour:
   bossPrefab:
   - {fileID: 2224417783285068984, guid: 37a13b8baa2583e4daa47472803564cd, type: 3}
   - {fileID: 7491276532175866133, guid: 9b567955919199a4c957f1a3993ebf02, type: 3}
+  - {fileID: 5557357690426427536, guid: 98a90ccb39f026243a2aa8bf293abcbc, type: 3}
+  - {fileID: 3741112452924574882, guid: c6ada6b315ec6944399e1b3a4f70f9de, type: 3}
 --- !u!4 &1861240756
 Transform:
   m_ObjectHideFlags: 0
