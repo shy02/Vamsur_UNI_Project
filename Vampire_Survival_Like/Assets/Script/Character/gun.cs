@@ -8,6 +8,7 @@ public class gun : MonoBehaviour
     public int per;
     public float speed;
 
+
     public void Init(float damage, int per)
     {
         this.damage = damage;

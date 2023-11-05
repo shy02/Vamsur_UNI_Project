@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-      public GameObject bullet;
+    public GameObject gun;
     public Transform pos;
     public float cooltime;
     private float curtime;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
         if (curtime <= 0)
         {
 
-                Instantiate(bullet,pos.position,transform.rotation);
+                Instantiate(gun,pos.position,transform.rotation);
             
                 curtime = cooltime;
 
