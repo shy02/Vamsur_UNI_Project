@@ -29,7 +29,7 @@ public class gun : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Enemy")){
+        if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }

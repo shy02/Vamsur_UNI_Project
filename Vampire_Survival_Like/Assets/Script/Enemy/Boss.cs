@@ -48,6 +48,9 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(boss_HP <= 0){
+            gameObject.GetComponent<BossDead>().Dead_("stage2");
+        }
         timer += Time.deltaTime;
         spawn_police_time += Time.deltaTime;
         attack_time += Time.deltaTime;
