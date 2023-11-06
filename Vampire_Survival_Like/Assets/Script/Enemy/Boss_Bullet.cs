@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss_Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float speed = 500000f;
+    private float speed = 300000f;
     Rigidbody2D v_bullet, target;
 
     private void OnEnable()

@@ -102,7 +102,7 @@ public class Boss : MonoBehaviour
     {
         if (other.collider.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.Player_damage(1);
+            GameManager.instance.Player_damage(0.5f);
         }
     }
     private void LateUpdate()

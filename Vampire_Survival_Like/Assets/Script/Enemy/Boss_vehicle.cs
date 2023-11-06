@@ -75,6 +75,10 @@ public class Boss_vehicle : MonoBehaviour
             attack_time = 0;
             isattack = false;
         }
+        if (dmg_reduce >= 30)
+        {
+            dmg_reduce = 0;
+        }
     }
 
     public void Boss_Damage(float dmg)
@@ -97,7 +101,7 @@ public class Boss_vehicle : MonoBehaviour
     {
         if (other.collider.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.Player_damage(1);
+            GameManager.instance.Player_damage(0.5f);
         }
     }
     private void LateUpdate()

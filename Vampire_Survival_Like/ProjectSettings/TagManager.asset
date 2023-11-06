@@ -11,6 +11,7 @@ TagManager:
   - Area
   - Boss
   - Exp
+  - Block
   layers:
   - Default
   - TransparentFX

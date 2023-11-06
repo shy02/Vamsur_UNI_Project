@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 6910673956657094733, guid: 4aaa94df481cad64398f484ea3d6f731, type: 3}
   d_bullet: {fileID: 123243078841057217, guid: e0dead41dac09f546b16e51996e937be, type: 3}
+  cannon: {fileID: 8435505829613662209, guid: ef53522a489927846ab8aff154fb7a23, type: 3}
   spawnpoint:
   - {fileID: 4458086080773525772}
   - {fileID: 1778251201771144184}

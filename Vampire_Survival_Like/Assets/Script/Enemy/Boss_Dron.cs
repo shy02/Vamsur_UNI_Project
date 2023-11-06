@@ -13,6 +13,8 @@ public class Boss_Dron : MonoBehaviour
 
     public GameObject laser;
     public GameObject d_bullet;
+    public GameObject cannon;
+    public GameObject bounce;
     public Transform[] spawnpoint;
 
     public float boss_HP = 200;
@@ -65,9 +67,11 @@ public class Boss_Dron : MonoBehaviour
                         break;
                     case 3: //벽 튕기는 투사체 발사
                         isattack = true;
+                        Instantiate(bounce, bossPos.position, Quaternion.identity);
                         break;
                     case 4: //랜덤한 위치로 포탄 발사
                         isattack = true;
+                        Instantiate(cannon, bossPos.position, Quaternion.identity);
                         break;
                 }
                 
@@ -95,7 +99,7 @@ public class Boss_Dron : MonoBehaviour
     {
         if (other.collider.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.Player_damage(1);
+            GameManager.instance.Player_damage(0.5f);
         }
     }
     private void LateUpdate()
