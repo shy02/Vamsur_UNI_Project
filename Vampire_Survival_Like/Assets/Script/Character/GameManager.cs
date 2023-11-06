@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        isLive = true;
+        SceneManager.LoadScene("Sc_Play");
     }
 
     void Update()
