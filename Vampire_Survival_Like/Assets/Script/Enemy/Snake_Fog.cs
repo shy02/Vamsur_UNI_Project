@@ -21,6 +21,7 @@ public class Snake_Fog : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.instance.Player_damage(1);
+
         }
     }
 }

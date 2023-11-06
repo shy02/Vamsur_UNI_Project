@@ -11,6 +11,7 @@ public class Boss_Bullet : MonoBehaviour
     private void OnEnable()
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        v_bullet = GetComponent<Rigidbody2D>();
     }
     void Start()
     {

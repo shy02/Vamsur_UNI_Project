@@ -51,7 +51,7 @@ public class Boss_Snake : MonoBehaviour
         }
 
         //공격 변수
-        random_ = Random.Range(3, 4);
+        random_ = Random.Range(1, 4);
 
         //꼬리 위치
         Vector3 targer_3 = target.position;
