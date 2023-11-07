@@ -58,13 +58,10 @@ public class Enemy : MonoBehaviour
     public void Dead()
     {
         Destroy(gameObject);
-        Debug.Log("죽어버림");
         Drop_Exp();
     }
     public void GetDamage(float DMG){
-        Debug.Log("데미지 받았따");
         em_health = em_health - DMG;
-        gm.GetComponent<GameManager>().Survied_UI.GetComponent<SumkillEnemy>().DeadEnemy++;
     }
 
     private void Drop_Exp()

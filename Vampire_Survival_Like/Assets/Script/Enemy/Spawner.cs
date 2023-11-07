@@ -9,15 +9,18 @@ public class Spawner : MonoBehaviour
     public int enemy_count=0;
     float timer;
     public GameObject parent;
-
+    public GameObject GM;
     public GameObject[] enemyPrefab;
     public GameObject[] bossPrefab;
     List<GameObject>[] pools; 
     List<GameObject>[] b_pools;
 
+    private Player player;
     void Awake()
     {
         spawnPoint = GetComponentsInChildren<Transform>();
+        GM = GameObject.Find("DontDestroyOnLoad").transform.GetChild(1).transform.GetChild(0).gameObject;
+        player = GM.GetComponent<GameManager>().player;
         pools = new List<GameObject>[enemyPrefab.Length];
         b_pools=new List<GameObject>[bossPrefab.Length];
 
@@ -31,6 +34,7 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
+        gameObject.transform.position = player.transform.position;
         timer += Time.deltaTime;
         if (timer > 1f)
         {
