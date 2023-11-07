@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9adc1a4cac16b9641954832d15794958
+guid: e25f156dfba7ac34ba6fadbed14e04d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,33 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_policeofficer_0
+      name: 5stage_robot_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 13
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fa091c2eba21ba4da2b98a315904d80
-      internalID: 1878813454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_policeofficer_1
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 13
-        width: 22
+        x: 23
+        y: 19
+        width: 15
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,40 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 117984c4ec002e547b9700bca5155108
-      internalID: -221803238
+      spriteID: e62f61430f8371f4fb6647156e1ef996
+      internalID: 1790127419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_policeofficer_2
+      name: 5stage_robot_1
       rect:
         serializedVersion: 2
-        x: 148
-        y: 13
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14bcb3a9cb65b4b40a492f6e2e7d2963
-      internalID: -198561637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_policeofficer_3
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 13
-        width: 22
+        x: 87
+        y: 19
+        width: 15
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -194,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65ded8d9749d53141a969d16577701bd
-      internalID: 1585529953
+      spriteID: 802376acaa33ca249b3c6e9449be8de3
+      internalID: 1242555411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_policeofficer_4
+      name: 5stage_robot_2
       rect:
         serializedVersion: 2
-        x: 276
-        y: 13
-        width: 22
-        height: 25
+        x: 150
+        y: 19
+        width: 16
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 174a5381d07e0664a9c8699201801c85
-      internalID: -1317364494
+      spriteID: 5c0383427285f1c4ca91055c49f55b52
+      internalID: -1551859634
       vertices: []
       indices: 
       edges: []
@@ -232,11 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss_policeofficer_1: -221803238
-      boss_policeofficer_4: -1317364494
-      boss_policeofficer_3: 1585529953
-      boss_policeofficer_2: -198561637
-      boss_policeofficer_0: 1878813454
+      5stage_robot_1: 1242555411
+      5stage_robot_2: -1551859634
+      5stage_robot_0: 1790127419
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
