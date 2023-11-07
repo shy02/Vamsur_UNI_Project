@@ -99,4 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   per: 0
-  speed: 10
+  speed: 15
