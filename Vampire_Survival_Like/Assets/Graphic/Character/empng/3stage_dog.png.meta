@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13e3b6158c8ec5c41b68db1067886835
+guid: 8333a770847a0034ab87a0dbc1fe01c0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: self-destructdron_0
+      name: 3stage_dog_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 7
-        width: 25
-        height: 33
+        x: 17
+        y: 20
+        width: 27
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acad70f44aae1204abb88fcbff556d79
-      internalID: -1188387589
+      spriteID: f1174242b3505b04fa14534004d1699f
+      internalID: -1342078789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: self-destructdron_1
+      name: 3stage_dog_1
       rect:
         serializedVersion: 2
-        x: 83
-        y: 7
-        width: 25
-        height: 33
+        x: 82
+        y: 20
+        width: 26
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59410dbf2bd0e4047a67bf58dd048e20
-      internalID: 1602388029
+      spriteID: 8123c7ef0e95d7f47a151894e89f3397
+      internalID: -656869923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: self-destructdron_2
+      name: 3stage_dog_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 8
-        width: 25
-        height: 33
+        x: 145
+        y: 20
+        width: 27
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e6bd3f4fbe428940af3a46cc264f618
-      internalID: 1314761908
+      spriteID: b7e7acc8e60c49d45a2fbcad0213f747
+      internalID: 929173112
       vertices: []
       indices: 
       edges: []
@@ -202,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      self-destructdron_0: -1188387589
-      self-destructdron_2: 1314761908
-      self-destructdron_1: 1602388029
+      3stage_dog_1: -656869923
+      3stage_dog_2: 929173112
+      3stage_dog_0: -1342078789
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 5557357690426427549}
   - component: {fileID: 5557357690426427550}
   - component: {fileID: 5557357690426427551}
+  - component: {fileID: 2594495253922739001}
   m_Layer: 0
   m_Name: Boss_Vehicle
   m_TagString: Boss
@@ -130,12 +131,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: f4ce50ea933d9194b940b31c9b3ccba7, type: 3}
+  m_Sprite: {fileID: -357400855, guid: 0041842a5b91cc544b13055e371c9b51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 3.3125, y: 2.5625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -158,14 +159,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 3.3125, y: 2.5625}
+    newSize: {x: 3.3125, y: 2.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.7}
+  m_Size: {x: 3.4, y: 2.6}
   m_EdgeRadius: 0
 --- !u!50 &5557357690426427550
 Rigidbody2D:
@@ -205,3 +206,23 @@ MonoBehaviour:
   v_watercannon: {fileID: 5449478084856187074, guid: 372ae5efdf3c58a4d9389957b42069d1, type: 3}
   boss_HP: 500
   current_boss_HP: 0
+--- !u!95 &2594495253922739001
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557357690426427536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77a8b871d04b11a4f8c0bef4d33e63af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

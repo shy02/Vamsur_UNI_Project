@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d85510b4aeabdaa4496bebe1470ef73e
+guid: 7be04c9dcd3fb5d439f1278b3bd40516
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot_0
+      name: 1stage_policeofficer_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 19
-        width: 15
-        height: 26
+        x: 21
+        y: 13
+        width: 20
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d5a0dd2c676b1d42a907b28f921f4ed
-      internalID: 1487858979
+      spriteID: 1ae5deb682c641e43973ec7c3c01df9d
+      internalID: -1397563543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_1
+      name: 1stage_policeofficer_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 19
-        width: 15
+        x: 85
+        y: 13
+        width: 20
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +152,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48d26caa9e491e940ae20b56fefd14b0
-      internalID: 2058804138
+      spriteID: 44283bd702f16f445aae63d44ae57756
+      internalID: -1114583479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot_2
+      name: 1stage_policeofficer_2
       rect:
         serializedVersion: 2
-        x: 150
-        y: 19
-        width: 16
+        x: 149
+        y: 13
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a833642f06e368749aa317cf3c16a808
+      internalID: 1890551156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1stage_policeofficer_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 13
+        width: 20
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,8 +194,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c766f7599f63cbf419a55e78b2e00109
-      internalID: 103742859
+      spriteID: 9e4833cc741021d4f951c3b52cb3a7bf
+      internalID: -182508365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1stage_policeofficer_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 13
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e91588b88073944da95a81db8b8436d
+      internalID: -1550969901
       vertices: []
       indices: 
       edges: []
@@ -202,9 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot_2: 103742859
-      robot_1: 2058804138
-      robot_0: 1487858979
+      1stage_policeofficer_0: -1397563543
+      1stage_policeofficer_3: -182508365
+      1stage_policeofficer_1: -1114583479
+      1stage_policeofficer_2: 1890551156
+      1stage_policeofficer_4: -1550969901
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

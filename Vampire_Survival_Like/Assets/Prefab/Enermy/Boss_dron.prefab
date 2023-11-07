@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3741112452924574909}
   - component: {fileID: 3741112452924574908}
-  - component: {fileID: 3741112452924574883}
   - component: {fileID: -5192511359246212368}
   - component: {fileID: -6139472939336721203}
   - component: {fileID: 8935045909019181389}
+  - component: {fileID: 3945419639445634075}
   m_Layer: 0
   m_Name: Boss_dron
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3741112452924574882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.415942, y: 0.1466434, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79,37 +79,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 597682126, guid: 6535a479dc9a3894d95eae128812dcf2, type: 3}
+  m_Sprite: {fileID: 1692814922, guid: f561a90e2a8e6e2419b97623403c02ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.35, y: 2.15}
+  m_Size: {x: 2.9375, y: 2.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3741112452924574883
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3741112452924574882}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ef18b751f2e71b04b87cb16cf9981518, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &-5192511359246212368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +105,7 @@ MonoBehaviour:
   laser: {fileID: 6910673956657094733, guid: 4aaa94df481cad64398f484ea3d6f731, type: 3}
   d_bullet: {fileID: 123243078841057217, guid: e0dead41dac09f546b16e51996e937be, type: 3}
   cannon: {fileID: 8435505829613662209, guid: ef53522a489927846ab8aff154fb7a23, type: 3}
+  bounce: {fileID: 0}
   spawnpoint:
   - {fileID: 4458086080773525772}
   - {fileID: 1778251201771144184}
@@ -143,7 +124,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
+  m_Offset: {x: 0, y: -0.5}
   serializedVersion: 2
   m_Radius: 1
 --- !u!50 &8935045909019181389
@@ -167,6 +148,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &3945419639445634075
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741112452924574882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef18b751f2e71b04b87cb16cf9981518, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5325192119182798708
 GameObject:
   m_ObjectHideFlags: 0

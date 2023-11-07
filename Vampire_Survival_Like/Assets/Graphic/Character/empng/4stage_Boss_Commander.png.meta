@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8477fb3ac7667a8468e8d547cde7e9ce
+guid: 3386980488428d84eb5d182d5ddd2fd6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bat_0
+      name: 4stage_Boss_Commander_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 16
-        width: 43
-        height: 21
+        x: 20
+        y: 8
+        width: 28
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1628cc217bb014689aa1986866369e
-      internalID: 289116506
+      spriteID: 6f9c73ad703ecb04684a1868e0cb63c1
+      internalID: -1106297271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bat_1
+      name: 4stage_Boss_Commander_1
       rect:
         serializedVersion: 2
-        x: 83
-        y: 15
-        width: 28
-        height: 15
+        x: 88
+        y: 8
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +152,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa9392a1d2a62ac4bab164256fedd819
-      internalID: -1045270577
+      spriteID: 400ed046a8bec2f478171f87db2f2606
+      internalID: 1391602576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4stage_Boss_Commander_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 8
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1686597379d21dc4d8ed8c484eb5d21c
+      internalID: -1196470697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4stage_Boss_Commander_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 8
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4837b22b7881004db2441be3c1d213a
+      internalID: 478323974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4stage_Boss_Commander_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 8
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdb264caf9f0f246bb64453bfefc2b1
+      internalID: 959869918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4stage_Boss_Commander_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 7
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e4851c45006fd439c8656a5817563f
+      internalID: 487740251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4stage_Boss_Commander_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 7
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71bd0464cab8f947b2853b137f50b65
+      internalID: -1588593729
       vertices: []
       indices: 
       edges: []
@@ -181,8 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bat_0: 289116506
-      bat_1: -1045270577
+      4stage_Boss_Commander_5: 487740251
+      4stage_Boss_Commander_6: -1588593729
+      4stage_Boss_Commander_4: 959869918
+      4stage_Boss_Commander_1: 1391602576
+      4stage_Boss_Commander_2: -1196470697
+      4stage_Boss_Commander_3: 478323974
+      4stage_Boss_Commander_0: -1106297271
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

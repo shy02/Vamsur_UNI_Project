@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a301c69ae40c4c5439ca61e556f509fe
+guid: b5eb59a0c2f1303459b3a7fd7981c7c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: policeofficer_0
+      name: 1stage_bat_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 13
-        width: 20
-        height: 25
+        x: 10
+        y: 16
+        width: 43
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8e5d1e13252bbb448eef9c82962115c
-      internalID: -127950201
+      spriteID: bd202b8a24c683a4cbd5d9418dd72a87
+      internalID: -1963077607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: policeofficer_1
+      name: 1stage_bat_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 13
-        width: 20
-        height: 26
+        x: 83
+        y: 15
+        width: 28
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,71 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 241837f8fc641c64da3c38acc92b70f1
-      internalID: 1554083856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: policeofficer_2
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 13
-        width: 20
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36e07e0fc2be34848a286aa7499427f7
-      internalID: -860885553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: policeofficer_3
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 13
-        width: 20
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d5db27f3a6c3264a9f3f8f00d4422ac
-      internalID: -524290474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: policeofficer_4
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 13
-        width: 20
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fabe4c15440bc57419521aaa828f5629
-      internalID: -1326092854
+      spriteID: 09762813cc9b79b4da5773d0d088448c
+      internalID: -1257880128
       vertices: []
       indices: 
       edges: []
@@ -244,11 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      policeofficer_0: -127950201
-      policeofficer_1: 1554083856
-      policeofficer_4: -1326092854
-      policeofficer_3: -524290474
-      policeofficer_2: -860885553
+      1stage_bat_0: -1963077607
+      1stage_bat_1: -1257880128
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

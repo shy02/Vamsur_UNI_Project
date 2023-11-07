@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 15629d3900e8f81459a2fc15538fcdc7
+guid: b0672ac067115424fb56ba5f80a11a4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: silverwolf_0
+      name: 2stage_snake_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 17
-        width: 31
-        height: 17
+        x: 9
+        y: 14
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b1b4ff4c26c43646aec3393992736eb
-      internalID: 704061408
+      spriteID: b66c46add1fd29e4e8ab0e6de34b3fde
+      internalID: -1631268662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: silverwolf_1
+      name: 2stage_snake_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 17
-        width: 31
-        height: 17
+        x: 71
+        y: 14
+        width: 38
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bee791d96fcae54438adaaf47fe46ed5
-      internalID: 1173415673
+      spriteID: 3eed0d960f06016409c82230faeda64c
+      internalID: 1152099312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: silverwolf_2
+      name: 2stage_snake_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 17
-        width: 32
-        height: 17
+        x: 137
+        y: 14
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f613f4b7abe0428488343b69fbde6136
-      internalID: 1531019606
+      spriteID: 008257157911a3d418bece570c66f2d2
+      internalID: 553721186
       vertices: []
       indices: 
       edges: []
@@ -202,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      silverwolf_1: 1173415673
-      silverwolf_2: 1531019606
-      silverwolf_0: 704061408
+      2stage_snake_1: 1152099312
+      2stage_snake_0: -1631268662
+      2stage_snake_2: 553721186
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

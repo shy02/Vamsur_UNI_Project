@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9be88421b8cb2ed4c8fc45cb96e075db
+guid: e25f156dfba7ac34ba6fadbed14e04d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,29 +113,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_snake_0
+      name: 5stage_robot_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 14
-        width: 37
-        height: 31
+        x: 23
+        y: 19
+        width: 15
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5acea30d51c26fb44bdf0bf69dd6dc4c
-      internalID: 2015303497
+      spriteID: e62f61430f8371f4fb6647156e1ef996
+      internalID: 1790127419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_snake_1
+      name: 5stage_robot_1
       rect:
         serializedVersion: 2
-        x: 71
-        y: 14
-        width: 38
-        height: 32
+        x: 87
+        y: 19
+        width: 15
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 201a3a3a833bfc1449a55a00c4cd3cf9
-      internalID: 1216448538
+      spriteID: 802376acaa33ca249b3c6e9449be8de3
+      internalID: 1242555411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_snake_2
+      name: 5stage_robot_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 14
-        width: 37
-        height: 30
+        x: 150
+        y: 19
+        width: 16
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f49d3ec62e48ca041aeb03b692f5b3c3
-      internalID: 1842934901
+      spriteID: 5c0383427285f1c4ca91055c49f55b52
+      internalID: -1551859634
       vertices: []
       indices: 
       edges: []
@@ -202,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss_snake_2: 1842934901
-      boss_snake_0: 2015303497
-      boss_snake_1: 1216448538
+      5stage_robot_1: 1242555411
+      5stage_robot_2: -1551859634
+      5stage_robot_0: 1790127419
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
