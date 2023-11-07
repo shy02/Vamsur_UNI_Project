@@ -26,6 +26,7 @@ public class Boss : MonoBehaviour
     public float attack_range = 7; // 공격 범위
     
     public float speed = 3;
+    public GameObject GM;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class Boss : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         bossPos = GetComponent<Rigidbody2D>();
+        GM = GameObject.Find("Manager").transform.GetChild(0).gameObject;
 
         boss_HP = 200;
         current_boss_HP = boss_HP;
@@ -49,7 +51,7 @@ public class Boss : MonoBehaviour
     void FixedUpdate()
     {
         if(boss_HP <= 0){
-            gameObject.GetComponent<BossDead>().Dead_("stage2");
+            GM.GetComponent<GameManager>().Survied();
         }
         timer += Time.deltaTime;
         spawn_police_time += Time.deltaTime;

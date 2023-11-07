@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 2;
     public float _speed;
-    private GameObject gameManager;
+    private GameObject gm;
     private Rigidbody2D target;
     bool isLive;
     public GameObject Drop_exp;
@@ -25,12 +25,12 @@ public class Enemy : MonoBehaviour
         _speed = speed;
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
-        gameManager = GameObject.Find("GameManager");
+        gm = GameObject.Find("GameManager");
     }
     
     private void OnCollisionStay2D(Collision2D other) {
         if(other.collider.gameObject.CompareTag("Player")){
-            gameManager.GetComponent<GameManager>().Player_damage();
+            gm.GetComponent<GameManager>().Player_damage(0.5f);
         }
     }
     void FixedUpdate()
@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
     public void GetDamage(float DMG){
         Debug.Log("데미지 받았따");
         em_health = em_health - DMG;
+        gm.GetComponent<GameManager>().Survied_UI.GetComponent<SumkillEnemy>().DeadEnemy++;
     }
 
     private void Drop_Exp()

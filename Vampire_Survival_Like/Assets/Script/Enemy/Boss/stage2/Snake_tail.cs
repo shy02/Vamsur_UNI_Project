@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Snake_tail : MonoBehaviour
 {
-    public float blind_time = 1; // °ø°Ý ½Ãµµ ½Ã°£
-    public float del_time = 5; // »èÁ¦ ½Ã°£
+    public float blind_time = 1; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ ï¿½Ã°ï¿½
+    public float del_time = 5; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
     public float time;
     SpriteRenderer tail;
     Collider2D area;
     // Start is called before the first frame update
     void Start()
     {
-        //²¿¸® ÀÌ¹ÌÁö ²ô±â
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         tail = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         tail.enabled = false;
 
@@ -23,7 +23,7 @@ public class Snake_tail : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //ÀÏÁ¤ ½Ã°£ ÈÄ °ø°Ý
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         time += Time.deltaTime;
         if (time> blind_time)
         {
@@ -31,17 +31,17 @@ public class Snake_tail : MonoBehaviour
             tail.enabled = true;
         }
 
-        // ÀÏÁ¤ ½Ã°£ÈÄ »èÁ¦
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if(time>del_time)
         {
             Destroy(gameObject);
         }
     }
 
-    //²¿¸®°¡ »ý±â°í, ÄÝ¶óÀÌ´õ¿¡ Player ÅÂ±×°¡ ÀÖ°í, ÄÝ¶óÀÌ´õ°¡ ÄÑÀú ÀÖÀ» ¶§ ÇÃ·¹ÀÌ¾î µ¥¹ÌÁö
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ Player ï¿½Â±×°ï¿½ ï¿½Ö°ï¿½, ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public void OnTriggerStay2D(Collider2D other)
     {    
         if (other.CompareTag("Player"))
-            GameManager.instance.GetComponent<GameManager>().Player_damage();
+            GameManager.instance.GetComponent<GameManager>().Player_damage(0.5f);
     }
 }

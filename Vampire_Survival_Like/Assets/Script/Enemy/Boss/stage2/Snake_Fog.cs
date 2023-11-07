@@ -16,10 +16,10 @@ public class Snake_Fog : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D other)
     {
-        //Fog_Area ÄÝ¶óÀÌ´õ¿¡ Player ÅÂ±×°¡ ÀÖ°í, ÄÝ¶óÀÌ´õ°¡ ÄÑÀú ÀÖÀ» ¶§ ÇÃ·¹ÀÌ¾î µ¥¹ÌÁö
+        //Fog_Area ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ Player ï¿½Â±×°ï¿½ ï¿½Ö°ï¿½, ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (other.CompareTag("Player"))
         {
-            GameManager.instance.GetComponent<GameManager>().Player_damage();
+            GameManager.instance.GetComponent<GameManager>().Player_damage(0.5f);
         }
     }
 }

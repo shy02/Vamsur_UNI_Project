@@ -44,8 +44,8 @@ void Update()
     }
 }
 
-public void Player_damage(){
-    Player_HP--;
+public void Player_damage(float dmg){
+    Player_HP -= dmg;
 }
 public float getPlayer_HP(float hp){
     hp = Player_HP;
@@ -61,8 +61,8 @@ public void Survied(){
     Enemy.SetActive(false);
     Survied_UI.SetActive(true);
 }
-public void RestartClick(){
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+public void RestartClick(string stage){
+    SceneManager.LoadScene(stage);
     }
 public void OnBlock(){
     Block_Player.SetActive(true);
