@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     SpriteRenderer spriter;
-    Animator animator;
 
     Rigidbody2D target;
     Rigidbody2D bossPos;
@@ -31,8 +30,6 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //animator = GetComponent<Animator>();
-        //animator.SetBool("isfirst", false);
         spriter = GetComponent<SpriteRenderer>();
 
 
@@ -67,13 +64,6 @@ public class Boss : MonoBehaviour
 
         //공격범위 이동
         transform.GetChild(2).localPosition = director.normalized;
-
-        /*
-        if (timer > 1)
-        {
-            animator.SetBool("isfirst", false);
-        }*/
-
 
         //플레이어와의 거리
         float distance = Vector3.Distance(transform.position, target.position); 
