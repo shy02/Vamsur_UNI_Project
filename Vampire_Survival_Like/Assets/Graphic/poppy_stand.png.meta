@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f2f976e320ba74becb3ae54a45051ec2
+guid: 350b3600e0be74ba380b08d7dc29b207
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stand1_0
+      name: poppy_stand_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 7
+        y: 18
         width: 64
-        height: 57
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 376db55045eb0409d883e9fc890ba256
-      internalID: -691369030
+      spriteID: 4c43cf26376e24e8788920df50eedb7a
+      internalID: 167364905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stand1_1
+      name: poppy_stand_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 7
+        y: 18
         width: 64
-        height: 57
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,29 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5e099b8d9b774185b60855cce942d59
-      internalID: 604729345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stand1_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 7
-        width: 64
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5d01469c025a4fae9ea95760d3cefb6
-      internalID: -1247792522
+      spriteID: ef0c9ac176e904dbdaaf298ffb462a1e
+      internalID: -121189985
       vertices: []
       indices: 
       edges: []
@@ -190,9 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stand1_0: -691369030
-      stand1_1: 604729345
-      stand1_2: -1247792522
+      poppy_stand_1: -121189985
+      poppy_stand_0: 167364905
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

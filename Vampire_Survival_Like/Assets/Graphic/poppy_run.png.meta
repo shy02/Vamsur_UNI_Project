@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86b9ee4031083452892bf0aa49239e60
+guid: 4964d053023044bd0914f58999325a52
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run4_0
+      name: poppy_run_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 18
         width: 64
-        height: 59
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 957a81ff25ec84910b9f9f7f19c26c10
-      internalID: -821500530
+      spriteID: a8365f71a279b4399b4a059551ff2d69
+      internalID: 664738152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run4_1
+      name: poppy_run_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 5
+        y: 18
         width: 64
-        height: 59
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a2cc7b38925d460b876a0b011829a3c
-      internalID: 1096337129
+      spriteID: fb1916d766c0c43108933d48b0bb3476
+      internalID: -2033127018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run4_2
+      name: poppy_run_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 5
+        y: 18
         width: 64
-        height: 59
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,92 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50f283ac2f9584d369b73c85ee4a3415
-      internalID: -1699093021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run4_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 5
-        width: 64
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b4b8e7c20a534f63bb05221629dd44b
-      internalID: -696554650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run4_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 5
-        width: 64
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c18311c6ed0f4f39b322b7b3d6c4b58
-      internalID: -549439132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run4_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 5
-        width: 64
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5cd3fb8cb6814416a253397b55cc158
-      internalID: -1609187617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run4_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 5
-        width: 64
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de196c522764d41649eb3fa6587a78ca
-      internalID: 824396202
+      spriteID: cc1dc08a5af954f7c88151cfd72fbaa0
+      internalID: 501685352
       vertices: []
       indices: 
       edges: []
@@ -274,13 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run4_4: -549439132
-      run4_0: -821500530
-      run4_5: -1609187617
-      run4_6: 824396202
-      run4_3: -696554650
-      run4_1: 1096337129
-      run4_2: -1699093021
+      poppy_run_2: 501685352
+      poppy_run_1: -2033127018
+      poppy_run_0: 664738152
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

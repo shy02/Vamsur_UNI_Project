@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Dead
+  m_Name: Poppy_Run
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -340856894, guid: 1b0f8f1cb6e804edaacced550c2f8ee8, type: 3}
+      value: {fileID: 664738152, guid: 4964d053023044bd0914f58999325a52, type: 3}
     - time: 0.083333336
-      value: {fileID: 317346198, guid: 1b0f8f1cb6e804edaacced550c2f8ee8, type: 3}
+      value: {fileID: -2033127018, guid: 4964d053023044bd0914f58999325a52, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -340856894, guid: 1b0f8f1cb6e804edaacced550c2f8ee8, type: 3}
-    - {fileID: 317346198, guid: 1b0f8f1cb6e804edaacced550c2f8ee8, type: 3}
+    - {fileID: 664738152, guid: 4964d053023044bd0914f58999325a52, type: 3}
+    - {fileID: -2033127018, guid: 4964d053023044bd0914f58999325a52, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

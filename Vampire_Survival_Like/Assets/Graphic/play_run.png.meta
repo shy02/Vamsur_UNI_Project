@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b0f8f1cb6e804edaacced550c2f8ee8
+guid: 466ef99357fc3482bbb9899887e0485d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dead1_0
+      name: play_run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cff03b75b984403e874ce4ab8a57d3f
-      internalID: -340856894
+      spriteID: 1e3cebb5d67514751a1ad31236955371
+      internalID: -1788675250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dead1_1
+      name: play_run_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,8 +152,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20959d274accf4fa79bdba86b69c7d1a
-      internalID: 317346198
+      spriteID: f2f987637b2d14f6e8ad14b14173ae76
+      internalID: 225949014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play_run_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 5
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7a9409beeab48d2bf3a19b4e17ad68
+      internalID: -602366619
       vertices: []
       indices: 
       edges: []
@@ -169,8 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dead1_1: 317346198
-      dead1_0: -340856894
+      play_run_1: 225949014
+      play_run_2: -602366619
+      play_run_0: -1788675250
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
