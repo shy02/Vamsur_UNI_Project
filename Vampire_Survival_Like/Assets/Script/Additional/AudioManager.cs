@@ -7,30 +7,34 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-
+    
     [Header("#BGM")]
     public AudioClip bgmClip;
     public float bgmVolume;
     AudioSource bgmPlayer;
 
 
-    [Header("#SFX")] //È¿°úÀ½
+    [Header("#SFX")] //
     public AudioClip[] sfxClip;
     public float sfxVolume;
     public int channels;
     AudioSource[] sfxPlayers;
     int channelIndex;
 
+    public enum Sfx
+    {
+    } // íš¨ê³¼ìŒ ì—´ê±°
 
     void Awake()
     {
         instance = this;
         Init();
+        
     }
 
     void Init()
     {
-        //¹è°æÀ½ ÇÃ·¹ÀÌ¾î ÃÊ±âÈ­
+        // ë°°ê²½ìŒ í”Œë ˆì´ì–´ ì´ˆê¸°í™”
         GameObject bgmObject = new GameObject("BgmPlayer");
         bgmObject.transform.parent = transform;
         bgmPlayer = bgmObject.AddComponent<AudioSource>();
@@ -39,7 +43,7 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.volume = bgmVolume;
         bgmPlayer.clip = bgmClip;
 
-        //È¿°úÀ½ ÇÃ·¹ÀÌ¾î ÃÊ±âÈ­
+        // íš¨ê³¼ìŒ í”Œë ˆì´ì–´ ì´ˆê¸°í™”
         GameObject sfxObject = new GameObject("SfxPlayer");
         sfxObject.transform.parent = transform;
         sfxPlayers = new AudioSource[channels];
@@ -52,4 +56,50 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayBgm(bool isPlay)
+    {
+        if (isPlay)
+        {
+            bgmPlayer.Play();
+        }
+        else
+        {
+            bgmPlayer.Stop();
+        }
+    }
+
+    public void EffectBgm(bool isPlay)
+    {
+        
+    }
+    public void PlaySfx(Sfx sfx)
+    {
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
+
+            if (sfxPlayers[loopIndex].isPlaying)
+                continue;
+            
+            channelIndex = loopIndex;
+            //sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            //sfxPlayers[loopIndex].Play();
+            break;
+        }
+    }
+
+    public void ChangeBgmSound(float value)
+    {
+        bgmPlayer.volume = value;
+    }
+
+    public void ChangeSfxSound(float value)
+    {
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
+         
+            sfxPlayers[index].volume = value;
+        }
+    }
 }

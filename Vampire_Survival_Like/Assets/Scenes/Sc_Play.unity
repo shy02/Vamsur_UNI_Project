@@ -3524,8 +3524,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmClip: {fileID: 0}
   bgmVolume: 0
-  sfxClip: []
-  sfxVolume: 0
+  sfxClip:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sfxVolume: 12.53
   channels: 0
 --- !u!1 &1987123212
 GameObject:

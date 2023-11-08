@@ -32,12 +32,7 @@ public class GameManager : MonoBehaviour
         Survied_UI.SetActive(false);
         Block_Player.SetActive(false);
     }
-
-    public void GameStart()
-    {
-        SceneManager.LoadScene("Sc_Play");
-    }
-
+    
     void Update()
     {
         if (!isLive)
@@ -69,6 +64,7 @@ public class GameManager : MonoBehaviour
     public void gameOver(){
         Enemy.SetActive(false);
         GameOver_UI.SetActive(true);
+        
     }
 
     public void Survied(){
