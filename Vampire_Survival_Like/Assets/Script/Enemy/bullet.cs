@@ -39,6 +39,7 @@ public class bullet : MonoBehaviour
             if (collision.gameObject.CompareTag("Player")) //태그가 플레이어일떄
             {
                 Destroy(gameObject); //삭제
+                GameManager.instance.Player_damage(3);
                 Debug.Log("충돌!");
             }
         }

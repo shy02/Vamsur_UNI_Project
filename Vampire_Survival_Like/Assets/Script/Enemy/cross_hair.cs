@@ -10,8 +10,9 @@ public class cross_hair : MonoBehaviour
     new Collider2D collider;
 
     float time;
-    public float speed = 2;
+    public float speed = 4;
     bool is_attack;
+    bool isdamaged;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class cross_hair : MonoBehaviour
         sprite.sprite = img[0];
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         is_attack = false;
+        isdamaged = false;
         collider.enabled = false;
     }
 
@@ -36,7 +38,7 @@ public class cross_hair : MonoBehaviour
             Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
             rigid.MovePosition(rigid.position + next);
             //공격 준비
-            if (Vector3.Distance(transform.position, target.position) < 0.1f)
+            if (Vector3.Distance(transform.position, target.position) < 0.3f)
             {
                 is_attack = true;
             }
@@ -50,26 +52,32 @@ public class cross_hair : MonoBehaviour
             if (time >= 1)
             {
                 //공격할때 이미지 변경
-                sprite.sprite = img[2];
+                //sprite.sprite = img[2];
                 //공격
                 collider.enabled = true;
+                Destroy(gameObject,0.1f);
             }
-            if (time > 2)
+            /*if (time > 2)
             {
                 //공격후 복구
                 sprite.sprite = img[0];
                 is_attack = false;
                 collider.enabled = true;
                 time = 0;
-            }
+            }*/
         }
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collider.CompareTag("Player"))
+        if (collision != null)
         {
-            GameManager.instance.Player_damage(1);
+            if (collision.gameObject.CompareTag("Player")&&collider.enabled&&!isdamaged)
+            {
+                GameManager.instance.Player_damage(25);
+                isdamaged = true;
+            }
         }
     }
 }

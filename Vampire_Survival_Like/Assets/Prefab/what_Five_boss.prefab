@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -326143970, guid: a37c3937627ae5044b709ee12b19992a, type: 3}
+  m_Sprite: {fileID: 1952859954, guid: 19a4f7e97a7a5f14c945259d6afd95f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.6875, y: 1.1875}
+  m_Size: {x: 1.1904762, y: 1.8571428}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 5145383502930055893}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b7bafb5139ffd6443a482b41ee541b9a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5b24e7a30d572b945a7c5473a74846b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3460451184275298735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d0b99c722b9444b8a32e8b9836227d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3771510800519163883, guid: 410e3cfbd605b6d4aa1894baca784de8, type: 3}
+  bullet: {fileID: 123243078841057217, guid: e0dead41dac09f546b16e51996e937be, type: 3}
   bomb: {fileID: 4232454159979818302, guid: 1519a85462bb4d842b1f5db961bce722, type: 3}
-  time: 0
+  sniper: {fileID: 3541800778621063557, guid: 11f3bf4898f26344ebcebf98cd3d27e6, type: 3}
   cool: 0
+  boss_HP: 500
+  currentHP: 500
