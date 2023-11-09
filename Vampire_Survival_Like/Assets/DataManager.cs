@@ -19,7 +19,21 @@ public class DataManager : MonoBehaviour
         public GameObject SkillObject;
         public bool isFirst;
     }
+    [Serializable]
+    public struct FinalSkill
+    {
+        public int id;
+        public string name;
+        public string explain;
+        public Sprite skill_Icon;
+        public GameObject finalObject;
+        public GameObject Active;
+        public GameObject Passive;
+        public bool isFirst;
+    }
+
 
     [SerializeField]
     public Skills[] skill;
+    public FinalSkill[] final;
 }

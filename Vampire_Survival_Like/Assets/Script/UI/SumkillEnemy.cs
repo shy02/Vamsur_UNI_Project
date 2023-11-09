@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class SumkillEnemy : MonoBehaviour
 {
-    public int DeadEnemy;
+    public int DeadEnemy = 0;
     public Text Deadnum;
     
-    void Start(){
+    void Update(){
+        DeadEnemy = GameManager.instance.DeadNum;
         Deadnum = gameObject.GetComponent<Text>();
-        for(int i = 0; i > DeadEnemy; i++){
-            Deadnum.text = i.ToString();
-        }
+            Deadnum.text = DeadEnemy.ToString();
+        
     }
 }

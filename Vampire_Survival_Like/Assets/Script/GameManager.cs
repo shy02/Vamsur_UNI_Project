@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject Block_Player;
     public GameObject SkillManager;
     public GameObject DataManager;
+    public GameObject DeadEnemyNum;
+    public int DeadNum = 0;
 
     private bool isDangerous = false;
 

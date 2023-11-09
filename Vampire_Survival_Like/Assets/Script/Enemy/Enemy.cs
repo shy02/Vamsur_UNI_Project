@@ -57,8 +57,9 @@ public class Enemy : MonoBehaviour
 
     public void Dead()
     {
-        Destroy(gameObject);
+        gm.GetComponent<GameManager>().DeadNum++;
         Drop_Exp();
+        Destroy(gameObject);
     }
     public void GetDamage(float DMG){
         em_health = em_health - DMG;
