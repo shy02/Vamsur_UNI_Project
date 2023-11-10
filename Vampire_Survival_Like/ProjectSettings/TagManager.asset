@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
+  - Enemy
+  - Bullet
+  - Ground
+  - Area
+  - Boss
+  - Book
+  - Exp
   layers:
   - Default
   - TransparentFX
@@ -11,11 +19,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerWeapone
+  - Enermy
+  - block
+  - PlayerGansic
   - 
   - 
   - 
