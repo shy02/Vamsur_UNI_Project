@@ -12,16 +12,19 @@ public class Boss5_cross_hair : MonoBehaviour
     float time;
     public float speed = 4;
     bool is_attack;
-    bool isdamaged;
+    public bool isdamaged;
+    public float damage;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<CircleCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
+
         sprite.sprite = img[0];
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         is_attack = false;
         isdamaged = false;
         collider.enabled = false;
@@ -30,7 +33,6 @@ public class Boss5_cross_hair : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (is_attack == false)
         {
             //이동
@@ -49,35 +51,43 @@ public class Boss5_cross_hair : MonoBehaviour
             time += Time.deltaTime;
             sprite.sprite = img[1];
 
-            if (time >= 1)
+            if (time > 2)
             {
                 //공격할때 이미지 변경
-                //sprite.sprite = img[2];
+                sprite.sprite = img[2];
                 //공격
                 collider.enabled = true;
-                Destroy(gameObject,0.1f);
+                if (time > 3)
+                {
+                    recet();
+                    time = 0;
+                }
             }
-            /*if (time > 2)
-            {
-                //공격후 복구
-                sprite.sprite = img[0];
-                is_attack = false;
-                collider.enabled = true;
-                time = 0;
-            }*/
+
         }
+    }
+    public void recet()
+    {
+        sprite.sprite = img[0];
+        is_attack = false;
+        isdamaged = false;
 
     }
     
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null)
         {
-            if (collision.gameObject.CompareTag("Player")&&collider.enabled&&!isdamaged)
+            //Debug.Log(collision.gameObject.CompareTag("Player") && !isdamaged);
+            if (collision.gameObject.CompareTag("Player") && !isdamaged)
             {
-                GameManager.instance.Player_damage(25);
+                GameManager.instance.Player_damage(damage);
                 isdamaged = true;
+                //Debug.Log("Wtf_OnTriggerEN");
+                collider.enabled = false;
+
             }
         }
     }
+
 }

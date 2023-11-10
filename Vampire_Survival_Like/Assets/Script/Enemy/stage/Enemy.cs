@@ -4,58 +4,53 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float em_health = 100f;
-    // Start is called before the first frame update
+    public float damage;
+    private float HP = 100f;
+    private float Current_HP;
     public float speed = 2;
-    private GameObject gameManager;
+    // private GameObject gameManager;
+    //bool isLive;
     public GameObject Drop_exp;
     private Rigidbody2D target;
-    bool isLive;
-
     SpriteRenderer spriter;
     Rigidbody2D rigid;
-    
-    private void OnEnable()
-    {
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-    }
+
+    // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
-        gameManager = GameObject.Find("GameManager");
+        Current_HP = HP;
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+
     }
-    
-    private void OnCollisionStay2D(Collision2D other) {
-        if(other.collider.gameObject.CompareTag("Player")){
-            gameManager.GetComponent<GameManager>().Player_damage(1);
-        }
-    }
+
     void FixedUpdate()
     {
+        if (Current_HP < 0.2f)
+        {
+            Dead();
+        }
         Vector2 director = target.position - rigid.position;
-
         Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
-
         rigid.MovePosition(rigid.position + next);
 
         rigid.velocity = Vector2.zero;
         target.velocity = Vector2.zero;
+        spriter.flipX = target.position.x > rigid.position.x;
 
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    public void Enemy_Damage(float dmg)
     {
-        if (!collision.CompareTag("Bullet"))
-            return;
+        Current_HP = Current_HP - dmg;
+    }
 
-
-        em_health -= collision.GetComponent<Bullet>().damage;
-
-        if(em_health <= 0)
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
         {
-            Dead();
+            GameManager.instance.Player_damage(damage);
         }
-
     }
     public void Dead()
     {
@@ -72,6 +67,6 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
-        spriter.flipX = target.position.x < rigid.position.x;
+        //spriter.flipX = target.position.x < rigid.position.x;
     }
 }

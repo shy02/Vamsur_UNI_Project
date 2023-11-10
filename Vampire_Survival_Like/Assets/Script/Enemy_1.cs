@@ -9,7 +9,7 @@ public class Enemy_1 : MonoBehaviour
     public float enemyHP;
     public float enemy_maxHP;
     public Rigidbody2D target;
-    bool isLive;
+    //bool isLive;
     public GameObject Drop_exp;
 
     SpriteRenderer spriter;
@@ -18,7 +18,7 @@ public class Enemy_1 : MonoBehaviour
     private void OnEnable()
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        isLive = true;
+       // isLive = true;
         enemyHP = enemy_maxHP;
     }
 
