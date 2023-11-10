@@ -29,7 +29,8 @@ void Awake()
     GameOver_UI.SetActive(false);
     Survied_UI.SetActive(false);
     Block_Player.SetActive(false);
-    
+
+    //시작시 브금
     AudioManager.instance.PlayBgm(true);
 }
 
