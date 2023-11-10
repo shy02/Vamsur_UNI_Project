@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject DataManager;
     public GameObject DeadEnemyNum;
     public int DeadNum = 0;
+    private int stagenum = 2;
 
     private bool isDangerous = false;
 
@@ -63,9 +64,16 @@ public void Survied(){
     Enemy.SetActive(false);
     Survied_UI.SetActive(true);
 }
-public void RestartClick(string stage){
-    SceneManager.LoadScene(stage);
+public void RestartClick(){
+    if(stagenum<=5){
+    SceneManager.LoadScene("Stage" + stagenum);
+    stagenum++;
     }
+    else{
+    SceneManager.LoadScene("Ending");
+    }
+
+}
 public void OnBlock(){
     Block_Player.SetActive(true);
     Block_Player.transform.SetParent(null);

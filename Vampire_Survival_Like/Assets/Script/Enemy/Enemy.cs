@@ -40,8 +40,6 @@ public class Enemy : MonoBehaviour
         Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
 
         rigid.MovePosition(rigid.position + next);
-
-        rigid.velocity = Vector2.zero;
         target.velocity = Vector2.zero;
         
         if(em_health <= 0)
@@ -78,13 +76,27 @@ public class Enemy : MonoBehaviour
 
     public void Slow(float slowFactor)      //바나나밟으면 속도 감소 (추가)
     {
-
         speed *= (slowFactor/100);
-        Invoke("BackSpeed", 2f);
+        Invoke("ReturnSpeed", 2f);
+    }
+    public void KnockBack(){
+        if(target.position.x > transform.position.x){
+        rigid.AddForce(new Vector2(-1000f, 0f));
         }
-
-    public void BackSpeed()
+        else{
+        rigid.AddForce(new Vector2(1000f, 0f));
+        }
+        if(target.position.y > transform.position.y){
+        rigid.AddForce(new Vector2(0f, -1000f));
+        }
+        else{
+        rigid.AddForce(new Vector2(0f, 1000f));
+        }
+        
+    }
+    public void ReturnSpeed()
     {
         speed = _speed;
     }
+
 }

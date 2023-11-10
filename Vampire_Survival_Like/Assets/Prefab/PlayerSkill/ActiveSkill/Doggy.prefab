@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 4185311412594809637}
   - component: {fileID: 4185311412594809633}
   - component: {fileID: 4185311412594809635}
+  - component: {fileID: 320094522388638151}
   m_Layer: 7
   m_Name: Doggy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4185311412594809638
 Transform:
   m_ObjectHideFlags: 0
@@ -157,6 +158,7 @@ MonoBehaviour:
   timer: 0
   player: {fileID: 0}
   dmg: 30
+  Poppy_anime: {fileID: 0}
 --- !u!114 &4185311412594809635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,3 +177,24 @@ MonoBehaviour:
   Player: {fileID: 0}
   Pet: {fileID: 4185311412594809690}
   target: {fileID: 0}
+  Poppy_anime: {fileID: 0}
+--- !u!95 &320094522388638151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185311412594809690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4361e00240173c14e8ffbf98ac80667d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

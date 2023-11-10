@@ -14,6 +14,7 @@ public class Move_Pet : MonoBehaviour
     public Rigidbody2D target;
     private Vector2 director;
     private Vector2 next;
+    public Animator Poppy_anime;
 
     SpriteRenderer spriter;
     Rigidbody2D rigid;
@@ -22,6 +23,7 @@ public class Move_Pet : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         Player_Speed = Player.GetComponent<Player>().GetPlayerSpeed(Player_Speed);
+        Poppy_anime = GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -31,6 +33,9 @@ public class Move_Pet : MonoBehaviour
             }
             else{ Move(speed);
         }}
+        else{
+            Poppy_anime.SetBool("isMove", false);
+        }
         rigid.velocity = Vector2.zero;
         target.velocity = Vector2.zero;
     }
@@ -40,6 +45,8 @@ public class Move_Pet : MonoBehaviour
     }
 
     public void Move(float speed){
+        
+        Poppy_anime.SetBool("isMove", true);
         director = target.position - rigid.position;
         
         next = director.normalized * speed * Time.fixedDeltaTime;

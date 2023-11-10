@@ -35,12 +35,10 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
-        //anim.SetFloat("Speed" , inputVec.magnitude);
-        if(!GameManager.instance.GetComponent<Pause_>().nowPause){   
+        anim.SetFloat("Speed" , inputVec.magnitude); 
             if (inputVec.x != 0) {
             spriter.flipX = inputVec.x < 0;
             }
-        }
     }
 
     public float GetPlayerSpeed(float speed){      

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Pause_ : MonoBehaviour
 {
-    public bool nowPause;
+    public bool nowPause = true;
     void Start()
     {
-        nowPause = false;
     }
        public void Pause () {
         if(nowPause == false){

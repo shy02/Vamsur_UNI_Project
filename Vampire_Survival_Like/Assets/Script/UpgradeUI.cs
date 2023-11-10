@@ -11,7 +11,7 @@ public class UpgradeUI : MonoBehaviour
     public GameObject op3;
     public GameObject SkillManager;
 
-    public List<int>Num = new List<int>(){0,1,2,3,4,5,6,7,8,9};
+    public List<int>Num = new List<int>(){0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
     private static int[] ran = new int[3];
     private int index;
     // Start is called before the first frame update

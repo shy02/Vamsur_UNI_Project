@@ -12,6 +12,7 @@ public class WallBounce : MonoBehaviour
 
     void Start()
     {
+        transform.position = GameManager.instance.player.transform.position;
         rb = GetComponent<Rigidbody2D>();
         randomX = Random.Range(-1f, 1f);                 //랜덤값
         randomY = Random.Range(-1f, 1f);

@@ -12,10 +12,11 @@ public class Find_Enermy : MonoBehaviour
     public float timer;
     public GameObject player;
     public float dmg;
+    public Animator Poppy_anime;
 
     void Start()
     {
-        
+        Poppy_anime = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +48,7 @@ public class Find_Enermy : MonoBehaviour
     }
 
     private void Attack(){
+            Poppy_anime.SetBool("isMove", true);
             gameObject.GetComponent<Move_Pet>().enabled = false;
             gameObject.transform.position = Vector3.MoveTowards(transform.position, short_enemy.gameObject.transform.position, Speed * Time.deltaTime);
             if(timer >= 6f){
@@ -56,6 +58,7 @@ public class Find_Enermy : MonoBehaviour
     }
 
     private void Return(){
+        Poppy_anime.SetBool("isMove", false);
         gameObject.transform.position = player.transform.position;
         gameObject.GetComponent<Move_Pet>().enabled = true;
     }

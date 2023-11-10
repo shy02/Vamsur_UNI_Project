@@ -14,6 +14,5 @@ public class HP_BAR_Slider : MonoBehaviour
         currenthp = GM.GetComponent<GameManager>().getPlayer_HP(currenthp);
         if(currenthp > 0) HP_bar.value = currenthp/maxhp;
         if(currenthp <= 0) GM.GetComponent<GameManager>().gameOver();
-        
     }
 }
