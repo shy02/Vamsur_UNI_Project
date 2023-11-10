@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Snake : MonoBehaviour
+public class Boss2_Snake : MonoBehaviour
 {
 
     Rigidbody2D target;
@@ -29,13 +29,18 @@ public class Boss_Snake : MonoBehaviour
     void Start()
     {
         spriter = GetComponent<SpriteRenderer>();
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
+        current_boss_HP = boss_HP;
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (current_boss_HP < 0.01f)
+        {
+            Destroy(gameObject);
+        }
         //시간 계산
         timer += Time.deltaTime;
         attack_time += Time.deltaTime;
@@ -56,7 +61,6 @@ public class Boss_Snake : MonoBehaviour
         //꼬리 위치
         Vector3 targer_3 = target.position;
         Vector3 tail_pos = targer_3 + Vector3.right * Random.Range(-3, 3) + Vector3.up * Random.Range(-3, 3);
-
        
         //공격
         if (attack_time >= cooltime && isattack == false && fog_area == false)
@@ -99,10 +103,12 @@ public class Boss_Snake : MonoBehaviour
             Instantiate(fog, fog_pos, Quaternion.identity);
         }
     }
+
     public void Boss_Damage(float dmg)
     {
         boss_HP = boss_HP - dmg;
     }
+
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.collider.gameObject.CompareTag("Player"))
@@ -110,6 +116,7 @@ public class Boss_Snake : MonoBehaviour
             GameManager.instance.Player_damage(0.5f);
         }
     }
+
     private void LateUpdate()
     {
         spriter.flipX = target.position.x < rigid.position.x;

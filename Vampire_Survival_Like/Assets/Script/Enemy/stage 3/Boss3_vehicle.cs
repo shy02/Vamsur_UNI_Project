@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_vehicle : MonoBehaviour
+public class Boss3_vehicle : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -21,7 +21,7 @@ public class Boss_vehicle : MonoBehaviour
     float attack_time;
     float dmg_reduce;
     float colltime=5;
-    float attack_range = 20;
+    public float attack_range = 20;
     double close_range = 3;
 
     void Start()
@@ -32,14 +32,19 @@ public class Boss_vehicle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (current_boss_HP < 0.01f)
+        {
+            Destroy(gameObject);
+        }
         attack_time += Time.deltaTime;
         colltime += Time.deltaTime;
         dmg_reduce += Time.deltaTime;
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance <= close_range && colltime >=5) //일정 거리 이내 왔을 때 물대포
         {
+            Debug.Log("물대포 발사");
             Vector2 looking = target.position - bossPos.position;
             float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
             Instantiate(v_watercannon, bossPos.position, Quaternion.AngleAxis(angle - 90, Vector3.forward));
@@ -54,12 +59,14 @@ public class Boss_vehicle : MonoBehaviour
                 switch (attack_pattern)
                 {
                     case 1: //총알 세발 발사
+                        Debug.Log("총알 세발 발사");
                         isattack = true;
                         Spawn_v_bullet();
                         Invoke("Spawn_v_bullet", 0.3f);
                         Invoke("Spawn_v_bullet", 0.6f);
                         break;
                     case 2: //유도 미사일 발사
+                        Debug.Log("유도 미사일 발사");
                         isattack = true;
                         Vector2 looking = target.position - bossPos.position;
                         float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
@@ -93,10 +100,12 @@ public class Boss_vehicle : MonoBehaviour
     {
         Instantiate(v_bullet, bossPos.position, Quaternion.identity);
     }
+
     void Skill_On()
     {
         GameManager.instance.Skill_Manager.SetActive(true);
     }
+
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.collider.gameObject.CompareTag("Player"))

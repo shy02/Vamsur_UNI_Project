@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_4 : MonoBehaviour
+public class Boss4 : MonoBehaviour
 {
 
     Rigidbody2D target;
@@ -15,6 +15,8 @@ public class Boss_4 : MonoBehaviour
     public GameObject bullet;
     public GameObject fog;
 
+    public float boss_HP = 200; // 보스 초기 체력
+    public float current_boss_HP; // 보스 현재 체력
 
 
     public float fog_time = 0;
@@ -37,11 +39,16 @@ public class Boss_4 : MonoBehaviour
         is_fog = false;
         rnd_use = true;
         fog.SetActive(false);
+        current_boss_HP = boss_HP;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (current_boss_HP < 0.01f)
+        {
+            Destroy(gameObject);
+        }
         //공격 쿨타임 조정
         distance = Vector3.Distance(transform.position, target.position);
         i_distance = (int)distance;
@@ -161,6 +168,19 @@ public class Boss_4 : MonoBehaviour
         area.enabled = true; // 공격범위 활성화
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.Player_damage(0.5f);
+        }
+    }
+
+    public void Boss_Damage(float dmg)
+    {
+        current_boss_HP = current_boss_HP - dmg;
     }
     private void LateUpdate()
     {

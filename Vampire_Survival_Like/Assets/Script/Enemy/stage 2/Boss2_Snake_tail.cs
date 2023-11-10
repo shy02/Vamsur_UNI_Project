@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snake_tail : MonoBehaviour
+public class Boss2_Snake_tail : MonoBehaviour
 {
     public float blind_time = 1; // 공격 시도 시간
     public float del_time = 5; // 삭제 시간

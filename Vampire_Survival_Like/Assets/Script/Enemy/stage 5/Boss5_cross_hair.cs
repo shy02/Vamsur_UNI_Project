@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cross_hair : MonoBehaviour
+public class Boss5_cross_hair : MonoBehaviour
 {
     public Sprite[] img;
     SpriteRenderer sprite;

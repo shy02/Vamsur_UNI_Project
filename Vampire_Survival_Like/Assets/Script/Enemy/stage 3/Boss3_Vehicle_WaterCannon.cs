@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vehicle_WaterCannon : MonoBehaviour
+public class Boss3_Vehicle_WaterCannon : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D target,water_cannon;

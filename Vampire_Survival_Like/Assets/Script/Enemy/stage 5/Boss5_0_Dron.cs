@@ -1,8 +1,9 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Dron : MonoBehaviour
+public class Boss5_0_Dron : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -32,8 +33,12 @@ public class Boss_Dron : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (current_boss_HP < 0.01f)
+        {
+            Destroy(gameObject);
+        }
         attack_time += Time.deltaTime;
         float distance = Vector3.Distance(transform.position, target.position);
 

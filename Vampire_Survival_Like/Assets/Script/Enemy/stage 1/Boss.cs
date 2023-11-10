@@ -15,40 +15,45 @@ public class Boss : MonoBehaviour
     public GameObject s_bullet;
     public GameObject Enemy_L;
 
-    public float boss_HP; // 보스 초기 체력
+    public float boss_HP = 200; // 보스 초기 체력
     public float current_boss_HP; // 보스 현재 체력
-    float timer;
+    //float timer;
     public float spawn_police_time; // 쫄몹 생성 시간
-    float attack_time; // 
+    public float attack_time; // 
     bool isattack = false; // 공격 여부
     public float attack_range = 7; // 공격 범위
-    
+
     public float speed = 3;
 
     // Start is called before the first frame update
     void Start()
     {
         spriter = GetComponent<SpriteRenderer>();
-
-        L_Point = GetComponentsInChildren<Transform>();
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         bossPos = GetComponent<Rigidbody2D>();
 
-        boss_HP = 200;
+        L_Point = GetComponentsInChildren<Transform>();
+
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+
         current_boss_HP = boss_HP;
         area.enabled = false; // 공격 범위 비활성화
     }
-    
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        timer += Time.deltaTime;
+        if (current_boss_HP < 0.01f)
+        {
+            Destroy(gameObject);
+        }
+        //timer += Time.deltaTime;
         spawn_police_time += Time.deltaTime;
         attack_time += Time.deltaTime;
 
         //보스 이동
         Vector2 director = target.position - bossPos.position;
-        if (Vector3.Distance(transform.position, target.position) > 7)
+        if (Vector3.Distance(transform.position, target.position) > 2)
         {
             Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
             bossPos.MovePosition(bossPos.position + next);
@@ -58,7 +63,7 @@ public class Boss : MonoBehaviour
         transform.GetChild(2).localPosition = director.normalized;
 
         //플레이어와의 거리
-        float distance = Vector3.Distance(transform.position, target.position); 
+        float distance = Vector3.Distance(transform.position, target.position);
 
         //공격
         if (attack_time >= 3 && isattack == false)
@@ -67,7 +72,7 @@ public class Boss : MonoBehaviour
             {
                 //근접 공격
                 isattack = true;
-                Debug.Log("melle attack");
+                Debug.Log("근접 공격");
                 StopCoroutine("atk_area"); //코루틴 함수로 공격범위 제어
                 StartCoroutine("atk_area");
             }
@@ -95,15 +100,21 @@ public class Boss : MonoBehaviour
     IEnumerator atk_area()
     {
         area.enabled = true; // 공격범위 활성화
-        yield return new WaitForSeconds(2f); // 2초후 비활성화
+        yield return new WaitForSeconds(1f); // 1초후 비활성화
         area.enabled = false;
     }
+
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.collider.gameObject.CompareTag("Player"))
         {
             GameManager.instance.Player_damage(0.5f);
         }
+    }
+
+    public void Boss_Damage(float dmg)
+    {
+        current_boss_HP = current_boss_HP - dmg;
     }
     private void LateUpdate()
     {

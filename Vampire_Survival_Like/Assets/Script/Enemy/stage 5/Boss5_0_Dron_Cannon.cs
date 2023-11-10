@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dron_Cannon : MonoBehaviour
+public class Boss5_0_Dron_Cannon : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D target,rigid;

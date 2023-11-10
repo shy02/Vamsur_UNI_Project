@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_5 : MonoBehaviour
+public class Boss5 : MonoBehaviour
 {
     Rigidbody2D target, rigid;
     SpriteRenderer spriter;
     public GameObject bullet, bomb,sniper;
     public float cool;
     float recovery_time;
-    public float boss_HP, currentHP;
+    public float boss_HP, current_boss_HP;
+
+
     // Start is called before the first frame update
     void Start()
     {
         boss_HP = 500;
-        currentHP = boss_HP;
+        current_boss_HP = boss_HP;
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
@@ -23,6 +25,10 @@ public class Boss_5 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (current_boss_HP < 0.01f)
+        {
+            Destroy(gameObject);
+        }
         cool += Time.deltaTime;
         
         if (cool > 2)
@@ -43,12 +49,12 @@ public class Boss_5 : MonoBehaviour
                     break;
             }
         }
-        if (currentHP <= boss_HP / 2) //보스 체력 반 이하일때 실행
+        if (current_boss_HP <= boss_HP / 2) //보스 체력 반 이하일때 실행
         {
             recovery_time += Time.deltaTime;
             if (recovery_time >= 20) //20초마다 피 20씩 회복
             {
-                currentHP += 20;
+                current_boss_HP += 20;
                 Vector3 s_target = target.position;
                 Vector3 sniper_pos = s_target + Vector3.right * Random.Range(-2, 2) + Vector3.up * Random.Range(-2, 2);
                 Instantiate(sniper, sniper_pos, Quaternion.identity);
@@ -63,6 +69,11 @@ public class Boss_5 : MonoBehaviour
         {
             GameManager.instance.Player_damage(0.5f);
         }
+    }
+
+    public void Boss_Damage(float dmg)
+    {
+        current_boss_HP = current_boss_HP - dmg;
     }
     void spawn_bullet()
     {

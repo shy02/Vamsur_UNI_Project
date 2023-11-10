@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vehicle_Missile : MonoBehaviour
+public class Boss3_Vehicle_Missile : MonoBehaviour
 {
     // Start is called before the first frame update
     private float speed = 4f;

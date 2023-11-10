@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stungun_Bullet : MonoBehaviour
+public class Boss_Stungun_Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
 

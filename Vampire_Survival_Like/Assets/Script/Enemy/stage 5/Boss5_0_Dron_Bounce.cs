@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dron_Bounce : MonoBehaviour
+public class Boss5_0_Dron_Bounce : MonoBehaviour
 {
     // Start is called before the first frame update
     private float speed = 200000f;

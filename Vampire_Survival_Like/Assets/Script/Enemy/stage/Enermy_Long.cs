@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enermy_Long : MonoBehaviour
 {
     public GameObject Bullet;
-    public Transform pos; //생성위치
     public Rigidbody2D target;
 
     //public float distance;
@@ -17,10 +16,7 @@ public class Enermy_Long : MonoBehaviour
     SpriteRenderer spriter;
     Rigidbody2D rigid;
 
-    private void OnEnable()
-    {
-       // target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-    }
+
 
     // Start is called before the first frame update
     void Start()
