@@ -9,7 +9,7 @@ public class Candy : MonoBehaviour
     void Update()
     {
         LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[13].Level;
-        player.GetComponent<Player_State>().GetEXP = 14f * (LV - 1);
+        player.GetComponent<Player_State>().GetEXP = 30 + 14f * (LV - 1);
     }
 }
 

@@ -14,6 +14,9 @@ public class Find_Enermy : MonoBehaviour
     public float dmg;
     public Animator Poppy_anime;
     private GameObject Data;
+    public bool isFinal;
+    private int NumEnermy; // 죽인 적수
+    public float lv;
 
     void Start()
     {
@@ -68,13 +71,40 @@ public class Find_Enermy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, rad);
     }
-    private void OnCollisionStay2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.collider.CompareTag("Enemy") || other.collider.CompareTag("Boss")){
-            
-            dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-            other.gameObject.GetComponent<Enemy>().GetDamage(dmg);
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
+
+            NumEnermy++;
+            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
+
+        //dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+        //    other.gameObject.GetComponent<Enemy>().GetDamage(dmg);
+        
     }
 
+    void NormalDamage()
+    {
+
+        lv = Data.GetComponent<DataManager>().skill[14].Level;
+
+        dmg = (10f + 5f * (lv - 1)) / 100f;
+        dmg =  dmg = + ((dmg  / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+    }
+    void finalDamage()
+    {
+        dmg =  60;
+        dmg =  dmg = + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
+    }
 }

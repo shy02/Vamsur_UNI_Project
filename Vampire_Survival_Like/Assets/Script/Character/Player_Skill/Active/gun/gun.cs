@@ -43,6 +43,7 @@ public class gun : MonoBehaviour
             else{
                 finalDamage();
             }
+           
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }
