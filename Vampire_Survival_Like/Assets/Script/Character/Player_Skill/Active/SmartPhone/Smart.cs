@@ -9,6 +9,8 @@ public class Smart : MonoBehaviour
     public float speed;
     private int NumEnermy; // 죽인 적수
     private float timer;
+    private float lv;
+    private GameObject Data;
     
 
     public void Init(float damage, int per)//데미지와 탄수를 받아옴
@@ -18,7 +20,9 @@ public class Smart : MonoBehaviour
         
     }
 
-    
+void Start(){
+        Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
+}
     void Update()
     {
         timer += Time.deltaTime;
@@ -35,6 +39,10 @@ public class Smart : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
+            lv = Data.GetComponent<DataManager>().skill[3].Level;
+
+            damage = 10f + 5.1f*(lv-1);
+            damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }

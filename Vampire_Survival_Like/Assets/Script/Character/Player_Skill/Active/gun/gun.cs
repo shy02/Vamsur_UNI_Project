@@ -11,6 +11,7 @@ public class gun : MonoBehaviour
     private float timer;
     private GameObject Data;
     public float lv;
+    public bool isFinal;
     
     void Start(){
         Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
@@ -36,12 +37,13 @@ public class gun : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
-
+            if(!isFinal){
+                NormalDamage();
+            }
+            else{
+                finalDamage();
+            }
             NumEnermy++;
-            lv = Data.GetComponent<DataManager>().skill[0].Level;
-
-            damage = 15 + 5 *(lv-1);
-            damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }
     }
@@ -49,5 +51,18 @@ public class gun : MonoBehaviour
     void Destroygun()
     {
         Destroy(gameObject);
+    }
+
+    void NormalDamage(){
+        
+            lv = Data.GetComponent<DataManager>().skill[0].Level;
+
+            damage = 15 + 5 *(lv-1);
+            damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+    }
+    void finalDamage(){
+            damage = 60;
+            damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+     
     }
 }

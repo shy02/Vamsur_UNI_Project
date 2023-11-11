@@ -19,6 +19,7 @@ public class SmartWeapon : MonoBehaviour
     private float dmg;
     private int per;
     private int num;
+    private int BC;
 
     
     public Rigidbody2D rb;
@@ -28,6 +29,7 @@ public class SmartWeapon : MonoBehaviour
 
     void Awake()
     {
+        player = GameManager.instance.player;
     }
     void Update()
     {
@@ -45,7 +47,8 @@ public class SmartWeapon : MonoBehaviour
         curtime += Time.deltaTime;
         lv = data.skill[0].Level;
         SkillSet(lv);
-        if (curtime >= cooltime )
+        BC = player.gameObject.GetComponent<Player_State>().BallCount;
+        if (curtime >= cooltime - ((cooltime/100) * player.gameObject.GetComponent<Player_State>().ballSpeed))
         {
             /*
             Vector3 targetPos = player.scanner.nearestTarget.position;
@@ -57,7 +60,7 @@ public class SmartWeapon : MonoBehaviour
             
             smart.GetComponent<Smart>().Init(dmg, per);
             shot();
-            for (int i = 0; i < num - 1; i++)
+            for (int i = 0; i < num - 1 + BC; i++)
             {
                 Invoke("shot", 0.1f);
             }

@@ -27,7 +27,6 @@ public class Weapon : MonoBehaviour
         transform.Rotate(Vector3.back * speed * Time.deltaTime);
 
         if(LastLevel != Data.GetComponent<DataManager>().skill[4].Level){
-            Debug.Log("레벨바뀜");
             Transform[] childList = gameObject.GetComponentsInChildren<Transform>();
             if(childList != null){
                 for(int i =1; i < childList.Length; i++){

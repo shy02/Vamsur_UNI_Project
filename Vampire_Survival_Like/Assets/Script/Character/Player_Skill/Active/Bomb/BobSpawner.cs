@@ -18,7 +18,7 @@ public class BobSpawner : MonoBehaviour
         void Update(){
             Timer += Time.deltaTime;
            LV = DataManager.GetComponent<DataManager>().skill[5].Level;
-        if(Timer >= 4.5){     
+        if(Timer >= 4.5 - ((4.5/100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().CoolTime)){     
             if(Bomb_num < maxNum){
             Instantiate(Bomb_prefab, new Vector3(Random.Range(p1.position.x, p2.position.x), Random.Range(p1.position.y, p2.position.y), Random.Range(p1.position.z, p2.position.z)), Quaternion.identity);
             Bomb_num++;

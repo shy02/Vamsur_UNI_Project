@@ -18,7 +18,7 @@ public class BanaSpawner : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time >= coolTime)
+        if (time >= coolTime - (coolTime/100)*GameManager.instance.player.gameObject.GetComponent<Player_State>().CoolTime)
         {
             if (Bana_num < maxNum)
             {

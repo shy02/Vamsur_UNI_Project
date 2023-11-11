@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    Player player;
     public GameObject gun;
     public Transform pos;
     private float cooltime;
@@ -13,8 +14,12 @@ public class PlayerAttack : MonoBehaviour
     private float dmg;
     private int per;
     private int num;
+    private int BC;
+    private int ballcount;
+    public bool isfinal;
     void Start(){
         cooltime = 1f;
+        player = GameManager.instance.player;
     }
     void Update()
     {
@@ -26,11 +31,18 @@ public class PlayerAttack : MonoBehaviour
         curtime += Time.deltaTime;
         lv = data.skill[0].Level;
         SkillSet(lv);
-        if (curtime >= cooltime)
+        BC = player.gameObject.GetComponent<Player_State>().BallCount;
+        if (curtime >= cooltime - ((cooltime/100) * player.gameObject.GetComponent<Player_State>().ballSpeed))
         {
                 gun.GetComponent<gun>().Init(dmg,per);
                 shot();
-                for(int i = 0; i < num-1; i++){
+
+                if(!isfinal){
+                    ballcount = num-1 + BC;
+                }else{
+                    ballcount = 3 + BC;
+                }
+                for(int i = 0; i < ballcount; i++){
                     Invoke("shot", 0.1f);
                 }
                 curtime = 0;

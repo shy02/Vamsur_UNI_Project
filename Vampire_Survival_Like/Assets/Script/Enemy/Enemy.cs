@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
     public void Slow(float slowFactor)      //바나나밟으면 속도 감소 (추가)
     {
         speed *= (slowFactor/100);
-        Invoke("ReturnSpeed", 2f);
+        Invoke("ReturnSpeed", 2f+((2f/100)*GameManager.instance.player.GetComponent<Player_State>().WeaphoneTime));
     }
     public void KnockBack(){
         if(target.position.x > transform.position.x){

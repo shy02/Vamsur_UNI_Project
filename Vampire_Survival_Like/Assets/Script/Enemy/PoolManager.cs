@@ -29,9 +29,11 @@ public class PoolManager : MonoBehaviour
 
     }
     void Update(){
+        
         if(data.skill[4].isFirst){
             lv = data.skill[4].Level;
             StayTime = 3f + 0.15f * (lv-1);
+            StayTime += (StayTime/100)*GameManager.instance.player.gameObject.GetComponent<Player_State>().WeaphoneTime;
             Timer += Time.deltaTime;
             Timer_ += Time.deltaTime;
 

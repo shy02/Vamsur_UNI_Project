@@ -63,16 +63,20 @@ public class SkillManager : MonoBehaviour
 
     public void LevelUP(int i){
         Data.GetComponent<DataManager>().skill[i].Level++;
-         if(i >= 8){
+         if(i >= 8 && i != 11){
             if(Data.GetComponent<DataManager>().skill[i].Level >= 5){
             Upgrade.GetComponent<UpgradeUI>().Num.Remove(i);
             }
         }
-        else{
+        else if(i < 8){
             if(Data.GetComponent<DataManager>().skill[i].Level >= 8){
             Upgrade.GetComponent<UpgradeUI>().Num.Remove(i);
             }
         }
+        else{
+            if(Data.GetComponent<DataManager>().skill[i].Level >= 2){
+            Upgrade.GetComponent<UpgradeUI>().Num.Remove(i);
+        }
     }
 
-}
+}}
