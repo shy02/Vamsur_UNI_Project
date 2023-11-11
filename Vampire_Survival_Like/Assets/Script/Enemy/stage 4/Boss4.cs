@@ -15,7 +15,7 @@ public class Boss4 : MonoBehaviour
     public GameObject bullet;
     public GameObject fog;
 
-    public float boss_HP = 200; // 보스 초기 체력
+    public float boss_HP = 300; // 보스 초기 체력
     public float current_boss_HP; // 보스 현재 체력
 
 

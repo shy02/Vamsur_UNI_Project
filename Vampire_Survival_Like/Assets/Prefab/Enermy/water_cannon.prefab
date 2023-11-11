@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5449478084856187077}
   - component: {fileID: 3621420202725501131}
   - component: {fileID: 8560145839510286092}
-  - component: {fileID: 8106310622414090240}
+  - component: {fileID: 1234805313935633667}
   m_Layer: 0
   m_Name: water_cannon
   m_TagString: Untagged
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b26503373eeab646811d051ca095ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &8106310622414090240
-CircleCollider2D:
+--- !u!61 &1234805313935633667
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,6 +133,16 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0

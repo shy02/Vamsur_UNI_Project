@@ -22,10 +22,11 @@ public class Boss3_vehicle : MonoBehaviour
     float dmg_reduce;
     float colltime=5;
     public float attack_range = 20;
-    double close_range = 3;
+    double close_range = 4;
 
     void Start()
     {
+        current_boss_HP = boss_HP;
         spriter = GetComponent<SpriteRenderer>();
         bossPos = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
@@ -90,10 +91,10 @@ public class Boss3_vehicle : MonoBehaviour
 
     public void Boss_Damage(float dmg)
     {
-        boss_HP = boss_HP - dmg;
+        current_boss_HP =  current_boss_HP- dmg;
         if (dmg_reduce >= 20)
         {
-            boss_HP = boss_HP - (dmg / 2);
+            current_boss_HP = current_boss_HP - (dmg / 2);
         }
     }
     void Spawn_v_bullet()
