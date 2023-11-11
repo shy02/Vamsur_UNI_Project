@@ -8,7 +8,8 @@ public class Computer : MonoBehaviour
     public GameObject player;
     void Update()
     {
-        LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[15].Level;
+        LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[10].Level;
         player.GetComponent<Player_State>().CoolTime = (10f + 5f*(LV-1))/100f;
     }
 }
+
