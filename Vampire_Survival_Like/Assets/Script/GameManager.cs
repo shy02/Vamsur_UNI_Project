@@ -34,11 +34,11 @@ void Awake()
 
 void Update()
 {
-    if(Player_HP <= 30 && !isDangerous){
+    if(Player_HP + player.gameObject.GetComponent<Player_State>().HP <= 30 && !isDangerous){
         isDangerous = true;
         Danger_UI.GetComponent<Dangerous_UI>().Danger();
     }
-    if(Player_HP > 30 && isDangerous){
+    if(Player_HP + player.gameObject.GetComponent<Player_State>().HP > (Player_HP + player.gameObject.GetComponent<Player_State>().HP)/100 * 30 && isDangerous){
         isDangerous = false;
         Danger_UI.GetComponent<Dangerous_UI>().NoDanger();
     }

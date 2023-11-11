@@ -24,8 +24,6 @@ public class Boss_4 : MonoBehaviour
     public int random_;
     public float distance;
     public int i_distance;
-    public float boss_HP = 300;
-    public float current_boss_HP;
 
     public bool is_fog;
     public bool rnd_use;
@@ -163,10 +161,6 @@ public class Boss_4 : MonoBehaviour
         area.enabled = true; // 공격범위 활성화
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
-    }
-    public void Boss_Damage(float dmg)
-    {
-        current_boss_HP = current_boss_HP - dmg;
     }
     private void LateUpdate()
     {

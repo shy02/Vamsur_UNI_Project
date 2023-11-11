@@ -12,7 +12,7 @@ public class Boss_Snake : MonoBehaviour
     public GameObject tail;
     public GameObject fog;
 
-    public float boss_HP=200; //보스 초기 체력
+    public float boss_HP; //보스 초기 체력
     public float current_boss_HP; // 보스 현재 체력
     float timer;
     float fog_time;
@@ -31,7 +31,6 @@ public class Boss_Snake : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
-        current_boss_HP = boss_HP;
     }
 
     // Update is called once per frame
@@ -102,7 +101,7 @@ public class Boss_Snake : MonoBehaviour
     }
     public void Boss_Damage(float dmg)
     {
-        current_boss_HP = current_boss_HP - dmg;
+        boss_HP = boss_HP - dmg;
     }
     private void OnCollisionStay2D(Collision2D other)
     {

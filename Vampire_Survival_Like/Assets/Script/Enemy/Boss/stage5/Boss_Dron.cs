@@ -26,7 +26,6 @@ public class Boss_Dron : MonoBehaviour
 
     void Start()
     {
-        current_boss_HP = boss_HP;
         spriter = GetComponent<SpriteRenderer>();
         bossPos = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
@@ -84,7 +83,7 @@ public class Boss_Dron : MonoBehaviour
 
     public void Boss_Damage(float dmg)
     {
-        current_boss_HP = current_boss_HP - dmg;
+        boss_HP = boss_HP - dmg;
     }
     void laser_attack()
     {

@@ -22,7 +22,7 @@ public class Boss_vehicle : MonoBehaviour
     float dmg_reduce;
     float colltime=5;
     float attack_range = 20;
-    double close_range = 4;
+    double close_range = 3;
 
     void Start()
     {
@@ -83,10 +83,10 @@ public class Boss_vehicle : MonoBehaviour
 
     public void Boss_Damage(float dmg)
     {
-        current_boss_HP = current_boss_HP - dmg;
+        boss_HP = boss_HP - dmg;
         if (dmg_reduce >= 20)
         {
-            current_boss_HP=current_boss_HP - (dmg / 2);
+            boss_HP = boss_HP - (dmg / 2);
         }
     }
     void Spawn_v_bullet()

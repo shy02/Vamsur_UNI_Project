@@ -16,8 +16,8 @@ public class Boss : MonoBehaviour
     public GameObject s_bullet;
     public GameObject Enemy_L;
 
-    public float boss_HP; // 보스 초기 체력
-    public float current_boss_HP; // 보스 현재 체력
+    public int boss_HP; // 보스 초기 체력
+    public int current_boss_HP; // 보스 현재 체력
     float timer;
     public float spawn_police_time; // 쫄몹 생성 시간
     float attack_time; // 
@@ -47,8 +47,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(current_boss_HP <= 0.01f){
-            Destroy(gameObject);
+        if(boss_HP <= 0){
             GM.GetComponent<GameManager>().Survied();
         }
         timer += Time.deltaTime;
@@ -106,17 +105,6 @@ public class Boss : MonoBehaviour
         area.enabled = true; // 공격범위 활성화
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
-    }
-    public void Boss_Damage(float dmg)
-    {
-        current_boss_HP = current_boss_HP - dmg;
-    }
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.collider.gameObject.CompareTag("Player"))
-        {
-            GameManager.instance.Player_damage(0.5f);
-        }
     }
 
     private void LateUpdate()

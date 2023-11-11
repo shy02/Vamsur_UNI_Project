@@ -2,30 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gun : MonoBehaviour
+public class Smart : MonoBehaviour
 {
     public float damage;
     public int per;//목표 적수
     public float speed;
     private int NumEnermy; // 죽인 적수
     private float timer;
-    private GameObject Data;
-    public float lv;
     
-    void Start(){
-        Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
-    }
 
     public void Init(float damage, int per)//데미지와 탄수를 받아옴
     {
         this.damage = damage; // 데미지
-        this.per = per; // 탄수 
+        this.per = per; // 탄수
+        
     }
 
+    
     void Update()
     {
         timer += Time.deltaTime;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
+        
+        
         if(per <= NumEnermy){
             Destroygun();
         }
@@ -36,12 +35,7 @@ public class gun : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
-
             NumEnermy++;
-            lv = Data.GetComponent<DataManager>().skill[0].Level;
-
-            damage = 15 + 5 *(lv-1);
-            damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }
     }
@@ -50,4 +44,6 @@ public class gun : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
+    
 }

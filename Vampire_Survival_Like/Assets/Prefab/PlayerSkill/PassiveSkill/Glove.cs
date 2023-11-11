@@ -9,6 +9,6 @@ public class Glove : MonoBehaviour
     void Update()
     {
         LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[8].Level;
-        player.GetComponent<Player_State>().Attack_Speed = 0.06f * LV;
+        player.GetComponent<Player_State>().Attack_Speed = 6f * LV/100;
     }
 }

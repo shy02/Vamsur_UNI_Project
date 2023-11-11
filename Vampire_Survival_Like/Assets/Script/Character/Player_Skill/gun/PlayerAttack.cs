@@ -6,13 +6,16 @@ public class PlayerAttack : MonoBehaviour
 {
     public GameObject gun;
     public Transform pos;
-    public float cooltime;
+    private float cooltime;
     public DataManager data;
     private float lv;
     private float curtime;
     private float dmg;
     private int per;
     private int num;
+    void Start(){
+        cooltime = 1f;
+    }
     void Update()
     {
 

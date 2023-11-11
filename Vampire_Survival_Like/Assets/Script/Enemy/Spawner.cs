@@ -11,7 +11,6 @@ public class Spawner : MonoBehaviour
     public GameObject parent;
     public GameObject GM;
     public GameObject[] enemyPrefab;
-    public GameObject[] eletePrefab;
     public GameObject[] bossPrefab;
     List<GameObject>[] pools; 
     List<GameObject>[] b_pools;
@@ -52,12 +51,12 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        GameObject enemy = Instantiate(enemyPrefab[Random.Range(0,2)], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity,transform);
+        GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity,transform);
         enemy.transform.SetParent(parent.transform);
     }
     void Spawn_Elete()
     {
-        GameObject elete_enemy = Instantiate(eletePrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity, transform);
+        GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity, transform);
         elete_enemy.transform.SetParent(parent.transform);
     }
     public void Spawn_Boss(int stage)
