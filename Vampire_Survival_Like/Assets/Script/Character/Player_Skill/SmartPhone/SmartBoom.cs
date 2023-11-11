@@ -29,8 +29,11 @@ public class SmartBoom : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
-            LV = Data.GetComponent<DataManager>().skill[5].Level;
-            dmg = 15 + 3 *(LV-1);
+
+            LV = Data.GetComponent<DataManager>().skill[3].Level;
+            dmg = 15f + 3f *(LV-1);
+            dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
             other.GetComponent<Enemy>().GetDamage(dmg);
             Debug.Log(dmg);
         }

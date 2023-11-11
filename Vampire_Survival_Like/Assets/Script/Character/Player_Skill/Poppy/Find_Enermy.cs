@@ -13,10 +13,12 @@ public class Find_Enermy : MonoBehaviour
     public GameObject player;
     public float dmg;
     public Animator Poppy_anime;
+    private GameObject Data;
 
     void Start()
     {
         Poppy_anime = GetComponent<Animator>();
+        Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
@@ -69,6 +71,8 @@ public class Find_Enermy : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         if(other.collider.CompareTag("Enemy") || other.collider.CompareTag("Boss")){
+            
+            dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
             other.gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
     }

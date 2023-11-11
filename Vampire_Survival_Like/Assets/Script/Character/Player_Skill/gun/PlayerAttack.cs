@@ -6,13 +6,16 @@ public class PlayerAttack : MonoBehaviour
 {
     public GameObject gun;
     public Transform pos;
-    public float cooltime;
+    private float cooltime;
     public DataManager data;
     private float lv;
     private float curtime;
     private float dmg;
     private int per;
     private int num;
+    void Start(){
+        cooltime = 1f;
+    }
     void Update()
     {
 
@@ -42,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
 
     void SkillSet(float lv){
         dmg = 6.5f + 1.5f*(lv-1);
-        switch(lv){
+        switch(lv){//투사체 수
             case 1: case 2:
                 num = 1;
                 break;
@@ -62,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
                 num = 6;
                 break;
     }
-    switch(lv){
+    switch(lv){//관통
         case 1: case 2: case 3:
                 per = 1;
                 break;

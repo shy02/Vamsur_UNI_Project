@@ -28,7 +28,6 @@ public class SmartWeapon : MonoBehaviour
 
     void Awake()
     {
-        player = GetComponentInParent<Player>();
     }
     void Update()
     {
@@ -71,10 +70,10 @@ public class SmartWeapon : MonoBehaviour
 
     void shot()
     {
-        if (!player.scanner.nearestTarget)
+        if (!GameManager.instance.player.scanner.nearestTarget)
             return;
         
-        Instantiate(smart, pos.position, transform.rotation);
+        Instantiate(smart, GameManager.instance.player.gameObject.transform.position, transform.rotation);
     }
     
     

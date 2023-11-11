@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6475813597777073306}
   - component: {fileID: 6475813597777073307}
   - component: {fileID: 570280756135500623}
-  - component: {fileID: -5458923701804657787}
-  - component: {fileID: 2643382352043626754}
+  - component: {fileID: 4258683090169327211}
+  - component: {fileID: 2688730908782384707}
   m_Layer: 7
   m_Name: SmartPhone
   m_TagString: Untagged
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!114 &-5458923701804657787
+--- !u!114 &4258683090169327211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,13 +112,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6475813597777073301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8c42243a13e4bc5ba85bdbff0e91a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 537fa9718372bf14188ea107a752b162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2.5
   per: 50
   speed: 5
---- !u!114 &2643382352043626754
+--- !u!114 &2688730908782384707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,11 +127,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6475813597777073301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf19b56476eb493d9f610db44ebfda9, type: 3}
+  m_Script: {fileID: 11500000, guid: 520948108e5e2de44b8f3de9967709a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   img:
-  - {fileID: -864658859, guid: c691ebb171f30f645a09159d43c7104a, type: 3}
+  - {fileID: 0}
   stepTime: 1
   eraseTime: 0.08
   BombEff: {fileID: 2800134416640791721, guid: e4a22860356ec2647b49e7790e396aff, type: 3}

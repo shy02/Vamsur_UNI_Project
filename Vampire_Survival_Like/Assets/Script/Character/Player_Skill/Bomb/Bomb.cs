@@ -34,7 +34,10 @@ public class Bomb : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Enemy") || other.CompareTag("Boss")){
             LV = Data.GetComponent<DataManager>().skill[5].Level;
+            
             dmg = 15 + 5 *(LV-1);
+            dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
             other.GetComponent<Enemy>().GetDamage(dmg);
             Debug.Log(dmg);
         }

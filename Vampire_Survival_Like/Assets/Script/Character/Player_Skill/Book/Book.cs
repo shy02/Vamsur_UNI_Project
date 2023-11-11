@@ -16,8 +16,6 @@ public class Book : MonoBehaviour
     }
 
     void Update(){
-        lv = data.skill[4].Level;
-        damage = 10f + 4.25f*(lv-1f);
     }
 
     public void EraseBook(){
@@ -27,8 +25,11 @@ public class Book : MonoBehaviour
     {
         if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
         {
+            lv = data.skill[4].Level;
+            damage = 10f + 4.25f*(lv-1f);
+            damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+            
             other.GetComponent<Enemy>().GetDamage(damage); 
-
         }
     }
 }
