@@ -9,6 +9,6 @@ public class SiGlodChi : MonoBehaviour
     void Update()
     {
         LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[9].Level;
-        player.GetComponent<Player_State>().Force = 20f * (LV - 1);
+        player.GetComponent<Player_State>().Force = 20f + 20f * (LV - 1);
     }
 }

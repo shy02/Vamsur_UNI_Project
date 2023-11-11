@@ -8,12 +8,15 @@ public class Bomb : MonoBehaviour
     public float stepTime;
     public float eraseTime;
     private float dmg;
-    private float LV;
+    private float lv;
     private GameObject Data;
     public GameObject BombSp;
     public GameObject BombEff;
     BoxCollider2D box;
     SpriteRenderer SpRender;
+    public bool isFinal;
+    private int NumEnermy; // 죽인 적수
+    public float damage;
 
     // Start is called before the first frame update
     void Start()
@@ -31,17 +34,34 @@ public class Bomb : MonoBehaviour
         Invoke("final",stepTime*3);
     }
 
-    public void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Enemy") || other.CompareTag("Boss")){
-            LV = Data.GetComponent<DataManager>().skill[5].Level;
-            
-            dmg = 15 + 5 *(LV-1);
-            dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
 
-            other.GetComponent<Enemy>().GetDamage(dmg);
-            Debug.Log(dmg);
+            NumEnermy++;
+            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }
-    }
+    
+
+
+    //LV = Data.GetComponent<DataManager>().skill[5].Level;
+            
+    //        dmg = 15 + 5 *(LV-1);
+    //        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
+    //        other.GetComponent<Enemy>().GetDamage(dmg);
+    //        Debug.Log(dmg);
+        }
+    
 
     void secondstep(){
         SpRender.sprite = img[1];
@@ -58,5 +78,20 @@ public class Bomb : MonoBehaviour
         BombSp.GetComponent<BobSpawner>().minusNum();
         GameObject eff = Instantiate(BombEff, gameObject.transform.position , gameObject.transform.rotation);
         Destroy(gameObject);
+    }
+
+    void NormalDamage()
+    {
+
+        lv = Data.GetComponent<DataManager>().skill[5].Level;
+
+        damage = 5+ 7.5f * (lv - 1);
+        damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+    }
+    void finalDamage()
+    {
+        damage = 65;
+        damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
     }
 }

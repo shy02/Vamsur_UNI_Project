@@ -9,7 +9,7 @@ public class Battery : MonoBehaviour
     void Update()
     {
         LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[12].Level;
-        player.GetComponent<Player_State>().ballSpeed = 7.5f * (LV - 1);
+        player.GetComponent<Player_State>().ballSpeed =5f +  7.5f * (LV - 1);
     }
 }
 

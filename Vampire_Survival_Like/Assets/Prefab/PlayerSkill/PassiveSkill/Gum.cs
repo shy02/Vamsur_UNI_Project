@@ -9,7 +9,7 @@ public class Gum : MonoBehaviour
     void Update()
     {
         LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[14].Level;
-        player.GetComponent<Player_State>().WeaphoneTime = 5f * LV;
+        player.GetComponent<Player_State>().WeaphoneTime = 10f+ 5f * (LV-1);
     }
 }
 
