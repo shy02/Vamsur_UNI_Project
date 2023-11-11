@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class _Enemy : MonoBehaviour
 {
-    private float em_health = 100f;
+    public float em_health = 100f;
     // Start is called before the first frame update
     public float speed;
     private GameObject gameManager;
     private Rigidbody2D target;
-    bool isLive;
-
     SpriteRenderer spriter;
     Rigidbody2D rigid;
+
+    Vector2 knockbackVelocity;
+    float knockbackDuration;
     
+
     void Start()
     {
+        
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         gameManager = GameObject.Find("GameManager");
@@ -38,9 +41,14 @@ public class _Enemy : MonoBehaviour
         rigid.velocity = Vector2.zero;
         target.velocity = Vector2.zero;
 
+
+
     }
-    void OnTriggerEnter2D(Collider2D collision)
+
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (!collision.CompareTag("Bullet"))
             return;
 
@@ -52,7 +60,13 @@ public class _Enemy : MonoBehaviour
             Dead();
         }
 
+        
+
+
     }
+
+    
+
     public void Dead()
     {
         Destroy(gameObject);
@@ -62,4 +76,6 @@ public class _Enemy : MonoBehaviour
     {
         spriter.flipX = target.position.x > rigid.position.x;
     }
+
+    
 }

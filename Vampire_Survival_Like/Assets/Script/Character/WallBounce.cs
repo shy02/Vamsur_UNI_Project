@@ -10,9 +10,8 @@ public class WallBounce : MonoBehaviour
     public Rigidbody2D rb;
     float randomX, randomY;
 
-    void start()
+    void Start()
     {
-       
         rb = GetComponent<Rigidbody2D>();
 
         randomX = Random.Range(-1f, 1f);                 //랜덤값
@@ -20,9 +19,8 @@ public class WallBounce : MonoBehaviour
 
         Vector2 dir = new Vector2(randomX, randomY).normalized;
 
-        rb.AddForce(dir * speed);                               // 방향*스피드로 힘을 가함        
+        rb.AddForce(dir * speed);                               // 방향 * 스피드로 힘을 가함        
 
-        
     }
 
     

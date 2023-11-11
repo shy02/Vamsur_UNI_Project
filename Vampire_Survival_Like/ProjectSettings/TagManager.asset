@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Area
   - Boss
+  - Hotsix
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public GameObject Block_Player;
     public GameObject Skill_Data;
 
+    public float maxHp = 350f;
+
     private bool isDangerous = false;
 
 void Awake()
@@ -76,4 +78,22 @@ public void SkillTime(){
     gameObject.GetComponent<Pause_>().nowPause = true;
     
 }
+
+
+public void Heal(float amount)  // 힐
+{
+    if(Player_HP <= 0) { return; }
+
+    Player_HP += amount;
+    Debug.Log(Player_HP);
+
+
+    if (Player_HP > maxHp)
+    {
+        Player_HP = maxHp;
+
+    }
+
+}
+
 }

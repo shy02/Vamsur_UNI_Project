@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class energydrink : MonoBehaviour
 {
+    
     public int id;
     public int prefabId;
     public float damage;
     
-
-
-    void Start()
+     void Start()
     {
         Init();
     }
@@ -20,14 +19,15 @@ public class energydrink : MonoBehaviour
     {
         Batch();
     }
-    void Batch()
+     void Batch()
     {
         
             Transform bullet =GameManager.instance.Player_pool.Get(prefabId).transform;
-            bullet.parent = transform;
-             
-            bullet.GetComponent<Skill>().Init(damage, -1); // -1 is infinity per. 무한 공
+            bullet.parent = transform;          
 
+            bullet.GetComponent<Skill>().Init(damage, -1); // -1 is infinity per. 무한 공
         
     }
+    
+
 }
