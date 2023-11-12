@@ -18542,11 +18542,11 @@ MonoBehaviour:
   parent: {fileID: 808248165}
   GM: {fileID: 0}
   enemyPrefab:
-  - {fileID: 7281023641292627424, guid: 64e2b6108c93cac4a889c3affdb1cb73, type: 3}
-  - {fileID: 8816670546972088716, guid: 844a2a04351c1bd45a1411cfc3411b9a, type: 3}
+  - {fileID: 5663777831743332795, guid: 7924cce06791d1c4694f0e3f48401469, type: 3}
+  - {fileID: 4377912915198964586, guid: 62057744012fa4646a1b92099b497795, type: 3}
+  eletePrefab: []
   bossPrefab:
-  - {fileID: 2224417783285068984, guid: 37a13b8baa2583e4daa47472803564cd, type: 3}
-  - {fileID: 4618148829218574725, guid: 62c50a4496c6e7b4f9c75a6d74ac457f, type: 3}
+  - {fileID: 1316198157688271814, guid: 4298d96feff10da43a26ed7e123740d5, type: 3}
 --- !u!4 &1063835370
 Transform:
   m_ObjectHideFlags: 0

@@ -448,7 +448,7 @@ MonoBehaviour:
   L_Point:
   - {fileID: 251166704054333420}
   - {fileID: 251166703376983600}
-  spawnMob: {fileID: 4651971390040888927, guid: 4c62f94ae6e2a3e41a4726120aa49213, type: 3}
+  spawnMob: {fileID: 1882503196277489394, guid: f7c2f0e9c58b053478cf5bbf82dfa283, type: 3}
   bullet: {fileID: 123243078841057217, guid: e0dead41dac09f546b16e51996e937be, type: 3}
   fog: {fileID: 251166702638258146}
   fog_time: 0
@@ -457,5 +457,7 @@ MonoBehaviour:
   random_: 0
   distance: 0
   i_distance: 0
+  boss_HP: 300
+  current_boss_HP: 0
   is_fog: 0
   rnd_use: 0

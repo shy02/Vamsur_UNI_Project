@@ -6,7 +6,7 @@ public class Vehicle_WaterCannon : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D target,water_cannon;
-    float speed = 30f;
+    float speed = 25f;
     
     void Start()
     {

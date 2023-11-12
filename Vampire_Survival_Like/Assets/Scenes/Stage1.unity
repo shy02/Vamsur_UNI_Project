@@ -28049,6 +28049,7 @@ MonoBehaviour:
   gun: {fileID: 6475813597777073301, guid: 207733aa404ed184babaecea526859f5, type: 3}
   pos: {fileID: 1389464735}
   data: {fileID: 1915512886}
+  isfinal: 0
 --- !u!4 &1389464735
 Transform:
   m_ObjectHideFlags: 0
@@ -28490,6 +28491,8 @@ MonoBehaviour:
   player: {fileID: 603957813}
   dmg: 30
   Poppy_anime: {fileID: 0}
+  isFinal: 0
+  lv: 0
 --- !u!50 &1478446034
 Rigidbody2D:
   serializedVersion: 4
@@ -28779,6 +28782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816482c42b100104daf0a3f94815f4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFinal: 0
+  damage: 0
 --- !u!1 &1565028117
 GameObject:
   m_ObjectHideFlags: 0
@@ -31146,11 +31151,12 @@ MonoBehaviour:
   parent: {fileID: 808248165}
   GM: {fileID: 0}
   enemyPrefab:
-  - {fileID: 7281023641292627424, guid: 64e2b6108c93cac4a889c3affdb1cb73, type: 3}
-  - {fileID: 8816670546972088716, guid: 844a2a04351c1bd45a1411cfc3411b9a, type: 3}
+  - {fileID: 2286318197314152028, guid: 8442d5686da41a649a8cc8eaadadfe22, type: 3}
+  - {fileID: 4844167076624571308, guid: 35c7d0e4ddc60bd43b5a9679070d0971, type: 3}
+  eletePrefab:
+  - {fileID: 5102913199933272847, guid: f52578c98dbbcad4396601594cb703b4, type: 3}
   bossPrefab:
   - {fileID: 2224417783285068984, guid: 37a13b8baa2583e4daa47472803564cd, type: 3}
-  - {fileID: 4618148829218574725, guid: 62c50a4496c6e7b4f9c75a6d74ac457f, type: 3}
 --- !u!4 &1861240756
 Transform:
   m_ObjectHideFlags: 0
@@ -31270,6 +31276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 100
+  isFinal: 0
+  damage: 0
 --- !u!58 &1881063445
 CircleCollider2D:
   m_ObjectHideFlags: 0

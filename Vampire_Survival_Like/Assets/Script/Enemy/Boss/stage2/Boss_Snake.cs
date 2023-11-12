@@ -31,11 +31,18 @@ public class Boss_Snake : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
+        boss_HP = 200;
+        current_boss_HP = boss_HP;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (current_boss_HP <= 0.01f)
+        {
+            GameManager.instance.GetComponent<GameManager>().Survied();
+            Destroy(gameObject);
+        }
         //시간 계산
         timer += Time.deltaTime;
         attack_time += Time.deltaTime;
@@ -101,8 +108,9 @@ public class Boss_Snake : MonoBehaviour
     }
     public void Boss_Damage(float dmg)
     {
-        boss_HP = boss_HP - dmg;
+        current_boss_HP = current_boss_HP - dmg;
     }
+
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.collider.gameObject.CompareTag("Player"))

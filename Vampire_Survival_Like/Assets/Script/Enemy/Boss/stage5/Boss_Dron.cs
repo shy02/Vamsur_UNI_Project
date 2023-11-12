@@ -29,11 +29,16 @@ public class Boss_Dron : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         bossPos = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        current_boss_HP = boss_HP;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (current_boss_HP <= 0.01f)
+        {
+            Destroy(gameObject);
+        }
         attack_time += Time.deltaTime;
         float distance = Vector3.Distance(transform.position, target.position);
 
@@ -83,7 +88,7 @@ public class Boss_Dron : MonoBehaviour
 
     public void Boss_Damage(float dmg)
     {
-        boss_HP = boss_HP - dmg;
+        current_boss_HP = current_boss_HP - dmg;
     }
     void laser_attack()
     {

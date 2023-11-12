@@ -24,6 +24,8 @@ public class Boss_4 : MonoBehaviour
     public int random_;
     public float distance;
     public int i_distance;
+    public float boss_HP=400;
+    public float current_boss_HP;
 
     public bool is_fog;
     public bool rnd_use;
@@ -37,11 +39,17 @@ public class Boss_4 : MonoBehaviour
         is_fog = false;
         rnd_use = true;
         fog.SetActive(false);
+        current_boss_HP = boss_HP;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (current_boss_HP <= 0.01f)
+        {
+            GameManager.instance.GetComponent<GameManager>().Survied();
+            Destroy(gameObject);
+        }
         //공격 쿨타임 조정
         distance = Vector3.Distance(transform.position, target.position);
         i_distance = (int)distance;
@@ -161,6 +169,17 @@ public class Boss_4 : MonoBehaviour
         area.enabled = true; // 공격범위 활성화
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
+    }
+    public void Boss_Damage(float dmg)
+    {
+        current_boss_HP = current_boss_HP - dmg;
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.Player_damage(0.5f);
+        }
     }
     private void LateUpdate()
     {

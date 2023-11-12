@@ -123,7 +123,7 @@ MonoBehaviour:
   em_health: 10
   speed: 2
   _speed: 0
-  Drop_exp: {fileID: 0}
+  Drop_exp: {fileID: 8153309968320466148, guid: f024e1eb50942264390d2087c33ad165, type: 3}
 --- !u!50 &8189062579243448103
 Rigidbody2D:
   serializedVersion: 4

@@ -8,7 +8,6 @@ public class Boss : MonoBehaviour
 
     Rigidbody2D target;
     Rigidbody2D bossPos;
-    Rigidbody2D rigid;
 
     public Transform[] L_Point; // 쫄몹 생성위치
     public BoxCollider2D area; // 근접 공격 범위
@@ -16,8 +15,8 @@ public class Boss : MonoBehaviour
     public GameObject s_bullet;
     public GameObject Enemy_L;
 
-    public int boss_HP; // 보스 초기 체력
-    public int current_boss_HP; // 보스 현재 체력
+    public float boss_HP; // 보스 초기 체력
+    public float current_boss_HP; // 보스 현재 체력
     float timer;
     public float spawn_police_time; // 쫄몹 생성 시간
     float attack_time; // 
@@ -34,7 +33,7 @@ public class Boss : MonoBehaviour
 
 
         L_Point = GetComponentsInChildren<Transform>();
-        rigid = GetComponent<Rigidbody2D>();
+        bossPos = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         bossPos = GetComponent<Rigidbody2D>();
         GM = GameObject.Find("Manager").transform.GetChild(0).gameObject;
@@ -47,19 +46,20 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(boss_HP <= 0){
+        if(current_boss_HP <= 0.01f){
             GM.GetComponent<GameManager>().Survied();
+            Destroy(gameObject);
         }
         timer += Time.deltaTime;
         spawn_police_time += Time.deltaTime;
         attack_time += Time.deltaTime;
 
         //보스 이동
-        Vector2 director = target.position - rigid.position;
+        Vector2 director = target.position - bossPos.position;
         if (Vector3.Distance(transform.position, target.position) > 7)
         {
             Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
-            rigid.MovePosition(rigid.position + next);
+            bossPos.MovePosition(bossPos.position + next);
         }
 
         //공격범위 이동
@@ -106,9 +106,20 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
     }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.Player_damage(0.5f);
+        }
+    }
+    public void Boss_Damage(float dmg)
+    {
+        current_boss_HP = current_boss_HP - dmg;
+    }
 
     private void LateUpdate()
     {
-        spriter.flipX = target.position.x < rigid.position.x;
+        spriter.flipX = target.position.x < bossPos.position.x;
     }
 }
