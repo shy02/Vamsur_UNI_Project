@@ -11,6 +11,8 @@ public class Banana : MonoBehaviour
     public float slowFactor; // 적의 이동 속도를 줄이는 속도 감소 요인을 설정하는 public 변수
     public float Damage;
     private float lv;
+    public bool isFinal;
+    private int NumEnermy; // 죽인 적수
 
     void Start()
     {
@@ -26,19 +28,39 @@ public class Banana : MonoBehaviour
     {
         if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
         {
-            // 충돌한 오브젝트의 태그가 "Enemy" 또는 "Boss"일 경우에 아래의 코드를 실행
-            other.GetComponent<Enemy>().Slow(slowFactor);// _Enemy에 Slow() 함수 추가!! 이거 없애고 밑에 주석 지워도 똑같이 느려지지는 않음.
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
 
-            lv = Data.GetComponent<DataManager>().skill[7].Level;
-            Damage = 20f +5.7f*(lv-1);
-            Damage = Damage + ((Damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-            other.GetComponent<Enemy>().GetDamage(Damage);
-
+            NumEnermy++;
+            other.GetComponent<Enemy>().Slow(slowFactor);
+            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(Damage);
+        }
             BananaSp.GetComponent<BanaSpawner>().minusNum();
             Destroy(gameObject);
         }
+
+    void NormalDamage()
+    {
+
+        lv = Data.GetComponent<DataManager>().skill[7].Level;
+
+        Damage = (10f + 5f * (lv - 1)) / 100f;
+        Damage = Damage + ((Damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
     }
+    void finalDamage()
+    {
+        Damage = 60;
+        Damage = Damage + ((Damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
     }
+
+}
 
 
 

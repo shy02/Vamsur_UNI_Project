@@ -11,7 +11,9 @@ public class SmartBoom : MonoBehaviour
     private float LV;
     private GameObject Data;
     public GameObject BombEff;
-    
+    public bool isFinal;
+    private int NumEnermy; // 죽인 적수
+
     CircleCollider2D circle;
         
     SpriteRenderer SpRender;
@@ -25,19 +27,33 @@ public class SmartBoom : MonoBehaviour
         circle.enabled = false;
         Invoke("final",stepTime*1);
     }
-    
-    
-    public void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
 
-            LV = Data.GetComponent<DataManager>().skill[3].Level;
-            dmg = 15f + 3f *(LV-1);
-            dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
 
-            other.GetComponent<Enemy>().GetDamage(dmg);
-            Debug.Log(dmg);
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
+
+            NumEnermy++;
+            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
-    }
+
+        //LV = Data.GetComponent<DataManager>().skill[3].Level;
+        //    dmg = 15f + 3f *(LV-1);
+        //    dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
+        //    other.GetComponent<Enemy>().GetDamage(dmg);
+        //    Debug.Log(dmg);
+        }
+    
     
     void final(){
         Invoke("Erase", eraseTime);
@@ -47,5 +63,20 @@ public class SmartBoom : MonoBehaviour
     public void Erase(){
         GameObject eff = Instantiate(BombEff, gameObject.transform.position , gameObject.transform.rotation);
         Destroy(gameObject);
+    }
+
+    void NormalDamage()
+    {
+
+        LV = Data.GetComponent<DataManager>().skill[3].Level;
+
+        dmg =30 + 14f * (LV - 1);
+        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+    }
+    void finalDamage()
+    {
+        dmg = 60;
+        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
     }
 }

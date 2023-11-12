@@ -899,6 +899,8 @@ MonoBehaviour:
   player: {fileID: 1440924160}
   dmg: 30
   Poppy_anime: {fileID: 0}
+  isFinal: 0
+  lv: 0
 --- !u!50 &337535803
 Rigidbody2D:
   serializedVersion: 4
@@ -1943,6 +1945,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 100
+  isFinal: 0
+  damage: 0
 --- !u!58 &813473568
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2885,6 +2889,7 @@ GameObject:
   - component: {fileID: 1440924161}
   - component: {fileID: 1440924165}
   - component: {fileID: 1440924162}
+  - component: {fileID: 1440924167}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -3025,6 +3030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
   speed: 5.5
+  scanner: {fileID: 0}
 --- !u!4 &1440924166
 Transform:
   m_ObjectHideFlags: 0
@@ -3048,6 +3054,26 @@ Transform:
   m_Father: {fileID: 701708184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440924167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440924160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e1f74533ff6dd46af0e202317dfa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  Force: 0
+  Attack_Speed: 0
+  BallCount: 0
+  ballSpeed: 0
+  GetEXP: 0
+  WeaphoneTime: 0
+  CoolTime: 0
 --- !u!1 &1651433066
 GameObject:
   m_ObjectHideFlags: 0
@@ -4885,8 +4911,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 6475813597777073301, guid: 207733aa404ed184babaecea526859f5, type: 3}
   pos: {fileID: 1841419133}
-  cooltime: 1
   data: {fileID: 1694897201}
+  isfinal: 0
 --- !u!4 &1841419133
 Transform:
   m_ObjectHideFlags: 0
