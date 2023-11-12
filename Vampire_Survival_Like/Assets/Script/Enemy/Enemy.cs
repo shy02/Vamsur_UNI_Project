@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
-        spriter.flipX = target.position.x > rigid.position.x;
+        spriter.flipX = target.position.x < rigid.position.x;
     }
 
     public void Slow(float slowFactor)      //바나나밟으면 속도 감소 (추가)

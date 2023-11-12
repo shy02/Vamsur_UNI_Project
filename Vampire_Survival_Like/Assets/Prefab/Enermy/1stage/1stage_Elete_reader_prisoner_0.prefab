@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6258302584437669909}
   - component: {fileID: 855717312089182853}
   - component: {fileID: 1644543722628672682}
+  - component: {fileID: 634962315833215664}
+  - component: {fileID: 2732723407863965191}
   m_Layer: 0
   m_Name: 1stage_Elete_reader_prisoner_0
   m_TagString: Untagged
@@ -122,3 +124,50 @@ MonoBehaviour:
   speed: 2
   _speed: 0
   Drop_exp: {fileID: 8153309968320466148, guid: f024e1eb50942264390d2087c33ad165, type: 3}
+--- !u!50 &634962315833215664
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102913199933272847}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &2732723407863965191
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102913199933272847}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08256292, y: -0.028307319}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.9375, y: 2.125}
+    newSize: {x: 1.9375, y: 2.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3572004, y: 1.8607986}
+  m_EdgeRadius: 0
