@@ -85,12 +85,7 @@ public void OffBlock(){
     Block_Player.SetActive(false);
 }
 public void SkillTime(){
-<<<<<<< HEAD:Vampire_Survival_Like/Assets/Script/Character/GameManager.cs
-    gameObject.GetComponent<Pause_>().nowPause = true;
-    
-=======
     gameObject.GetComponent<Pause_>().Pause();
     SkillManager.GetComponent<SkillManager>().StartUI();   
->>>>>>> 639c65b06df45023916c3820b45abd55947ebe0c:Vampire_Survival_Like/Assets/Script/GameManager.cs
 }
 }
