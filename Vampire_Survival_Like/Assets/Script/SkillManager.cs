@@ -20,10 +20,10 @@ public class SkillManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GM.GetComponent<Pause_>().Pause();
     }
     
     public void StartUI(){
+        GM.GetComponent<Pause_>().Pause();
         createUI();
     }
 

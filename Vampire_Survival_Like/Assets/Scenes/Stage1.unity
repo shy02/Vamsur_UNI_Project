@@ -42134,6 +42134,10 @@ MonoBehaviour:
   Spawner: {fileID: 1861240754}
   timer: {fileID: 0}
   enemy: {fileID: 808248165}
+  DDOL: {fileID: 0}
+  player: {fileID: 0}
+  GM: {fileID: 0}
+  firstStage: 1
 --- !u!4 &1080743619
 Transform:
   m_ObjectHideFlags: 0

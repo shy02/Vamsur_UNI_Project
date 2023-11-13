@@ -33,14 +33,10 @@ public class Timer_Manager : MonoBehaviour
                 GM.GetComponent<GameManager>().OnBlock();
             }
             Bossishere = true;
-            /*if(GameTime_sec > 30){
-                GM.GetComponent<GameManager>().OffBlock();
-
-                isBossdead = true;
-            }*/
         }
         if (GameTime_H == 6 && isBossdead) {
             GM.GetComponent<GameManager>().OffBlock();
+            gameObject.GetComponent<Timer_Manager>().enabled = true;
             isBossdead = false;
             Bossishere = false;
             bossnum += 1;

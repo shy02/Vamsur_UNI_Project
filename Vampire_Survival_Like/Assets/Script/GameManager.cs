@@ -86,7 +86,6 @@ public void OffBlock(){
     Block_Player.SetActive(false);
 }
 public void SkillTime(){
-    gameObject.GetComponent<Pause_>().Pause();
     SkillManager.GetComponent<SkillManager>().StartUI();   
 }
 }

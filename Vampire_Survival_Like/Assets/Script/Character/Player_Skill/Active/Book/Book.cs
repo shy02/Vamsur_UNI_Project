@@ -18,9 +18,6 @@ public class Book : MonoBehaviour
         data = GameObject.Find("Manager").transform.GetChild(2).GetComponent<DataManager>();
     }
 
-    void Update(){
-    }
-
     public void EraseBook(){
         Destroy(gameObject);
     }

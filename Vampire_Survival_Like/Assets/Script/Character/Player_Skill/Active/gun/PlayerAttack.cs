@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     private int num;
     private int BC;
     private int ballcount;
-    public bool isfinal;
+    public bool isFinal;
     void Start(){
         cooltime = 1f;
         player = GameManager.instance.player;
@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
                 gun.GetComponent<gun>().Init(dmg,per);
                 shot();
 
-                if(!isfinal){
+                if(!isFinal){
                     ballcount = num-1 + BC;
                 }else{
                     ballcount = 3 + BC;
