@@ -5,11 +5,17 @@ using UnityEngine;
 public class Computer : MonoBehaviour
 {
     private float LV;
-    public GameObject player;
+    
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject Data;
+
     void Update()
     {
-        LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[10].Level;
-        player.GetComponent<Player_State>().CoolTime = (10f + 5f*(LV-1))/100f;
+            LV = Data.GetComponent<DataManager>().skill[10].Level;
+                player.GetComponent<Player_State>().CoolTime = 10f + 5f * (LV - 1);
+        }
     }
-}
 

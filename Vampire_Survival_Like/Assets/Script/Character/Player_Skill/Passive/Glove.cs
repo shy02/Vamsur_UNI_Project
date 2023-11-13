@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Glove : MonoBehaviour
 {
+    
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject Data;
     private float LV;
-    public GameObject player;
     void Update()
     {
-        LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[8].Level;
-        player.GetComponent<Player_State>().Attack_Speed = 6f * (LV - 1) / 100;
+            LV = Data.GetComponent<DataManager>().skill[8].Level;
+            player.GetComponent<Player_State>().itemGetArea = 10 * LV;//%
     }
 }
-
-

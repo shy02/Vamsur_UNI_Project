@@ -76,7 +76,9 @@ public class SkillManager : MonoBehaviour
             }
             isActiveClear = true;
         }
+        if(Data != null){
         Data.GetComponent<DataManager>().skill[index].SkillObject.SetActive(true);
+        }
         SkillUI.GetComponent<Chage_Icon_Image>().setIcon(Data.GetComponent<DataManager>().skill[index].skill_Icon);
         Data.GetComponent<DataManager>().skill[index].isFirst = true;
         }
