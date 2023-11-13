@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df9573fed5683ea4b80f283b3907e263
+guid: 8c881735021af41aeb57917ca753f250
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20231113_014927564_0
+      name: Poppy_ending_final_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 16
         width: 64
-        height: 59
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,41 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4c4f21c16749324c96fac15ababc38d
-      internalID: 1199626232
+      spriteID: bfdede8b70f604b66a576e55178e49db
+      internalID: 916842775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20231113_014927564_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 5
-        width: 64
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe130080677d0234983d57cb5c07c459
-      internalID: 899087165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20231113_014927564_1
+      name: Poppy_ending_final_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 5
+        y: 16
         width: 64
-        height: 59
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +152,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65f79126f01c404fad96009c662ccd3
-      internalID: -232566818
+      spriteID: 70eca003542c1457bae3367424513b4d
+      internalID: 701979659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poppy_ending_final_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5056d483b7d0a4cf99275b687bb5f463
+      internalID: -26408
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KakaoTalk_20231113_014927564_0: 1199626232
-      KakaoTalk_20231113_014927564_1: -232566818
-      KakaoTalk_20231113_014927564_2: 899087165
+      Poppy_ending_final_2: -26408
+      Poppy_ending_final_0: 916842775
+      Poppy_ending_final_1: 701979659
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
