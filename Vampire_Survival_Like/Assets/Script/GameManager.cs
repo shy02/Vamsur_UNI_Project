@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject SkillManager;
     public GameObject DataManager;
     public GameObject DeadEnemyNum;
+    public GameObject Timer;
     public int DeadNum = 0;
     private int stagenum = 2;
 

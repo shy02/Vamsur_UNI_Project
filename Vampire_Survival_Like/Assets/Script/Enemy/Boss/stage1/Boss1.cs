@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss1 : MonoBehaviour
 {
     SpriteRenderer spriter;
 
@@ -35,7 +35,6 @@ public class Boss : MonoBehaviour
         L_Point = GetComponentsInChildren<Transform>();
         bossPos = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-        bossPos = GetComponent<Rigidbody2D>();
         GM = GameObject.Find("Manager").transform.GetChild(0).gameObject;
 
         boss_HP = 200;
@@ -46,7 +45,8 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(current_boss_HP <= 0.01f){
+        bossPos.velocity = Vector2.zero;
+        if (current_boss_HP <= 0.01f){
             GM.GetComponent<GameManager>().Survied();
             Destroy(gameObject);
         }
@@ -113,7 +113,7 @@ public class Boss : MonoBehaviour
             GameManager.instance.Player_damage(0.5f);
         }
     }
-    public void Boss_Damage(float dmg)
+    public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
     }

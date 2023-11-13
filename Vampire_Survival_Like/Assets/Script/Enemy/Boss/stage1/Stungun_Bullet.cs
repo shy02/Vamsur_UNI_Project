@@ -6,7 +6,9 @@ public class Stungun_Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private float speed = 500000f;
+    private float speed = 20000f;
+    private float p_speed;
+    public Animator anime;
     Rigidbody2D s_bullet, target;
 
     private void OnEnable()
@@ -19,8 +21,9 @@ public class Stungun_Bullet : MonoBehaviour
         Vector2 director = target.position - s_bullet.position;
         s_bullet.AddForce(s_bullet.position+director.normalized *speed* Time.deltaTime);
         s_bullet.velocity = Vector2.zero;
+        anime = GameObject.Find("Effect").GetComponent<Animator>();
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame
@@ -34,8 +37,19 @@ public class Stungun_Bullet : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                Destroy(gameObject);
+                anime.SetBool("isStun", true);
+                GameManager.instance.Player_damage(15);
+                p_speed = GameManager.instance.player.speed;
+                GameManager.instance.player.speed = 0;
+                Invoke("Player_Speed_Return", 1.5f);
+                gameObject.SetActive(false);
             }
         }
+    }
+    void Player_Speed_Return()
+    {
+        GameManager.instance.player.speed = p_speed;
+        anime.SetBool("isStun", false);
+        Destroy(gameObject);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_vehicle : MonoBehaviour
+public class Boss3 : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -87,12 +87,12 @@ public class Boss_vehicle : MonoBehaviour
         }
     }
 
-    public void Boss_Damage(float dmg)
+    public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
         if (dmg_reduce >= 20)
         {
-            current_boss_HP = current_boss_HP - (dmg / 2);
+            current_boss_HP = current_boss_HP - (dmg*0.9f);
         }
     }
     void Spawn_v_bullet()

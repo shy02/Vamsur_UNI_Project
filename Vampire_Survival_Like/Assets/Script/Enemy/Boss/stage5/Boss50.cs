@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Dron : MonoBehaviour
+public class Boss50 : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -86,7 +86,7 @@ public class Boss_Dron : MonoBehaviour
         }
     }
 
-    public void Boss_Damage(float dmg)
+    public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
     }

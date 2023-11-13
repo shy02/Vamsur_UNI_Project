@@ -11,45 +11,54 @@ public class Timer_Manager : MonoBehaviour
     public GameObject Timer_UI;
     public GameObject GM;
     public GameObject Spawner_Boss;
-
-    private bool Bossishere = false;
-    int stage;
+    public int bossnum;
+    public bool Bossishere = false;
     
     void Start()
     {
         Timer_UI.SetActive(true);
         gameObject.GetComponent<Timer_Manager>().enabled = true;
         Bossishere = false;
-        stage=1;
+        bossnum = 1;
     }
     // Update is called once per frameS
     void Update()
     {
-        /*if(GameTime_H >= 5){
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            Timer_UI.SetActive(false);
-            GM.GetComponent<GameManager>().Survied();   
-        }*/
-        if(GameTime_H == 5 && !isBossdead){
+        if(GameTime_H == 6 && !isBossdead){
             if (!Bossishere)
             {
-                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss(stage);
-                Bossishere = true;
-                gameObject.GetComponent<Timer_Manager>().enabled=false;
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                gameObject.GetComponent<Timer_Manager>().enabled = false;
                 GameManager.instance.Enemy.SetActive(false);
+                GM.GetComponent<GameManager>().OnBlock();
             }
-
-            GM.GetComponent<GameManager>().OnBlock();
-            if(GameTime_sec > 30){
+            Bossishere = true;
+            /*if(GameTime_sec > 30){
                 GM.GetComponent<GameManager>().OffBlock();
 
                 isBossdead = true;
-            }
+            }*/
         }
-        
-        
-
-        if (GameTime_H == 5 && isBossdead) { isBossdead = false; Bossishere = false; }
+        if (GameTime_H == 6 && isBossdead) {
+            GM.GetComponent<GameManager>().OffBlock();
+            isBossdead = false;
+            Bossishere = false;
+            bossnum += 1;
+        }
+        if (GameTime_H == 12 && !isBossdead)
+        {
+            if (!Bossishere)
+            {
+                if (!Spawner_Boss)
+                {
+                    Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                    Bossishere = true;
+                    gameObject.GetComponent<Timer_Manager>().enabled = false;
+                    GameManager.instance.Enemy.SetActive(false);
+                }
+            }
+            GM.GetComponent<GameManager>().OnBlock();
+        }
         GameTime_sec += Time.deltaTime;
         if(GameTime_sec >= 60f){
             GameTime_H++;

@@ -72,7 +72,7 @@ public class Boss5 : MonoBehaviour
         }
     }
 
-    public void Boss_Damage(float dmg)
+    public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
     }

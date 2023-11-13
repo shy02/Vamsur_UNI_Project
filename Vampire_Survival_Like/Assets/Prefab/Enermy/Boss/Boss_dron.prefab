@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -6139472939336721203}
   - component: {fileID: 8935045909019181389}
   - component: {fileID: 4172514632176643257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss_dron
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1266530617, guid: 4d228ab8089c14a48bb7e2f10b0ecb0c, type: 3}
+  m_Sprite: {fileID: 1971587033, guid: b6804f72088bef0479705a103ef9b343, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 3741112452924574882}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 34dcd7fcf6624154aab82ab01b2f796b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 949c374a881115a419d278c811deefc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778251201771144184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spawnpoint1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4458086080773525772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spawnpoint0
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

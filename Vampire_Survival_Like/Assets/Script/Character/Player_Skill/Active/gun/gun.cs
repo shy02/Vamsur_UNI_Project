@@ -10,11 +10,14 @@ public class gun : MonoBehaviour
     private int NumEnermy; // 죽인 적수
     private float timer;
     private GameObject Data;
+    public GameObject TM;
     public float lv;
     public bool isFinal;
+    public int bossnum;
     
     void Start(){
         Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
+        TM = GameObject.Find("Timer");
     }
 
     public void Init(float damage, int per)//데미지와 탄수를 받아옴
@@ -25,6 +28,7 @@ public class gun : MonoBehaviour
 
     void Update()
     {
+        bossnum = TM.GetComponent<Timer_Manager>().bossnum;
         timer += Time.deltaTime;
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         if(per <= NumEnermy){
@@ -36,7 +40,7 @@ public class gun : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Enemy")||other.CompareTag("Boss")){
+        if(other.CompareTag("Enemy")){
             if(!isFinal){
                 NormalDamage();
             }
@@ -46,6 +50,43 @@ public class gun : MonoBehaviour
            
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
+        }
+        if (other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
+
+            NumEnermy++;
+
+            switch (bossnum)
+            {
+                case 1:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(damage);
+                    break;
+                case 2:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(damage);
+                    break;
+                case 3:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(damage);
+                    break;
+                case 4:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(damage);
+                    break;
+                case 5:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(damage);
+                    break;
+                case 6:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(damage);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

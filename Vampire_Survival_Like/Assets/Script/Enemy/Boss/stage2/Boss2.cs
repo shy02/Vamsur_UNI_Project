@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Snake : MonoBehaviour
+public class Boss2 : MonoBehaviour
 {
 
     Rigidbody2D target;
@@ -106,7 +106,7 @@ public class Boss_Snake : MonoBehaviour
             Instantiate(fog, fog_pos, Quaternion.identity);
         }
     }
-    public void Boss_Damage(float dmg)
+    public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
     }

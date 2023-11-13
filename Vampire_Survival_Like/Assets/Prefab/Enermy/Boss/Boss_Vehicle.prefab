@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7708713992043297121}
   - component: {fileID: 1935254075552074534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: water_cannon_spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 5557357690426427549}
   - component: {fileID: 5557357690426427550}
   - component: {fileID: 6883666391513859215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss_Vehicle
   m_TagString: Boss
   m_Icon: {fileID: 0}

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_4 : MonoBehaviour
+public class Boss4 : MonoBehaviour
 {
 
     Rigidbody2D target;
     SpriteRenderer spriter;
     Rigidbody2D rigid;
+    Animator anime;
 
     public BoxCollider2D area; // 근접 공격 범위
     public Transform[] L_Point; // 쫄몹 생성위치
@@ -36,6 +37,7 @@ public class Boss_4 : MonoBehaviour
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
+        anime = GetComponent<Animator>();
         is_fog = false;
         rnd_use = true;
         fog.SetActive(false);
@@ -105,10 +107,12 @@ public class Boss_4 : MonoBehaviour
                         if (cool_time > 5)
                         {
                             Debug.Log("원거리 성공");
+                            anime.SetBool("isShot", true);
                             fog_count += 1;
                             rnd_use = true;
                             cool_time = 0;
                             Instantiate(bullet, rigid.position, Quaternion.identity);
+                            anime.SetBool("isShot",false);
                             break;
                         }
                         if (distance < 5) //너무 근접해서 도망
@@ -166,11 +170,13 @@ public class Boss_4 : MonoBehaviour
 
     IEnumerator atk_area()
     {
+        anime.SetBool("isKnife", true);
         area.enabled = true; // 공격범위 활성화
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
+        anime.SetBool("isKnife", false);
     }
-    public void Boss_Damage(float dmg)
+    public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
     }
