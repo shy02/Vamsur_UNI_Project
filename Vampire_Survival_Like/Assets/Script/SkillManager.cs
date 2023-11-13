@@ -20,12 +20,11 @@ public class SkillManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Ui = Instantiate(Upgrade);
         GM.GetComponent<Pause_>().Pause();
     }
     
     public void StartUI(){
-        Ui = Instantiate(Upgrade);
+        createUI();
     }
 
     public void SelectOp1(){
@@ -99,5 +98,10 @@ public class SkillManager : MonoBehaviour
                 UpgradeUI.Num.Remove(index);
             } 
         }
+    }
+
+    public void createUI(){
+
+        Ui = Instantiate(Upgrade);
     }
 }
