@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/Backup/dog.anim
   m_Name: dog
+========
+  m_Name: Boss_Vehicle
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/3stage/Boss_Vehicle.anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +24,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/Backup/dog.anim
       value: {fileID: -28260156, guid: 0d7579a3f39ca7b4ea68f47603d61856, type: 3}
     - time: 0.083333336
       value: {fileID: -1255351621, guid: 0d7579a3f39ca7b4ea68f47603d61856, type: 3}
     - time: 0.16666667
       value: {fileID: 127493245, guid: 0d7579a3f39ca7b4ea68f47603d61856, type: 3}
+========
+      value: {fileID: -357400855, guid: 0041842a5b91cc544b13055e371c9b51, type: 3}
+    - time: 0.083333336
+      value: {fileID: -2067646813, guid: 0041842a5b91cc544b13055e371c9b51, type: 3}
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/3stage/Boss_Vehicle.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +54,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/Backup/dog.anim
     - {fileID: -28260156, guid: 0d7579a3f39ca7b4ea68f47603d61856, type: 3}
     - {fileID: -1255351621, guid: 0d7579a3f39ca7b4ea68f47603d61856, type: 3}
     - {fileID: 127493245, guid: 0d7579a3f39ca7b4ea68f47603d61856, type: 3}
+========
+    - {fileID: -357400855, guid: 0041842a5b91cc544b13055e371c9b51, type: 3}
+    - {fileID: -2067646813, guid: 0041842a5b91cc544b13055e371c9b51, type: 3}
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/3stage/Boss_Vehicle.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

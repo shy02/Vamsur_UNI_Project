@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Audio/Sound.meta
 guid: 3363579c225444d83809ae2ce771eb09
+========
+guid: ff2e2e43407b9e8489ab1ce1bdcb8494
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/2stage.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

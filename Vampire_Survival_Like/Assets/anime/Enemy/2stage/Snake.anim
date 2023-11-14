@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/2stage/Snake.anim
   m_Name: Snake
+========
+  m_Name: Dog
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/3stage/Dog.anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +24,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/2stage/Snake.anim
       value: {fileID: -1631268662, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
     - time: 0.083333336
       value: {fileID: 1152099312, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
     - time: 0.16666667
       value: {fileID: 553721186, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+========
+      value: {fileID: -1342078789, guid: 8333a770847a0034ab87a0dbc1fe01c0, type: 3}
+    - time: 0.083333336
+      value: {fileID: -656869923, guid: 8333a770847a0034ab87a0dbc1fe01c0, type: 3}
+    - time: 0.16666667
+      value: {fileID: 929173112, guid: 8333a770847a0034ab87a0dbc1fe01c0, type: 3}
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/3stage/Dog.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +56,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/2stage/Snake.anim
     - {fileID: -1631268662, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
     - {fileID: 1152099312, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
     - {fileID: 553721186, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+========
+    - {fileID: -1342078789, guid: 8333a770847a0034ab87a0dbc1fe01c0, type: 3}
+    - {fileID: -656869923, guid: 8333a770847a0034ab87a0dbc1fe01c0, type: 3}
+    - {fileID: 929173112, guid: 8333a770847a0034ab87a0dbc1fe01c0, type: 3}
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/3stage/Dog.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

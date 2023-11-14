@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Scenes/Stage1.unity.meta
 guid: 40f479dea55845c43bdd4f37bebb4293
+========
+guid: e71a9efdd0208194bb6d31fc3acbcdfc
+>>>>>>>> main:Vampire_Survival_Like/Assets/Scenes/Init.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

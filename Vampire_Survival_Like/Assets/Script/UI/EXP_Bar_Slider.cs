@@ -34,7 +34,11 @@ public class EXP_Bar_Slider : MonoBehaviour
     public void Exp_Up()
     {
         recently_Exp += 10 * LV;
+<<<<<<< HEAD
         AudioManager.instance.PlaySfx(AudioManager.Sfx.ExeGet);
+=======
+        recently_Exp += (recently_Exp /100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().GetEXP;
+>>>>>>> main
 
     }
 }

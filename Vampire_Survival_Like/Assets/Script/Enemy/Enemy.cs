@@ -40,15 +40,21 @@ public class Enemy : MonoBehaviour
         Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
 
         rigid.MovePosition(rigid.position + next);
+<<<<<<< HEAD
 
         rigid.velocity = Vector2.zero;
+=======
+>>>>>>> main
         target.velocity = Vector2.zero;
         
         if(em_health <= 0)
         {
             Dead();
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> main
 
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -61,9 +67,12 @@ public class Enemy : MonoBehaviour
         gm.GetComponent<GameManager>().DeadNum++;
         Drop_Exp();
         Destroy(gameObject);
+<<<<<<< HEAD
 
         // if(GameManager.instance.Survied)
             AudioManager.instance.PlaySfx(AudioManager.Sfx.Dead);
+=======
+>>>>>>> main
     }
     public void GetDamage(float DMG){
         em_health = em_health - DMG;
@@ -77,11 +86,16 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
+<<<<<<< HEAD
         spriter.flipX = target.position.x > rigid.position.x;
+=======
+        spriter.flipX = target.position.x < rigid.position.x;
+>>>>>>> main
     }
 
     public void Slow(float slowFactor)      //바나나밟으면 속도 감소 (추가)
     {
+<<<<<<< HEAD
 
         speed *= (slowFactor/100);
         Invoke("BackSpeed", 2f);
@@ -91,4 +105,29 @@ public class Enemy : MonoBehaviour
     {
         speed = _speed;
     }
+=======
+        speed *= (slowFactor/100);
+        Invoke("ReturnSpeed", 2f+((2f/100)*GameManager.instance.player.GetComponent<Player_State>().WeaphoneTime));
+    }
+    public void KnockBack(){
+        if(target.position.x > transform.position.x){
+        rigid.AddForce(new Vector2(-1000f, 0f));
+        }
+        else{
+        rigid.AddForce(new Vector2(1000f, 0f));
+        }
+        if(target.position.y > transform.position.y){
+        rigid.AddForce(new Vector2(0f, -1000f));
+        }
+        else{
+        rigid.AddForce(new Vector2(0f, 1000f));
+        }
+        
+    }
+    public void ReturnSpeed()
+    {
+        speed = _speed;
+    }
+
+>>>>>>> main
 }

@@ -9,8 +9,15 @@ public class Spawner : MonoBehaviour
     public int enemy_count=0;
     float timer;
     public GameObject parent;
+<<<<<<< HEAD
     public GameObject GM;
     public GameObject[] enemyPrefab;
+=======
+    public GameObject boss_obj;
+    public GameObject GM;
+    public GameObject[] enemyPrefab;
+    public GameObject[] eletePrefab;
+>>>>>>> main
     public GameObject[] bossPrefab;
     List<GameObject>[] pools; 
     List<GameObject>[] b_pools;
@@ -51,11 +58,16 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
+<<<<<<< HEAD
         GameObject enemy = Instantiate(enemyPrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity,transform);
+=======
+        GameObject enemy = Instantiate(enemyPrefab[Random.Range(0,2)], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity,transform);
+>>>>>>> main
         enemy.transform.SetParent(parent.transform);
     }
     void Spawn_Elete()
     {
+<<<<<<< HEAD
         GameObject elete_enemy = Instantiate(enemyPrefab[1], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity, transform);
         elete_enemy.transform.SetParent(parent.transform);
     }
@@ -63,5 +75,14 @@ public class Spawner : MonoBehaviour
     {
         GameObject boss = Instantiate(bossPrefab[stage-1],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity,transform);
         //boss.transform.SetParent(parent.transform);
+=======
+        GameObject elete_enemy = Instantiate(eletePrefab[0], spawnPoint[Random.Range(1, spawnPoint.Length-1)].position, Quaternion.identity, transform);
+        elete_enemy.transform.SetParent(parent.transform);
+    }
+    public void Spawn_Boss()
+    {
+        GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity,transform);
+        boss.transform.SetParent(boss_obj.transform);
+>>>>>>> main
     }
 }

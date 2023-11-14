@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/1stage/1stage_bat_0 1.controller.meta
 guid: 18c33bafc4a3c054b864121b05960cab
+========
+guid: 22ca476386910b240ab39cc7fd6dbc77
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/1stage/1stage_bat_0.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000

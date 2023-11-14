@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/1stage/Bat.anim.meta
 guid: 28bacffa6c2af3349a332af759bdcf67
+========
+guid: 5c6c84630bda4d640966af7b3a1bc27b
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/1stage/Boss_PolliceOfficer.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

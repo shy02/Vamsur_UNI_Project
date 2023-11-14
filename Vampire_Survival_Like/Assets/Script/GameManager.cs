@@ -19,7 +19,13 @@ public class GameManager : MonoBehaviour
     public GameObject SkillManager;
     public GameObject DataManager;
     public GameObject DeadEnemyNum;
+<<<<<<< HEAD
     public int DeadNum = 0;
+=======
+    public GameObject Timer;
+    public int DeadNum = 0;
+    private int stagenum = 2;
+>>>>>>> main
 
     private bool isDangerous = false;
 
@@ -29,18 +35,29 @@ void Awake()
     GameOver_UI.SetActive(false);
     Survied_UI.SetActive(false);
     Block_Player.SetActive(false);
+<<<<<<< HEAD
 
     //시작시 브금
     AudioManager.instance.PlayBgm(true);
+=======
+>>>>>>> main
 }
 
 void Update()
 {
+<<<<<<< HEAD
     if(Player_HP <= 30 && !isDangerous){
         isDangerous = true;
         Danger_UI.GetComponent<Dangerous_UI>().Danger();
     }
     if(Player_HP > 30 && isDangerous){
+=======
+    if(Player_HP + player.gameObject.GetComponent<Player_State>().HP <= 30 && !isDangerous){
+        isDangerous = true;
+        Danger_UI.GetComponent<Dangerous_UI>().Danger();
+    }
+    if(Player_HP + player.gameObject.GetComponent<Player_State>().HP > (Player_HP + player.gameObject.GetComponent<Player_State>().HP)/100 * 30 && isDangerous){
+>>>>>>> main
         isDangerous = false;
         Danger_UI.GetComponent<Dangerous_UI>().NoDanger();
     }
@@ -51,8 +68,11 @@ void Update()
 
 public void Player_damage(float dmg){
     Player_HP -= dmg;
+<<<<<<< HEAD
     AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);
     
+=======
+>>>>>>> main
 }
 public float getPlayer_HP(float hp){
     hp = Player_HP;
@@ -62,18 +82,35 @@ public float getPlayer_HP(float hp){
 public void gameOver(){
     Enemy.SetActive(false);
     GameOver_UI.SetActive(true);
+<<<<<<< HEAD
     AudioManager.instance.PlayBgm(false);
     AudioManager.instance.PlaySfx(AudioManager.Sfx.Gameover1);
+=======
+>>>>>>> main
 }
 
 public void Survied(){
     Enemy.SetActive(false);
     Survied_UI.SetActive(true);
+<<<<<<< HEAD
     
 }
 public void RestartClick(string stage){
     SceneManager.LoadScene(stage);
     }
+=======
+}
+public void RestartClick(){
+    if(stagenum<=5){
+    SceneManager.LoadScene("Stage" + stagenum);
+    stagenum++;
+    }
+    else{
+    SceneManager.LoadScene("Ending");
+    }
+
+}
+>>>>>>> main
 public void OnBlock(){
     Block_Player.SetActive(true);
     Block_Player.transform.SetParent(null);
@@ -85,8 +122,12 @@ public void OffBlock(){
     Block_Player.SetActive(false);
 }
 public void SkillTime(){
+<<<<<<< HEAD
     gameObject.GetComponent<Pause_>().Pause();
     SkillManager.GetComponent<SkillManager>().StartUI();   
     
+=======
+    SkillManager.GetComponent<SkillManager>().StartUI();   
+>>>>>>> main
 }
 }

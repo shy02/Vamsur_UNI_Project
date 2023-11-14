@@ -11,8 +11,13 @@ GameObject:
   - component: {fileID: 5449478084856187076}
   - component: {fileID: 5449478084856187077}
   - component: {fileID: 3621420202725501131}
+<<<<<<< HEAD
   - component: {fileID: 8106310622414090240}
   - component: {fileID: 6292323134675591358}
+=======
+  - component: {fileID: 3695335724009780960}
+  - component: {fileID: 706628993569239370}
+>>>>>>> main
   m_Layer: 0
   m_Name: water_cannon
   m_TagString: Untagged
@@ -86,7 +91,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+<<<<<<< HEAD
   m_SpriteSortPoint: 0
+=======
+  m_SpriteSortPoint: 1
+>>>>>>> main
 --- !u!50 &3621420202725501131
 Rigidbody2D:
   serializedVersion: 4
@@ -108,8 +117,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+<<<<<<< HEAD
 --- !u!58 &8106310622414090240
 CircleCollider2D:
+=======
+--- !u!61 &3695335724009780960
+BoxCollider2D:
+>>>>>>> main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,10 +135,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD
   m_Offset: {x: 0, y: 1}
   serializedVersion: 2
   m_Radius: 0.8
 --- !u!114 &6292323134675591358
+=======
+  m_Offset: {x: 0, y: 2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &706628993569239370
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,6 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5449478084856187074}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ade76932c09d78a43b30cbc5b468683c, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: dedd64e3474ae9f4e82ab25d97b32b3b, type: 3}
+>>>>>>> main
   m_Name: 
   m_EditorClassIdentifier: 

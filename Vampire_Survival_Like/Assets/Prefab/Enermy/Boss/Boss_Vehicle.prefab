@@ -10,7 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7708713992043297121}
   - component: {fileID: 1935254075552074534}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 8
+>>>>>>> main
   m_Name: water_cannon_spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +70,11 @@ GameObject:
   - component: {fileID: 5557357690426427549}
   - component: {fileID: 5557357690426427550}
   - component: {fileID: 6883666391513859215}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 8
+>>>>>>> main
   m_Name: Boss_Vehicle
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -151,7 +159,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_IsTrigger: 1
+=======
+  m_IsTrigger: 0
+>>>>>>> main
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

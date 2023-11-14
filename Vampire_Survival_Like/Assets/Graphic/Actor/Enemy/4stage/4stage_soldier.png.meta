@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 27cbf0943318f2b44a3e2b4d76ba2a2f
+=======
+guid: 99a7117c2daf9bc49875919062fc7bea
+>>>>>>> main
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,8 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 94cddaff589a52a49a0e4fca999e1068
       internalID: -1596512356
+=======
+      spriteID: 6a51f58b9496e8a4ab21b183e396a1d7
+      internalID: -1141216909
+>>>>>>> main
       vertices: []
       indices: 
       edges: []
@@ -152,8 +161,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: f3b548c2580ae03409eca3d8bfcc1bc1
       internalID: 1160064173
+=======
+      spriteID: 5affba50aab08b44eb762578b1989a11
+      internalID: -563588442
+>>>>>>> main
       vertices: []
       indices: 
       edges: []
@@ -173,8 +187,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: db72a4fb2b458db498b807bae52a463b
       internalID: -631829200
+=======
+      spriteID: fce4c03d33e508640b0c3b8e9977e46f
+      internalID: 2011859801
+>>>>>>> main
       vertices: []
       indices: 
       edges: []
@@ -190,9 +209,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< HEAD
       4stage_soldier_2: -631829200
       4stage_soldier_1: 1160064173
       4stage_soldier_0: -1596512356
+=======
+      4stage_soldier_2: 2011859801
+      4stage_soldier_1: -563588442
+      4stage_soldier_0: -1141216909
+>>>>>>> main
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
