@@ -70,10 +70,10 @@ public class Banana : MonoBehaviour
                     break;
 
                 case 5:
-                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(Damage);
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(Damage);
                     break;
                 case 6:
-                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss6>().GetDamage(Damage);
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(Damage);
                     break;
                 default:
                     break;

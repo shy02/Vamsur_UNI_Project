@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    private float speed= 5000f; // 속도값 설정
+    private float speed= 800000f; // 속도값 설정
     Rigidbody2D rigid, target;
 
     Transform playerPos;
