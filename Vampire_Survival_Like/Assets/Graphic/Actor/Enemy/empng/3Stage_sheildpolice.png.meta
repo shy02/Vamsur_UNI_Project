@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
 guid: b8c22bdc4f9a3dd47a523c4eba9cb85f
+========
+guid: 0de39f51e6c53e545aaeb4a5e08dd0f2
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +51,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
   spritePixelsToUnits: 24
+========
+  spritePixelsToUnits: 16
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,6 +137,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       name: sheildpolice_0
       rect:
         serializedVersion: 2
@@ -136,6 +145,15 @@ TextureImporter:
         y: 11
         width: 23
         height: 42
+========
+      name: 5stage_tank_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 55
+        height: 23
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,13 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       spriteID: cbd5d3318ff384c499f19097972515d3
       internalID: 1474457760
+========
+      spriteID: 93211f19ecf635f4caa76447aebb5099
+      internalID: -1933645619
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       name: sheildpolice_1
       rect:
         serializedVersion: 2
@@ -157,6 +181,15 @@ TextureImporter:
         y: 11
         width: 23
         height: 42
+========
+      name: 5stage_tank_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2
+        width: 55
+        height: 24
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,13 +197,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       spriteID: 8946a70b51bc48c4983e139af19066ff
       internalID: -668276257
+========
+      spriteID: b86a6ef4882c989429f482fa955f1446
+      internalID: 663119468
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       name: sheildpolice_2
       rect:
         serializedVersion: 2
@@ -178,6 +217,15 @@ TextureImporter:
         y: 11
         width: 23
         height: 42
+========
+      name: 5stage_tank_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 55
+        height: 23
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +233,34 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       spriteID: d486f55dd1aadfb4abe68b4a6e4b8375
       internalID: 137299744
+========
+      spriteID: f3ddffedfc2222648913457944cfb3de
+      internalID: -647126656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5stage_tank_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2
+        width: 55
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b68d728936d3d4daccf790a6788eb5
+      internalID: -1088971530
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
       vertices: []
       indices: 
       edges: []
@@ -202,9 +276,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/empng/3Stage_sheildpolice.png.meta
       sheildpolice_1: -668276257
       sheildpolice_2: 137299744
       sheildpolice_0: 1474457760
+========
+      5stage_tank_0: -1933645619
+      5stage_tank_1: 663119468
+      5stage_tank_3: -1088971530
+      5stage_tank_2: -647126656
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/5stage/5stage_tank.png.meta
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/1stage/PolliceOfficer.anim.meta
 guid: ed85a7cdf2ae2714ba0ae6c3ec58d386
+========
+guid: 856549a0e63ef4a49af58deb95453516
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/1stage/Prisoner.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

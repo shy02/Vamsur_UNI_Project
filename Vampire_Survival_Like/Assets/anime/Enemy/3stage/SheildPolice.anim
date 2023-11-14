@@ -6,7 +6,11 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/3stage/SheildPolice.anim
   m_Name: SheildPolice
+========
+  m_Name: Snake
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/2stage/Snake.anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +24,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/3stage/SheildPolice.anim
       value: {fileID: 1474457760, guid: b8c22bdc4f9a3dd47a523c4eba9cb85f, type: 3}
     - time: 0.083333336
       value: {fileID: -668276257, guid: b8c22bdc4f9a3dd47a523c4eba9cb85f, type: 3}
     - time: 0.16666667
       value: {fileID: 137299744, guid: b8c22bdc4f9a3dd47a523c4eba9cb85f, type: 3}
+========
+      value: {fileID: -1631268662, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+    - time: 0.083333336
+      value: {fileID: 1152099312, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+    - time: 0.16666667
+      value: {fileID: 553721186, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/2stage/Snake.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +56,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/anime/Enemy/3stage/SheildPolice.anim
     - {fileID: 1474457760, guid: b8c22bdc4f9a3dd47a523c4eba9cb85f, type: 3}
     - {fileID: -668276257, guid: b8c22bdc4f9a3dd47a523c4eba9cb85f, type: 3}
     - {fileID: 137299744, guid: b8c22bdc4f9a3dd47a523c4eba9cb85f, type: 3}
+========
+    - {fileID: -1631268662, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+    - {fileID: 1152099312, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+    - {fileID: 553721186, guid: b0672ac067115424fb56ba5f80a11a4d, type: 3}
+>>>>>>>> main:Vampire_Survival_Like/Assets/anime/Enemy/2stage/Snake.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

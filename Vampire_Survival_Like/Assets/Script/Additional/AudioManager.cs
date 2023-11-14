@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System.ComponentModel;
+using System.Security.Cryptography;
+>>>>>>> main
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> main
     [Header("#BGM")]
     public AudioClip bgmClip;
     public float bgmVolume;
     AudioSource bgmPlayer;
+<<<<<<< HEAD
     AudioHighPassFilter bgmEffect;
 
     [Header("#SFX")]
@@ -20,13 +30,33 @@ public class AudioManager : MonoBehaviour
     int channelIndex; 
 
     public enum Sfx { Select, Hit, Dead, Bomb, ExeGet, Boom, Gun, Gameover1 }
+=======
+
+
+    [Header("#SFX")] //
+    public AudioClip[] sfxClip;
+    public float sfxVolume;
+    public int channels;
+    AudioSource[] sfxPlayers;
+    int channelIndex;
+
+    public enum Sfx
+    {
+    } // 효과음 열거
+>>>>>>> main
 
     void Awake()
     {
         instance = this;
         Init();
+<<<<<<< HEAD
     }
      
+=======
+        
+    }
+
+>>>>>>> main
     void Init()
     {
         // 배경음 플레이어 초기화
@@ -37,35 +67,55 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
         bgmPlayer.clip = bgmClip;
+<<<<<<< HEAD
         //강화창 브금조절
         bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
+=======
+>>>>>>> main
 
         // 효과음 플레이어 초기화
         GameObject sfxObject = new GameObject("SfxPlayer");
         sfxObject.transform.parent = transform;
         sfxPlayers = new AudioSource[channels];
 
+<<<<<<< HEAD
         for(int index=0; index < sfxPlayers.Length; index++) {
             sfxPlayers[index] = sfxObject.AddComponent<AudioSource>();
             sfxPlayers[index].playOnAwake = false;
             sfxPlayers[index].bypassListenerEffects = true;
+=======
+        for (int index=0; index < sfxPlayers.Length; index++)
+        {
+            sfxPlayers[index] = sfxObject.AddComponent<AudioSource>();
+            sfxPlayers[index].playOnAwake = false;
+>>>>>>> main
             sfxPlayers[index].volume = sfxVolume;
         }
     }
 
     public void PlayBgm(bool isPlay)
     {
+<<<<<<< HEAD
         Debug.Log("PlayBgm called with isPlay: " + isPlay);
         
         if (isPlay){
             bgmPlayer.Play();
         }
         else {
+=======
+        if (isPlay)
+        {
+            bgmPlayer.Play();
+        }
+        else
+        {
+>>>>>>> main
             bgmPlayer.Stop();
         }
     }
 
+<<<<<<< HEAD
      public void EffectBgm(bool isPlay)
     {
         bgmEffect.enabled = isPlay;
@@ -104,4 +154,40 @@ public class AudioManager : MonoBehaviour
     //         PlayBgm(false);
     //     }
     // }
+=======
+    public void EffectBgm(bool isPlay)
+    {
+        
+    }
+    public void PlaySfx(Sfx sfx)
+    {
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
+
+            if (sfxPlayers[loopIndex].isPlaying)
+                continue;
+            
+            channelIndex = loopIndex;
+            //sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            //sfxPlayers[loopIndex].Play();
+            break;
+        }
+    }
+
+    public void ChangeBgmSound(float value)
+    {
+        bgmPlayer.volume = value;
+    }
+
+    public void ChangeSfxSound(float value)
+    {
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
+         
+            sfxPlayers[index].volume = value;
+        }
+    }
+>>>>>>> main
 }

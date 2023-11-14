@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Pause_ : MonoBehaviour
 {
+<<<<<<< HEAD
     public bool nowPause;
     void Start()
     {
         nowPause = false;
+=======
+    public bool nowPause = true;
+    void Start()
+    {
+>>>>>>> main
     }
        public void Pause () {
         if(nowPause == false){

@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
+<<<<<<< HEAD
+=======
+    public Scanner scanner;
+>>>>>>> main
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -16,6 +20,10 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+<<<<<<< HEAD
+=======
+        scanner = GetComponent<Scanner>();
+>>>>>>> main
     }
 
     // Update is called once per frame
@@ -35,12 +43,19 @@ public class Player : MonoBehaviour
 
     private void LateUpdate()
     {
+<<<<<<< HEAD
         //anim.SetFloat("Speed" , inputVec.magnitude);
         if(!GameManager.instance.GetComponent<Pause_>().nowPause){   
             if (inputVec.x != 0) {
             spriter.flipX = inputVec.x < 0;
             }
         }
+=======
+        anim.SetFloat("Speed" , inputVec.magnitude); 
+            if (inputVec.x != 0) {
+            spriter.flipX = inputVec.x < 0;
+            }
+>>>>>>> main
     }
 
     public float GetPlayerSpeed(float speed){      

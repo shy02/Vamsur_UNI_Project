@@ -11,20 +11,30 @@ public class Timer_Manager : MonoBehaviour
     public GameObject Timer_UI;
     public GameObject GM;
     public GameObject Spawner_Boss;
+<<<<<<< HEAD
 
     private bool Bossishere = false;
     int stage;
+=======
+    public int bossnum;
+    public bool Bossishere = false;
+>>>>>>> main
     
     void Start()
     {
         Timer_UI.SetActive(true);
         gameObject.GetComponent<Timer_Manager>().enabled = true;
         Bossishere = false;
+<<<<<<< HEAD
         stage=1;
+=======
+        bossnum = 1;
+>>>>>>> main
     }
     // Update is called once per frameS
     void Update()
     {
+<<<<<<< HEAD
         /*if(GameTime_H >= 5){
             gameObject.GetComponent<Timer_Manager>().enabled = false;
             Timer_UI.SetActive(false);
@@ -50,6 +60,39 @@ public class Timer_Manager : MonoBehaviour
         
 
         if (GameTime_H == 5 && isBossdead) { isBossdead = false; Bossishere = false; }
+=======
+        if(GameTime_H == 6 && !isBossdead){
+            if (!Bossishere)
+            {
+                Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                gameObject.GetComponent<Timer_Manager>().enabled = false;
+                GameManager.instance.Enemy.SetActive(false);
+                GM.GetComponent<GameManager>().OnBlock();
+            }
+            Bossishere = true;
+        }
+        if (GameTime_H == 6 && isBossdead) {
+            GM.GetComponent<GameManager>().OffBlock();
+            gameObject.GetComponent<Timer_Manager>().enabled = true;
+            isBossdead = false;
+            Bossishere = false;
+            bossnum += 1;
+        }
+        if (GameTime_H == 12 && !isBossdead)
+        {
+            if (!Bossishere)
+            {
+                if (!Spawner_Boss)
+                {
+                    Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
+                    Bossishere = true;
+                    gameObject.GetComponent<Timer_Manager>().enabled = false;
+                    GameManager.instance.Enemy.SetActive(false);
+                }
+            }
+            GM.GetComponent<GameManager>().OnBlock();
+        }
+>>>>>>> main
         GameTime_sec += Time.deltaTime;
         if(GameTime_sec >= 60f){
             GameTime_H++;

@@ -9,6 +9,10 @@ public class Dangerous_UI : MonoBehaviour
     private bool isfull =false;
     private float p;
     private Color color;
+<<<<<<< HEAD
+=======
+    public GameObject gm;
+>>>>>>> main
 
     void Start(){
         p = 0f;
@@ -20,7 +24,11 @@ public class Dangerous_UI : MonoBehaviour
     }
     void Update()
     { 
+<<<<<<< HEAD
         if(!GameManager.instance.GetComponent<Pause_>().nowPause){   
+=======
+        if(!gm.GetComponent<Pause_>().nowPause){   
+>>>>>>> main
             if(isDangerous){
             if(p < 1 && !isfull){
             p += 0.007f;

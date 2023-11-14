@@ -12,7 +12,11 @@ public class Reposition : MonoBehaviour
     void start(){
         Debug.Log("아임히어");
     }
+<<<<<<< HEAD
     int tilecount = 48;
+=======
+    int tilecount = 74;
+>>>>>>> main
     void OnTriggerExit2D(Collider2D collision)
 
     {

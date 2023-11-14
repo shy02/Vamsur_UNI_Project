@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/2stage.meta
 guid: ff2e2e43407b9e8489ab1ce1bdcb8494
+========
+guid: 7bbc3403761e17b49ae311cf5dad7e12
+>>>>>>>> main:Vampire_Survival_Like/Assets/Graphic/Actor/Enemy/3stage.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

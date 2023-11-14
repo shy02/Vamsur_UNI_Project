@@ -76,13 +76,22 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
   m_SortingOrder: 0
   m_Sprite: {fileID: -1596512356, guid: 27cbf0943318f2b44a3e2b4d76ba2a2f, type: 3}
+=======
+  m_SortingOrder: 10
+  m_Sprite: {fileID: -1141216909, guid: 99a7117c2daf9bc49875919062fc7bea, type: 3}
+>>>>>>> main
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD
   m_Size: {x: 1.1, y: 2.5}
+=======
+  m_Size: {x: 0.9166667, y: 2.0833333}
+>>>>>>> main
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -147,7 +156,11 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.9166667, y: 2.0833333}
+<<<<<<< HEAD
     newSize: {x: 1.1, y: 2.5}
+=======
+    newSize: {x: 0.9166667, y: 2.0833333}
+>>>>>>> main
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -170,4 +183,8 @@ MonoBehaviour:
   em_health: 10
   speed: 2
   _speed: 0
+<<<<<<< HEAD
   Drop_exp: {fileID: 0}
+=======
+  Drop_exp: {fileID: 8153309968320466148, guid: f024e1eb50942264390d2087c33ad165, type: 3}
+>>>>>>> main

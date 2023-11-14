@@ -120,10 +120,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e61b03d7d072e040966bc3797fa3480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   em_health: 10
   speed: 2
   _speed: 0
   Drop_exp: {fileID: 0}
+=======
+  em_health: 130
+  speed: 2
+  _speed: 0
+  Drop_exp: {fileID: 8153309968320466148, guid: f024e1eb50942264390d2087c33ad165, type: 3}
+>>>>>>> main
 --- !u!50 &7755432212850083742
 Rigidbody2D:
   serializedVersion: 4
@@ -170,4 +177,8 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.9375, y: 1.0625}
+<<<<<<< HEAD
   m_EdgeRadius: 0
+=======
+  m_EdgeRadius: 10
+>>>>>>> main
