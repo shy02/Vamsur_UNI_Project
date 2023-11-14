@@ -30,6 +30,7 @@ public class InitStage : MonoBehaviour
         GameManager.instance.Enemy = enemy;
 
         if(firstStage){
+        GM.GetComponent<Pause_>().Pause();
         skillmanager.GetComponent<SkillManager>().StartUI();
         }
     }
