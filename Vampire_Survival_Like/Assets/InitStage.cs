@@ -11,10 +11,12 @@ public class InitStage : MonoBehaviour
     public GameObject DDOL;
     public GameObject player;
     public GameObject GM;
+    public GameObject Block;
     public bool firstStage;
     void Start()
     {
         DDOL = GameObject.Find("DontDestroyOnLoad");
+        Block = DDOL.transform.GetChild(0).GetChild(1).gameObject;
         GM = DDOL.transform.GetChild(1).transform.GetChild(0).gameObject;
         skillmanager = DDOL.transform.GetChild(1).transform.GetChild(1).gameObject;
         timer = DDOL.transform.GetChild(2).transform.GetChild(2).gameObject;
@@ -24,6 +26,7 @@ public class InitStage : MonoBehaviour
         GameManager.instance.Player_HP = 100f;
         timer.GetComponent<Timer_Manager>().Spawner_Boss = Spawner;
         DDOL.transform.GetChild(4).gameObject.SetActive(false);
+        Block.SetActive(false);
         GameManager.instance.Enemy = enemy;
 
         if(firstStage){
