@@ -9,7 +9,7 @@ public class Clothes : MonoBehaviour
     void Update()
     {
         LV = GameManager.instance.DataManager.GetComponent<DataManager>().skill[8].Level;
-        player.GetComponent<Player_State>().HP = 50f * (LV - 1);
+        player.GetComponent<Player_State>().HP = 50f+ 50f * (LV - 1);
     }
 }
 

@@ -99,7 +99,7 @@ public class gun : MonoBehaviour
         
             lv = Data.GetComponent<DataManager>().skill[0].Level;
 
-            damage = 15 + 5 *(lv-1);
+            damage = 10f + 10f *(lv-1);
             damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
     }
     void finalDamage(){

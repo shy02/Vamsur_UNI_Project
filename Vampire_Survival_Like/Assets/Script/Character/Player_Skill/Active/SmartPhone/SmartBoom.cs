@@ -13,7 +13,7 @@ public class SmartBoom : MonoBehaviour
     public GameObject BombEff;
     public bool isFinal;
     private int NumEnermy; // 죽인 적수
-
+    public int bossnum;
     CircleCollider2D circle;
         
     SpriteRenderer SpRender;
@@ -31,7 +31,7 @@ public class SmartBoom : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        if (other.CompareTag("Enemy"))
         {
             if (!isFinal)
             {
@@ -45,32 +45,56 @@ public class SmartBoom : MonoBehaviour
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
+        if (other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
 
-        //LV = Data.GetComponent<DataManager>().skill[3].Level;
-        //    dmg = 15f + 3f *(LV-1);
-        //    dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+            NumEnermy++;
 
-        //    other.GetComponent<Enemy>().GetDamage(dmg);
-        //    Debug.Log(dmg);
+            switch (bossnum)
+            {
+                case 1:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(dmg);
+                    break;
+                case 2:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(dmg);
+                    break;
+                case 3:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(dmg);
+                    break;
+                case 4:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(dmg);
+                    break;
+                case 5:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(dmg);
+                    break;
+                case 6:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(dmg);
+                    break;
+                default:
+                    break;
+            }
         }
-    
-    
-    void final(){
-        Invoke("Erase", eraseTime);
-        circle.enabled = true;
     }
 
-    public void Erase(){
-        GameObject eff = Instantiate(BombEff, gameObject.transform.position , gameObject.transform.rotation);
+    void Destroygun()
+    {
         Destroy(gameObject);
     }
 
     void NormalDamage()
     {
 
-        LV = Data.GetComponent<DataManager>().skill[3].Level;
+        LV = Data.GetComponent<DataManager>().skill[0].Level;
 
-        dmg =30 + 14f * (LV - 1);
+        dmg = 30f + 14 * (LV - 1);
         dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
     }
     void finalDamage()
@@ -79,4 +103,29 @@ public class SmartBoom : MonoBehaviour
         dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
 
     }
+
+    void final()
+    {
+        Invoke("Erase", eraseTime);
+        circle.enabled = true;
+    }
+
+    public void Erase()
+    {
+        GameObject eff = Instantiate(BombEff, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(gameObject);
+    }
+
 }
+
+
+        //LV = Data.GetComponent<DataManager>().skill[3].Level;
+        //    dmg = 15f + 3f *(LV-1);
+        //    dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
+        //    other.GetComponent<Enemy>().GetDamage(dmg);
+        //    Debug.Log(dmg);
+        
+    
+  
+   

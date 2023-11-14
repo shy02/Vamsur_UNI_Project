@@ -17,6 +17,7 @@ public class Find_Enermy : MonoBehaviour
     public bool isFinal;
     private int NumEnermy; // 죽인 적수
     public float lv;
+    public int bossnum;
 
     void Start()
     {
@@ -73,7 +74,7 @@ public class Find_Enermy : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        if (other.CompareTag("Enemy"))
         {
             if (!isFinal)
             {
@@ -87,24 +88,67 @@ public class Find_Enermy : MonoBehaviour
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
+        if (other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
 
-        //dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-        //    other.gameObject.GetComponent<Enemy>().GetDamage(dmg);
-        
+            NumEnermy++;
+
+            switch (bossnum)
+            {
+                case 1:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(dmg);
+                    break;
+                case 2:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(dmg);
+                    break;
+                case 3:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(dmg);
+                    break;
+                case 4:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(dmg);
+                    break;
+                case 5:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(dmg);
+                    break;
+                case 6:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(dmg);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    void Destroygun()
+    {
+        Destroy(gameObject);
     }
 
     void NormalDamage()
     {
 
-        lv = Data.GetComponent<DataManager>().skill[14].Level;
+        lv = Data.GetComponent<DataManager>().skill[0].Level;
 
-        dmg = (10f + 5f * (lv - 1)) / 100f;
-        dmg =  dmg = + ((dmg  / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+        dmg = 10f + 5f * (lv - 1);
+        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
     }
     void finalDamage()
     {
-        dmg =  60;
-        dmg =  dmg = + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+        dmg = 70;
+        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
 
     }
 }
+
+        //dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+        //    other.gameObject.GetComponent<Enemy>().GetDamage(dmg);
+        
+   

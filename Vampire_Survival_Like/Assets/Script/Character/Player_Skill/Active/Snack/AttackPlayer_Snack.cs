@@ -15,6 +15,7 @@ public class AttackPlayer_Snack : MonoBehaviour
     private float curtime;
     private float cooltime;
     private int ballcount;
+    public int bossnum;
     void Start()
     {
 
@@ -23,7 +24,7 @@ public class AttackPlayer_Snack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        if (other.CompareTag("Enemy"))
         {
             if (!isFinal)
             {
@@ -33,37 +34,76 @@ public class AttackPlayer_Snack : MonoBehaviour
             {
                 finalDamage();
             }
-            Debug.Log(damage);
+
             NumEnermy++;
-            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
+            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
+        if (other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
 
+            NumEnermy++;
 
-        //LV = Data.GetComponent<DataManager>().skill[6].Level;
-
-        //        dmg = 15f + 5f *(LV-1);
-        //        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-
-        //        other.GetComponent<Enemy>().GetDamage(dmg);
-        //        Debug.Log(dmg);
+            switch (bossnum)
+            {
+                case 1:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(dmg);
+                    break;
+                case 2:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(dmg);
+                    break;
+                case 3:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(dmg);
+                    break;
+                case 4:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(dmg);
+                    break;
+                case 5:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(dmg);
+                    break;
+                case 6:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(dmg);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
 
-    void NormalDamage()
-    {
 
-        LV = Data.GetComponent<DataManager>().skill[2].Level;
+    //LV = Data.GetComponent<DataManager>().skill[6].Level;
 
-        damage = 20 + 20 * (LV - 1);
-        damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-    }
-    void finalDamage()
-    {
-        damage = 65;
-        damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+    //        dmg = 15f + 5f *(LV-1);
+    //        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
 
-    }
+    //        other.GetComponent<Enemy>().GetDamage(dmg);
+    //        Debug.Log(dmg);
 
+
+
+void NormalDamage()
+{
+
+    LV = Data.GetComponent<DataManager>().skill[0].Level;
+
+    dmg = 20f + 20f * (LV - 1);
+    dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+}
+void finalDamage()
+{
+    dmg = 65;
+    dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
+}
+}
 
    
     //void SkillSet(float lv)
@@ -111,5 +151,5 @@ public class AttackPlayer_Snack : MonoBehaviour
     //            break;
     //    }
     //}
-}
+
 

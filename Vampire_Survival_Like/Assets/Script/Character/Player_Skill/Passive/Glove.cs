@@ -14,6 +14,6 @@ public class Glove : MonoBehaviour
     void Update()
     {
             LV = Data.GetComponent<DataManager>().skill[8].Level;
-            player.GetComponent<Player_State>().itemGetArea = 10 * LV;//%
+            player.GetComponent<Player_State>().itemGetArea = 10f+10f * (LV-1);//%
     }
 }

@@ -17,7 +17,7 @@ public class Bomb : MonoBehaviour
     public bool isFinal;
     private int NumEnermy; // 죽인 적수
     public float damage;
-
+    public int bossnum;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class Bomb : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Boss"))
+        if (other.CompareTag("Enemy"))
         {
             if (!isFinal)
             {
@@ -50,18 +50,61 @@ public class Bomb : MonoBehaviour
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }
-    
 
+        if (other.CompareTag("Boss"))
+        {
+            if (!isFinal)
+            {
+                NormalDamage();
+            }
+            else
+            {
+                finalDamage();
+            }
 
-    //LV = Data.GetComponent<DataManager>().skill[5].Level;
-            
-    //        dmg = 15 + 5 *(LV-1);
-    //        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-
-    //        other.GetComponent<Enemy>().GetDamage(dmg);
-    //        Debug.Log(dmg);
+            NumEnermy++;
+            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
         }
-    
+        switch (bossnum)
+        {
+
+            case 1:
+                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(damage);
+                break;
+            case 2:
+                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(damage);
+                break;
+            case 3:
+                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(damage);
+                break;
+            case 4:
+                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(damage);
+                break;
+            case 5:
+                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(damage);
+                break;
+            case 6:
+                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(damage);
+                break;
+            default:
+                break;
+        }
+
+
+        {
+
+        }
+
+
+        //LV = Data.GetComponent<DataManager>().skill[5].Level;
+
+        //        dmg = 15 + 5 *(LV-1);
+        //        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
+
+        //        other.GetComponent<Enemy>().GetDamage(dmg);
+        //        Debug.Log(dmg);
+    }
+
 
     void secondstep(){
         SpRender.sprite = img[1];
@@ -85,7 +128,7 @@ public class Bomb : MonoBehaviour
 
         lv = Data.GetComponent<DataManager>().skill[5].Level;
 
-        damage = 5+ 7.5f * (lv - 1);
+        damage = 5+ 7f * (lv - 1);
         damage = damage + ((damage / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
     }
     void finalDamage()
