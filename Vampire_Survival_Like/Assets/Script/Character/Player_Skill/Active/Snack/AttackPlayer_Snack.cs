@@ -26,6 +26,7 @@ public class AttackPlayer_Snack : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.gun);
             if (!isFinal)
             {
                 NormalDamage();
@@ -40,6 +41,7 @@ public class AttackPlayer_Snack : MonoBehaviour
         }
         if (other.CompareTag("Boss"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.gun);
             if (!isFinal)
             {
                 NormalDamage();

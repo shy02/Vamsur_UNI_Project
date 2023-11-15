@@ -38,6 +38,7 @@ public class Boss50 : MonoBehaviour
         if (current_boss_HP <= 0.01f)
         {
             Destroy(gameObject);
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern2);
         }
         attack_time += Time.deltaTime;
         float distance = Vector3.Distance(transform.position, target.position);
@@ -66,6 +67,7 @@ public class Boss50 : MonoBehaviour
                         break;
                     case 2: //4갈래 방향 레이저 발사(방향 바꾸고 2번)
                         isattack = true;
+                        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern4);
                         Instantiate(laser, bossPos.position, Quaternion.AngleAxis(0, Vector3.forward));
                         Instantiate(laser, bossPos.position, Quaternion.AngleAxis(90, Vector3.forward));
                         Invoke("laser_attack", 1f);
@@ -76,6 +78,7 @@ public class Boss50 : MonoBehaviour
                         break;
                     case 4: //랜덤한 위치로 포탄 발사
                         isattack = true;
+                        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern6);
                         Instantiate(cannon, bossPos.position, Quaternion.identity);
                         break;
                 }
@@ -88,16 +91,20 @@ public class Boss50 : MonoBehaviour
 
     public void GetDamage(float dmg)
     {
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern1);
         current_boss_HP = current_boss_HP - dmg;
     }
     void laser_attack()
     {
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern4);
         Instantiate(laser, bossPos.position, Quaternion.AngleAxis(45, Vector3.forward));
         Instantiate(laser, bossPos.position, Quaternion.AngleAxis(135, Vector3.forward));
     }
     void bullet_attack()
     {
-        Instantiate(d_bullet,spawnpoint[0].position, Quaternion.identity);
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
+        Instantiate(d_bullet, spawnpoint[0].position, Quaternion.identity);
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
         Instantiate(d_bullet, spawnpoint[1].position, Quaternion.identity);
     }
     private void OnCollisionStay2D(Collision2D other)

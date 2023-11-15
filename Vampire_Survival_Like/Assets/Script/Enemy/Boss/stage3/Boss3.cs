@@ -73,7 +73,6 @@ public class Boss3 : MonoBehaviour
                         float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
                         Instantiate(v_missile, bossPos.position, Quaternion.AngleAxis(angle - 90, Vector3.forward));
                         AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern4);
-
                         break;
                     case 3: //EMP �޽� ����
                         Debug.Log("�޽� ����");

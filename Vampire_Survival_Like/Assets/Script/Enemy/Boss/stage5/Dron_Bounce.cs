@@ -27,6 +27,7 @@ public class Dron_Bounce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern5);
             GameManager.instance.Player_damage(5);
         }
     }

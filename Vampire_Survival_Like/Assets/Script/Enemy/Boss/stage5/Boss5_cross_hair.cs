@@ -14,7 +14,7 @@ public class Boss5_cross_hair : MonoBehaviour
     bool is_attack;
     public bool isdamaged;
     public float damage;
-
+    bool isSound;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class Boss5_cross_hair : MonoBehaviour
         is_attack = false;
         isdamaged = false;
         collider.enabled = false;
+        isSound = false;
     }
 
     // Update is called once per frame
@@ -55,6 +56,11 @@ public class Boss5_cross_hair : MonoBehaviour
             {
                 //공격할때 이미지 변경
                 sprite.sprite = img[2];
+                if(!isSound)
+                {
+                    isSound = true;
+                    AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern7);
+                }
                 //공격
                 collider.enabled = true;
                 if (time > 3)
@@ -71,9 +77,10 @@ public class Boss5_cross_hair : MonoBehaviour
         sprite.sprite = img[0];
         is_attack = false;
         isdamaged = false;
+        isSound = false;
 
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null)

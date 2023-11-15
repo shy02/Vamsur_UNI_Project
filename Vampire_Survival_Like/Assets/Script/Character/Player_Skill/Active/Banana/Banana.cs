@@ -26,6 +26,7 @@ public class Banana : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.banana);
             if (!isFinal)
             {
                 NormalDamage();
@@ -40,6 +41,8 @@ public class Banana : MonoBehaviour
         }
         if (other.CompareTag("Boss"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.banana);
+
             if (!isFinal)
             {
                 NormalDamage();

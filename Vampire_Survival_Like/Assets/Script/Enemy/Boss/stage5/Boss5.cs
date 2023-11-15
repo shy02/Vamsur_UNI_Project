@@ -46,7 +46,8 @@ public class Boss5 : MonoBehaviour
                     }
                     break;
                 case 2:
-                        Instantiate(bomb, rigid.position, Quaternion.identity);
+                    AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern6);
+                    Instantiate(bomb, rigid.position, Quaternion.identity);
                     break;
             }
         }
@@ -74,10 +75,12 @@ public class Boss5 : MonoBehaviour
 
     public void GetDamage(float dmg)
     {
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.e_hit);
         current_boss_HP = current_boss_HP - dmg;
     }
     void spawn_bullet()
     {
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
         Instantiate(bullet, rigid.position, Quaternion.identity);
     }
     private void LateUpdate()

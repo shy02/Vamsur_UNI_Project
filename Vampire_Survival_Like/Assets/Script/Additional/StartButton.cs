@@ -8,5 +8,6 @@ public class StartButton : MonoBehaviour
     public void start()
     {
         SceneManager.LoadScene("Stage1");
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.select);
     }
 }

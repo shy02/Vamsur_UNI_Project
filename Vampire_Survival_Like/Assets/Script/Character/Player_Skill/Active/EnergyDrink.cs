@@ -16,6 +16,7 @@ public class EnergyDrink : MonoBehaviour
     {
         player = GameManager.instance.player;
         Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.drink);
     }
     void Update()
     {

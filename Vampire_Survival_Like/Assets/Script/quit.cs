@@ -6,5 +6,6 @@ public class quit : MonoBehaviour
 {
     public void Quit(){
         Application.Quit();
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.select);
     }
 }

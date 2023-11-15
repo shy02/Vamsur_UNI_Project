@@ -114,6 +114,7 @@ public class Bomb : MonoBehaviour
     }
     void final(){
         box.enabled=true;
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.bomb);
         Invoke("Erase", eraseTime);
     }
 

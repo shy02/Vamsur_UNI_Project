@@ -25,6 +25,7 @@ public class Book : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.book);
             if (!isFinal)
             {
                 NormalDamage();
@@ -40,6 +41,7 @@ public class Book : MonoBehaviour
 
         if (other.CompareTag("Boss"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.book);
             if (!isFinal)
             {
                 NormalDamage();

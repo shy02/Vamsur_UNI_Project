@@ -18,11 +18,12 @@ public class Find_Enermy : MonoBehaviour
     private int NumEnermy; // 죽인 적수
     public float lv;
     public int bossnum;
-
+    bool isSound;
     void Start()
     {
         Poppy_anime = GetComponent<Animator>();
         Data = GameObject.Find("Manager").transform.GetChild(2).gameObject;
+        isSound = false;
     }
 
     // Update is called once per frame
@@ -54,7 +55,12 @@ public class Find_Enermy : MonoBehaviour
     }
 
     private void Attack(){
-            Poppy_anime.SetBool("isMove", true);
+        if(!isSound)
+        {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.dog);
+            isSound = true;
+        }
+        Poppy_anime.SetBool("isMove", true);
             gameObject.GetComponent<Move_Pet>().enabled = false;
             gameObject.transform.position = Vector3.MoveTowards(transform.position, short_enemy.gameObject.transform.position, Speed * Time.deltaTime);
             if(timer >= 6f){
@@ -65,6 +71,7 @@ public class Find_Enermy : MonoBehaviour
 
     private void Return(){
         Poppy_anime.SetBool("isMove", false);
+        isSound = false;
         gameObject.transform.position = player.transform.position;
         gameObject.GetComponent<Move_Pet>().enabled = true;
     }

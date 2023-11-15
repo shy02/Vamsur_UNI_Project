@@ -28,6 +28,7 @@ public class Exp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.exp);
             Destroy(gameObject);
             GameManager.instance.EXP_UI.GetComponent<EXP_Bar_Slider>().Exp_Up();
         }

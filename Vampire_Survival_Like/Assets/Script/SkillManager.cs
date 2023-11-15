@@ -30,17 +30,23 @@ public class SkillManager : MonoBehaviour
     public void SelectOp1(){
         index = Upgrade.GetComponent<UpgradeUI>().GetRan(0);
         LevelUP(index);
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.select);
+
         SelectFunction();
     }
     public void SelectOp2(){
         index = Upgrade.GetComponent<UpgradeUI>().GetRan(1);
         LevelUP(index);
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.select);
+
         SelectFunction();
     }
     
     public void SelectOp3(){
         index = Upgrade.GetComponent<UpgradeUI>().GetRan(2);
         LevelUP(index);
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.select);
+
         SelectFunction();
     }
 

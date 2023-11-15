@@ -30,7 +30,7 @@ public class Boss4 : MonoBehaviour
 
     public bool is_fog;
     public bool rnd_use;
-
+    bool isSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +42,7 @@ public class Boss4 : MonoBehaviour
         rnd_use = true;
         fog.SetActive(false);
         current_boss_HP = boss_HP;
+        isSound = false;
     }
 
     // Update is called once per frame
@@ -112,6 +113,7 @@ public class Boss4 : MonoBehaviour
                             rnd_use = true;
                             cool_time = 0;
                             Instantiate(bullet, rigid.position, Quaternion.identity);
+                            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern1);
                             anime.SetBool("isShot",false);
                             break;
                         }
@@ -145,6 +147,11 @@ public class Boss4 : MonoBehaviour
         }
         else if (is_fog == true && fog_time < 5)
         {
+            if (!isSound)
+            {
+                AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
+                isSound = true;
+            }
             spriter.enabled = false;
             fog_time += Time.deltaTime;
             //애니메이션도 꺼야함 ㅇㅇ
@@ -155,6 +162,7 @@ public class Boss4 : MonoBehaviour
             spriter.enabled = true;
             fog_time = 0;
             fog.SetActive(false);
+            isSound = false;
         }
     }
 
@@ -172,6 +180,8 @@ public class Boss4 : MonoBehaviour
     {
         anime.SetBool("isKnife", true);
         area.enabled = true; // 공격범위 활성화
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern2);
+
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
         anime.SetBool("isKnife", false);

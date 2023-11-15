@@ -33,6 +33,7 @@ public class SmartBoom : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.bomb);
             if (!isFinal)
             {
                 NormalDamage();
@@ -47,6 +48,7 @@ public class SmartBoom : MonoBehaviour
         }
         if (other.CompareTag("Boss"))
         {
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.bomb);
             if (!isFinal)
             {
                 NormalDamage();

@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     AudioSource bgmPlayer;
 
 
-    [Header("#SFX")] 
+    [Header("#SFX")]
     public AudioClip[] sfxClips;
     public float sfxVolume;
     public int channels;
@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
     public enum Sfx
     {
-        select, c_dead, c_hit, exp, drink, firework, book, bomb, gun, e_hit, e_dead, pattern1, pattern2, pattern3, pattern4, pattern5, pattern6, pattern7,
+        select, c_dead, c_hit, exp, drink, firework, book, bomb, gun, banana, dog, e_hit, e_dead, pattern1, pattern2, pattern3, pattern4, pattern5, pattern6, pattern7, pattern8
     } // 효과음 열거
 
     void Awake()
@@ -57,21 +57,18 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBgm(bool isPlay)
     {
-       // Debug.Log(isPlay);
+        // Debug.Log(isPlay);
 
         if (isPlay)
         {
             bgmPlayer.Play();
             Debug.Log(isPlay);
-
         }
         else
         {
             bgmPlayer.Stop();
             Debug.Log(isPlay);
-
         }
-
     }
 
     public void EffectBgm(bool isPlay)

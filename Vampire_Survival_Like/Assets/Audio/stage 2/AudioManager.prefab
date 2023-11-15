@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmClip: {fileID: 8300000, guid: 8b31c203ca31bf2418ac53bc0f5cadb4, type: 3}
-  bgmVolume: 1
+  bgmVolume: 0.3
   sfxClips:
   - {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
   - {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
@@ -56,6 +56,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0f74ddff9ad0345009de443fea1bdb03, type: 3}
   - {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
   - {fileID: 8300000, guid: 6739c01659ad96d47987f4ddee226b36, type: 3}
+  - {fileID: 8300000, guid: 7007703a6f12b444ba1db92c6a232736, type: 3}
+  - {fileID: 8300000, guid: 7eb3f4579c6f1b64a967f236b62f27d0, type: 3}
   - {fileID: 8300000, guid: 3378e033fd2639743ae64954bef221bb, type: 3}
   - {fileID: 8300000, guid: 3c3493f8f4bb0bf4296b0dd0eacb20c6, type: 3}
   - {fileID: 8300000, guid: 5d1774874d03d844e92fa004c0b2a1a7, type: 3}
