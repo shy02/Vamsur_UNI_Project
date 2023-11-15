@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbec57f018080a45a2ef05fc286e92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tail: {fileID: 2642318326010907698, guid: 839e5630996f32245a463f20d7145f40, type: 3}
+  tail: {fileID: 4411188647484895925, guid: 0e4d8b387bc939443a60423707fc724f, type: 3}
   fog: {fileID: 1546902084016879854, guid: c903c152f9711654bb926a4c076604ef, type: 3}
   boss_HP: 0
   current_boss_HP: 0
