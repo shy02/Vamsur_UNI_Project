@@ -9,15 +9,18 @@ public class Boss2_Snake_tail : MonoBehaviour
     public float time;
     SpriteRenderer tail;
     Collider2D area;
+    bool issound;
     // Start is called before the first frame update
     void Start()
     {
         //꼬리 이미지 끄기
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern2);
         tail = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         tail.enabled = false;
 
         area = gameObject.GetComponent<Collider2D>();
         area.enabled = false;
+        issound = false;
     }
 
     // Update is called once per frame
@@ -29,10 +32,15 @@ public class Boss2_Snake_tail : MonoBehaviour
         {
             area.enabled = true;
             tail.enabled = true;
+            if (!issound)
+            {
+                AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
+                issound = true;
+            }
         }
 
         // 일정 시간후 삭제
-        if(time>del_time)
+        if (time>del_time)
         {
             Destroy(gameObject);
         }

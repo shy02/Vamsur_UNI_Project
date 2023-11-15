@@ -37,6 +37,7 @@ public class Stungun_Bullet : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+                AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern4);
                 anime.SetBool("isStun", true);
                 GameManager.instance.Player_damage(15);
                 p_speed = GameManager.instance.player.speed;

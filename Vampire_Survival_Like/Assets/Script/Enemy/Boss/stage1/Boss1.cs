@@ -30,8 +30,6 @@ public class Boss1 : MonoBehaviour
     void Start()
     {
         spriter = GetComponent<SpriteRenderer>();
-
-
         L_Point = GetComponentsInChildren<Transform>();
         bossPos = GetComponent<Rigidbody2D>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
@@ -48,6 +46,7 @@ public class Boss1 : MonoBehaviour
         bossPos.velocity = Vector2.zero;
         if (current_boss_HP <= 0.01f){
             GM.GetComponent<GameManager>().Survied();
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
             Destroy(gameObject);
         }
         timer += Time.deltaTime;
@@ -85,12 +84,16 @@ public class Boss1 : MonoBehaviour
                 isattack = true;
                 Debug.Log("stungun attack");
                 Instantiate(s_bullet, bossPos.position, Quaternion.identity);
+                AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
+
             }
 
             if (spawn_police_time >= 20)
             {
                 //쫄몹 소환
                 isattack = true;
+                AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern2);
+
                 Instantiate(Enemy_L, L_Point[1].position, Quaternion.identity);
                 Instantiate(Enemy_L, L_Point[2].position, Quaternion.identity);
                 spawn_police_time = 0;
@@ -98,11 +101,14 @@ public class Boss1 : MonoBehaviour
             attack_time = 0;
             isattack = false;
         }
+        spriter.flipX = target.position.x < bossPos.position.x;
+
     }
 
     IEnumerator atk_area()
     {
         area.enabled = true; // 공격범위 활성화
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern1);
         yield return new WaitForSeconds(2f); // 2초후 비활성화
         area.enabled = false;
     }
@@ -116,10 +122,11 @@ public class Boss1 : MonoBehaviour
     public void GetDamage(float dmg)
     {
         current_boss_HP = current_boss_HP - dmg;
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.e_hit);
+
     }
 
     private void LateUpdate()
     {
-        spriter.flipX = target.position.x < bossPos.position.x;
     }
 }

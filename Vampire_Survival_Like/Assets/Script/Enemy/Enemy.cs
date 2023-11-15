@@ -16,16 +16,13 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriter;
     Rigidbody2D rigid;
     
-    private void OnEnable()
-    {
-        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
-    }
     void Start()
     {
         _speed = speed;
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         gm = GameObject.Find("GameManager");
+        target = GameManager.instance.player.GetComponent<Rigidbody2D>();
     }
     
     private void OnCollisionStay2D(Collision2D other) {
@@ -45,14 +42,17 @@ public class Enemy : MonoBehaviour
         if(em_health <= 0)
         {
             Dead();
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.e_dead);
+
         }
 
     }
+    /*
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Bullet")) return;
     }
-
+    */
     public void Dead()
     {
         gm.GetComponent<GameManager>().DeadNum++;
@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour
     }
     public void GetDamage(float DMG){
         em_health = em_health - DMG;
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.e_hit);
     }
 
     private void Drop_Exp()

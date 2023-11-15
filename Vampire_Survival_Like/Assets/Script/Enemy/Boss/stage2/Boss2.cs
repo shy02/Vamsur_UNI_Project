@@ -92,6 +92,7 @@ public class Boss2 : MonoBehaviour
                     fog_attack(3);
                     Debug.Log("FoG");
                     attack_time = 0;
+                    AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern1);
                     break;
             }
             isattack = false;

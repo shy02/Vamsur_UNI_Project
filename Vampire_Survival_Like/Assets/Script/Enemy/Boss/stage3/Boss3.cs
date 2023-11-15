@@ -38,6 +38,7 @@ public class Boss3 : MonoBehaviour
         if (current_boss_HP <= 0.01f)
         {
             GameManager.instance.GetComponent<GameManager>().Survied();
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern2);
             Destroy(gameObject);
         }
         attack_time += Time.deltaTime;
@@ -49,6 +50,7 @@ public class Boss3 : MonoBehaviour
             Vector2 looking = target.position - bossPos.position;
             float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
             Instantiate(v_watercannon, bossPos.position, Quaternion.AngleAxis(angle - 90, Vector3.forward));
+            AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern6);
             colltime = 0;
         }
         if (attack_time >= 2 && isattack == false)
@@ -70,11 +72,14 @@ public class Boss3 : MonoBehaviour
                         Vector2 looking = target.position - bossPos.position;
                         float angle = Mathf.Atan2(looking.y, looking.x) * Mathf.Rad2Deg;
                         Instantiate(v_missile, bossPos.position, Quaternion.AngleAxis(angle - 90, Vector3.forward));
+                        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern4);
+
                         break;
                     case 3: //EMP �޽� ����
                         Debug.Log("�޽� ����");
                         GameManager.instance.SkillManager.SetActive(false);
                         Invoke("Skill_On", 2f);
+                        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern5);
                         break;
                 }
             }
@@ -89,6 +94,7 @@ public class Boss3 : MonoBehaviour
 
     public void GetDamage(float dmg)
     {
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern1);
         current_boss_HP = current_boss_HP - dmg;
         if (dmg_reduce >= 20)
         {
@@ -98,6 +104,8 @@ public class Boss3 : MonoBehaviour
     void Spawn_v_bullet()
     {
         Instantiate(v_bullet, bossPos.position, Quaternion.identity);
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
+
     }
     void Skill_On()
     {
