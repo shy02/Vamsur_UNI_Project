@@ -25,6 +25,7 @@ public class EnergyDrink : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            other.GetComponent<Enemy>().KnockBack();
             if (!isFinal)
             {
                 NormalDamage();
@@ -75,7 +76,6 @@ public class EnergyDrink : MonoBehaviour
             }
         }
 
-        other.GetComponent<Enemy>().KnockBack();
 
         lv = Data.GetComponent<DataManager>().skill[1].Level;
         dmg = 11f + 5f * (lv - 1);
