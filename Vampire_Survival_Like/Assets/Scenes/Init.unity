@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFinal: 0
   damage: 0
+  bossnum: 0
 --- !u!58 &19050677
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -653,6 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730f682ed450f7d46a98a771e6ca76f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagenum: 0
   skill:
   - id: 0
     name: "\uAD8C\uCD1D"
@@ -781,82 +783,14 @@ MonoBehaviour:
     SkillObject: {fileID: 2127492141}
     isFirst: 0
   final:
-  - id: 0
-    name: "\uB77C\uC774\uD50C"
-    explain: "\uAD8C\uCD1D\uC758 \uC9C4\uD654\uD615"
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 1
-    name: "\uC804\uD22C\uC2DD\uB7C9"
-    explain: "\uC5D0\uB108\uC9C0\uB4DC\uB9C1\uD06C\uC758 \uC9C4\uD654\uD615. \uC801
-      \uCC98\uCE58 \uC2DC \uCCB4\uB825\uC744 \uD761\uC218\uD558\uBA70 \uCCB4\uB825\uD761\uC218
-      \uC2DC \uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD569\uB2C8\uB2E4."
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 2
-    name: "\uBF08\uB2E4\uADC0"
-    explain: "\uAC04\uC2DD\uC758 \uC9C4\uD654\uD615. \uC801\uC5D0\uAC8C \uBC18\uC0AC
-      \uB370\uBBF8\uC9C0\uB97C \uC8FC\uBA70 \uD295\uACA8\uC838 \uB098\uC62C \uB54C
-      \uD3ED\uD30C \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 3
-    name: "\uC804\uACF5\uCC45"
-    explain: "\uCC45\uC758 \uC9C4\uD654\uD615. \uCC45\uC774 \uC0AC\uB77C\uC9C0\uC9C0
-      \uC54A\uC2B5\uB2C8\uB2E4."
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 4
-    name: "\uBBF8\uC0AC\uC77C"
-    explain: "\uD3ED\uC8FD\uC758 \uC9C4\uD654\uD615\u3002\uAC15\uB825\uD55C \uBBF8\uC0AC\uC77C\uB85C
-      \uACF5\uACA9\uD569\uB2C8\uB2E4."
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 0
-    name: "\uB514\uC9C0\uD138\uCE74\uBA54\uB77C"
-    explain: "\uD50C\uB808\uC774\uC5B4\uAC00 \uBCF4\uB294 \uBC29\uD5A5\uC73C\uB85C
-      \uCE74\uBA54\uB77C \uC154\uD130\uB97C \uCC0D\uC2B5\uB2C8\uB2E4. \uCC0D\uD78C
-      \uC801\uB4E4\uC740 \uC7A0\uC2DC\uB3D9\uC548 \uAE30\uC808\uB418\uACE0 \uAC15\uB825\uD55C
-      \uD53C\uD574\uB97C \uC785\uC2B5\uB2C8\uB2E4. "
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 0
-    name: "\uBF40\uC090"
-    explain: "\uC804\uD22C\uB825\uC774 \uAC15\uD574\uC9C4 \uBF40\uC090\uB2E4. "
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
-  - id: 0
-    name: "\uC9C0"
-    explain: "\uD50C\uB808\uC774\uC5B4\uAC00 \uB9F5 \uC804\uC5ED \uB79C\uB364\uC73C\uB85C
-      \uC9C0\uB8B0\uB97C \uB358\uC9D1\uB2C8\uB2E4. \uC9C0\uB8B0\uB97C \uBC1F\uC740
-      \uC801\uC740 \uAC15\uB825\uD55C \uD53C\uD574\uB97C \uC785\uACE0 \uBC1F\uC740
-      \uC790\uB9AC \uC8FC\uBCC0 \uC801\uC758 \uC18D\uB3C4\uAC00 \uC7A0\uC2DC \uB290\uB824\uC9D1\uB2C8\uB2E4."
-    skill_Icon: {fileID: 0}
-    finalObject: {fileID: 0}
-    Active: {fileID: 0}
-    Passive: {fileID: 0}
-    isFirst: 0
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &247332239
 Transform:
   m_ObjectHideFlags: 0
@@ -2945,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &426253194
 Transform:
   m_ObjectHideFlags: 0
@@ -2995,6 +2929,7 @@ GameObject:
   - component: {fileID: 456459822}
   - component: {fileID: 456459821}
   - component: {fileID: 456459820}
+  - component: {fileID: 456459823}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -3020,8 +2955,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: -600, y: 40}
+  m_AnchoredPosition: {x: 0, y: -64.094604}
+  m_SizeDelta: {x: -1200, y: 78.1892}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456459820
 MonoBehaviour:
@@ -3067,9 +3002,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1522602792}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: gameOver
+      - m_Target: {fileID: 456459823}
+        m_TargetAssemblyTypeName: GoInit, Assembly-CSharp
+        m_MethodName: restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3117,6 +3052,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456459818}
   m_CullTransparentMesh: 1
+--- !u!114 &456459823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456459818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad0d4d29f521dc4aaf33ba35237973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466070346
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,6 +4549,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &951357353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951357355}
+  - component: {fileID: 951357354}
+  m_Layer: 0
+  m_Name: Command
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &951357354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951357353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb90c47ee4437394e99a22bf1716c95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &951357355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951357353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 902.44617, y: 679.3822, z: -1.6236928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996166623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,7 +5851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1086414617
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5868,7 +5859,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086414616}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -6460,12 +6451,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 23
+    m_Font: {fileID: 12800000, guid: 732987906c0a56c47a16518952e7efe5, type: 3}
+    m_FontSize: 52
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 41
+    m_MaxSize: 55
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6749,6 +6740,7 @@ MonoBehaviour:
   Poppy_anime: {fileID: 0}
   isFinal: 0
   lv: 0
+  bossnum: 0
 --- !u!50 &1461788037
 Rigidbody2D:
   serializedVersion: 4
@@ -6892,6 +6884,7 @@ MonoBehaviour:
   DeadEnemyNum: {fileID: 932434013}
   Timer: {fileID: 0}
   DeadNum: 0
+  stagenum: 1
 --- !u!114 &1522602793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7665,6 +7658,7 @@ MonoBehaviour:
   dmg: 100
   isFinal: 0
   damage: 0
+  bossnum: 0
 --- !u!58 &1908742586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7716,8 +7710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 46.61}
-  m_SizeDelta: {x: -400, y: 100}
+  m_AnchoredPosition: {x: 0, y: 90.000015}
+  m_SizeDelta: {x: -1000, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966090556
 MonoBehaviour:

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject DeadEnemyNum;
     public GameObject Timer;
     public int DeadNum = 0;
-    private int stagenum = 2;
+    public int stagenum = 0;
 
     private bool isDangerous = false;
 
@@ -66,9 +66,9 @@ public void Survied(){
     Survied_UI.SetActive(true);
 }
 public void RestartClick(){
-    if(stagenum<=5){
-    SceneManager.LoadScene("Stage" + stagenum);
+    if(stagenum<5){
     stagenum++;
+    SceneManager.LoadScene("Stage" + stagenum);
     }
     else{
     SceneManager.LoadScene("Ending");
