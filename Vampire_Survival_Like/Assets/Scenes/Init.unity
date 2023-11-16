@@ -6875,7 +6875,7 @@ MonoBehaviour:
   SkillManager: {fileID: 602003150}
   DataManager: {fileID: 247332237}
   DeadEnemyNum: {fileID: 932434013}
-  Timer: {fileID: 0}
+  Timer: {fileID: 1330075945}
   DeadNum: 0
   stagenum: 1
 --- !u!114 &1522602793

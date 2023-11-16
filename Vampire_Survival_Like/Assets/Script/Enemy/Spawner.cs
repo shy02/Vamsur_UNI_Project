@@ -8,14 +8,14 @@ public class Spawner : MonoBehaviour
    // public GameObject Boss;
     public int enemy_count=0;
     float timer;
+    int level;
     public GameObject parent;
     public GameObject boss_obj;
     public GameObject GM;
     public GameObject[] enemyPrefab;
     public GameObject[] eletePrefab;
     public GameObject[] bossPrefab;
-    List<GameObject>[] pools; 
-    List<GameObject>[] b_pools;
+    public float[] spawnTime = new float[5];
 
     private Player player;
     void Awake()
@@ -23,22 +23,17 @@ public class Spawner : MonoBehaviour
         spawnPoint = GetComponentsInChildren<Transform>();
         GM = GameObject.Find("DontDestroyOnLoad").transform.GetChild(1).transform.GetChild(0).gameObject;
         player = GM.GetComponent<GameManager>().player;
-        pools = new List<GameObject>[enemyPrefab.Length];
-        b_pools=new List<GameObject>[bossPrefab.Length];
-
-        for (int index = 0; index < pools.Length; index++)
+        for(int i = 0; i < 5; i++)
         {
-            pools[index] = new List<GameObject>();
-        }
-        for(int index =0; index<b_pools.Length;index++){
-            b_pools[index]=new List<GameObject>();
+            spawnTime[i] = (float)1 / (i + 1);
         }
     }
     void Update()
     {
         gameObject.transform.position = player.transform.position;
         timer += Time.deltaTime;
-        if (timer > 1f)
+        level = Mathf.FloorToInt(GameManager.instance.Timer.GetComponent<Timer_Manager>().GameTime_H / 6f);
+        if (timer > spawnTime[level])
         {
             timer = 0;
             enemy_count += 1;

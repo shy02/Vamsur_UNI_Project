@@ -52,10 +52,8 @@ public class Boss2 : MonoBehaviour
         Vector2 next = director.normalized * speed * Time.deltaTime;
 
         //보스 이동 + 거리 제한
-        if (Vector3.Distance(transform.position, target.position) > 10)
-        {
-            rigid.MovePosition(rigid.position + next);
-        }
+        speed = Vector3.Distance(transform.position, target.position) / 2f;
+        rigid.MovePosition(rigid.position + next);
 
         //공격 변수
         random_ = Random.Range(1, 4);

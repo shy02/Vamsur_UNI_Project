@@ -55,11 +55,9 @@ public class Boss1 : MonoBehaviour
 
         //보스 이동
         Vector2 director = target.position - bossPos.position;
-        if (Vector3.Distance(transform.position, target.position) > 7)
-        {
-            Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
-            bossPos.MovePosition(bossPos.position + next);
-        }
+        speed = Vector3.Distance(transform.position, target.position) / 2f;
+        Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
+        bossPos.MovePosition(bossPos.position + next);
 
         //공격범위 이동
         transform.GetChild(2).localPosition = director.normalized;

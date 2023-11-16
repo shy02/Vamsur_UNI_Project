@@ -43,6 +43,7 @@ public class Boss50 : MonoBehaviour
         attack_time += Time.deltaTime;
         float distance = Vector3.Distance(transform.position, target.position);
 
+        speed = Vector3.Distance(transform.position, target.position) / 2f;
         Vector2 director = target.position - bossPos.position;
         Vector2 next = director.normalized * speed * Time.deltaTime;
         if (Vector3.Distance(transform.position, target.position) > 8)
