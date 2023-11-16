@@ -33,16 +33,19 @@ public class Spawner : MonoBehaviour
         gameObject.transform.position = player.transform.position;
         timer += Time.deltaTime;
         level = Mathf.FloorToInt(GameManager.instance.Timer.GetComponent<Timer_Manager>().GameTime_H / 6f);
-        if (timer > spawnTime[level])
+        if (GameManager.instance.bossnum != 6)
         {
-            timer = 0;
-            enemy_count += 1;
-            Spawn();
-        }
-        if (enemy_count >= 20)
-        {
-            Spawn_Elete();
-            enemy_count = 0;
+            if (timer > spawnTime[level])
+            {
+                timer = 0;
+                enemy_count += 1;
+                Spawn();
+            }
+            if (enemy_count >= 20)
+            {
+                Spawn_Elete();
+                enemy_count = 0;
+            }
         }
     }
 
@@ -58,7 +61,15 @@ public class Spawner : MonoBehaviour
     }
     public void Spawn_Boss()
     {
-        GameObject boss = Instantiate(bossPrefab[0],spawnPoint[spawnPoint.Length-1].position,Quaternion.identity,transform);
-        boss.transform.SetParent(boss_obj.transform);
+        if (GameManager.instance.bossnum == 6)
+        {
+            GameObject boss = Instantiate(bossPrefab[1], spawnPoint[spawnPoint.Length - 1].position, Quaternion.identity, transform);
+            boss.transform.SetParent(boss_obj.transform);
+        }
+        else
+        {
+            GameObject boss = Instantiate(bossPrefab[0], spawnPoint[spawnPoint.Length - 1].position, Quaternion.identity, transform);
+            boss.transform.SetParent(boss_obj.transform);
+        }
     }
 }

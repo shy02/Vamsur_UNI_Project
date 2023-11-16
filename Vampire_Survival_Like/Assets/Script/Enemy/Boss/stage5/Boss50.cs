@@ -37,6 +37,7 @@ public class Boss50 : MonoBehaviour
     {
         if (current_boss_HP <= 0.01f)
         {
+            GameManager.instance.bossisdead = true;
             Destroy(gameObject);
             AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern2);
         }

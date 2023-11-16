@@ -21,8 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject DeadEnemyNum;
     public GameObject Timer;
     public int DeadNum = 0;
+    public int bossnum = 1;
     public int stagenum = 1;
 
+    public bool bossisdead = false;
     private bool isDangerous = false;
 
     void Awake()
@@ -45,9 +47,21 @@ public class GameManager : MonoBehaviour
             isDangerous = false;
             Danger_UI.GetComponent<Dangerous_UI>().NoDanger();
         }
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             gameObject.GetComponent<Pause_>().Pause();
+        }
+        if (bossisdead)
+        {
+            bossisdead = false;
+            OffBlock();
+            Timer.GetComponent<Timer_Manager>().Bossishere = false;
+            if(bossnum == 5)
+            {
+                Enemy.SetActive(true);
+                Timer.GetComponent<Timer_Manager>().enabled = true;
+            }
+            bossnum += 1;
         }
     }
 
@@ -80,6 +94,7 @@ public class GameManager : MonoBehaviour
         {
             stagenum++;
             SceneManager.LoadScene("Stage" + stagenum);
+            Timer.GetComponent<Timer_Manager>().enabled = true;
         }
         else
         {

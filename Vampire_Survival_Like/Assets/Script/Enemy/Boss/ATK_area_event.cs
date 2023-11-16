@@ -16,8 +16,9 @@ public class ATK_area_event : MonoBehaviour
         if (collision.GetComponent<Collider2D>().gameObject.CompareTag("Player"))
         {
             GameManager.instance.Player_damage(15f);
+            disable();
+
         }
-        disable();
     }
 
     void disable()

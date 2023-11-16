@@ -40,6 +40,7 @@ public class Boss2 : MonoBehaviour
     {
         if (current_boss_HP <= 0.01f)
         {
+            GameManager.instance.bossisdead = true;
             GameManager.instance.GetComponent<GameManager>().Survied();
             Destroy(gameObject);
         }

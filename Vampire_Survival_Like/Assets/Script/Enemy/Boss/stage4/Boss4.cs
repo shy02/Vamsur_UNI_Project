@@ -20,7 +20,7 @@ public class Boss4 : MonoBehaviour
 
     public float fog_time = 0;
     public float cool_time;
-    float speed = 1;
+    float speed = 11;
     public int fog_count = 0;
     public int random_;
     public float distance;
@@ -50,6 +50,7 @@ public class Boss4 : MonoBehaviour
     {
         if (current_boss_HP <= 0.01f)
         {
+            GameManager.instance.bossisdead = true;
             GameManager.instance.GetComponent<GameManager>().Survied();
             Destroy(gameObject);
         }

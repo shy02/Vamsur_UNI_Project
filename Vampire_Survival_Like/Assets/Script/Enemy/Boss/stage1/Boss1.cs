@@ -45,6 +45,7 @@ public class Boss1 : MonoBehaviour
     {
         bossPos.velocity = Vector2.zero;
         if (current_boss_HP <= 0.01f){
+            GameManager.instance.bossisdead = true;
             GM.GetComponent<GameManager>().Survied();
             AudioManager.A_instance.PlaySfx(AudioManager.Sfx.pattern3);
             Destroy(gameObject);

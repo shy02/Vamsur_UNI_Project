@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83bd980fd0786647aede6da72aaf5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 0}
+  laser: {fileID: 6910673956657094733, guid: a1b3f0e99ac67e64ab83d9c7eaa17754, type: 3}
   d_bullet: {fileID: 123243078841057217, guid: e0dead41dac09f546b16e51996e937be, type: 3}
   cannon: {fileID: 8435505829613662209, guid: ef53522a489927846ab8aff154fb7a23, type: 3}
   bounce: {fileID: 5652850745866846480, guid: df19c222cc7d8ad428a34492e0110553, type: 3}

@@ -483,8 +483,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604613472}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20328,9 +20328,16 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 5663777831743332795, guid: 7924cce06791d1c4694f0e3f48401469, type: 3}
   - {fileID: 4377912915198964586, guid: 62057744012fa4646a1b92099b497795, type: 3}
-  eletePrefab: []
+  eletePrefab:
+  - {fileID: 1882503196277489394, guid: f7c2f0e9c58b053478cf5bbf82dfa283, type: 3}
   bossPrefab:
   - {fileID: 1316198157688271814, guid: 4298d96feff10da43a26ed7e123740d5, type: 3}
+  spawnTime:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!4 &1063835370
 Transform:
   m_ObjectHideFlags: 0
