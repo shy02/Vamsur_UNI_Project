@@ -66,8 +66,10 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            if(bgmPlayer){//bgmplayer가 null값일 경우 실행하지 않음
             bgmPlayer.Stop();
             Debug.Log(isPlay);
+            }
         }
     }
 

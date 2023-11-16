@@ -22,13 +22,13 @@ public class BanaSpawner : MonoBehaviour
         {
             if (Bana_num < maxNum)
             {
+                Bana_num++;
                 GameObject clone = Instantiate(Banana_prefab, new Vector3(Random.Range(p1.position.x, p2.position.x), Random.Range(p1.position.y, p2.position.y), Random.Range(p1.position.z, p2.position.z)), Quaternion.identity);
                 clone.transform.parent = this.transform;
                 SkillSet(DataManager.GetComponent<DataManager>().skill[7].Level, clone);
                 
                 clone.name = "Banana";
                 clone.transform.localScale = Vector3.one * 1f;
-                Bana_num++;
             }
             time = 0f;
         }
@@ -57,9 +57,7 @@ public class BanaSpawner : MonoBehaviour
         }
 
         coolTime = 4.5f - 0.21f * (lv -1);
-        dmg = 20f + 5.7f * (lv-1);
         slowrate = 30f + 3f * (lv-1);
-        ba_clone.GetComponent<Banana>().Damage = dmg;
         ba_clone.GetComponent<Banana>().slowFactor = slowrate;
     }
     public void minusNum()

@@ -23,7 +23,6 @@ public class DataManager : MonoBehaviour
 
     [SerializeField]
     public Skills[] skill;
-    public FinalSkill[] final;
 
     void Update(){
         this.stagenum = GameManager.instance.stagenum;

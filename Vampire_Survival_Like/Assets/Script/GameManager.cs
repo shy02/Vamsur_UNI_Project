@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject DeadEnemyNum;
     public GameObject Timer;
     public int DeadNum = 0;
-    public int stagenum = 0;
+    public int stagenum = 1;
 
     private bool isDangerous = false;
 

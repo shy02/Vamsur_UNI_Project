@@ -22,8 +22,9 @@ public class EnergyDrink : MonoBehaviour
     {
         transform.position = player.transform.position;
     }
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
+        //일반 적 && 엘리트일 경우
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().KnockBack();
@@ -39,6 +40,8 @@ public class EnergyDrink : MonoBehaviour
             NumEnermy++;
             other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(dmg);
         }
+
+        //보스일 경우
         if (other.CompareTag("Boss"))
         {
             if (!isFinal)
@@ -76,22 +79,11 @@ public class EnergyDrink : MonoBehaviour
                     break;
             }
         }
-
-
-        lv = Data.GetComponent<DataManager>().skill[1].Level;
-        dmg = 11f + 5f * (lv - 1);
-        dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
-
-        other.GetComponent<Enemy>().GetDamage(dmg);
-
-
-
-
+    }    
         void NormalDamage()
         {
-
-            lv = Data.GetComponent<DataManager>().skill[0].Level;
-
+            
+            lv = Data.GetComponent<DataManager>().skill[1].Level;
             dmg = 50f + 50f * (lv - 1);
             dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
         }
@@ -101,5 +93,4 @@ public class EnergyDrink : MonoBehaviour
             dmg = dmg + ((dmg / 100) * GameManager.instance.player.gameObject.GetComponent<Player_State>().Force);
 
         }
-    }
 }

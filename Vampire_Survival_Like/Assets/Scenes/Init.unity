@@ -722,10 +722,10 @@ MonoBehaviour:
       \uBC1F\uC740 \uC801\uC740 \uAC15\uB825\uD55C \uD53C\uD574\uB97C \uC785\uACE0
       \uBC1F\uC740 \uC790\uB9AC \uC8FC\uBCC0 \uC801\uC758 \uC18D\uB3C4\uAC00 \uC7A0\uC2DC
       \uB290\uB824\uC9D1\uB2C8\uB2E4."
-    Level: 1
+    Level: 0
     skill_Icon: {fileID: 1485565839, guid: c691ebb171f30f645a09159d43c7104a, type: 3}
     SkillObject: {fileID: 426253193}
-    isFirst: 1
+    isFirst: 0
   - id: 8
     name: "\uC7A5\uAC11"
     explain: "\uC5F0\uC0AC\uC18D\uB3C4 \uC99D\uAC00"
@@ -782,15 +782,6 @@ MonoBehaviour:
     skill_Icon: {fileID: 1701727871, guid: c691ebb171f30f645a09159d43c7104a, type: 3}
     SkillObject: {fileID: 2127492141}
     isFirst: 0
-  final:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &247332239
 Transform:
   m_ObjectHideFlags: 0
@@ -3632,6 +3623,7 @@ Transform:
   - {fileID: 935038323}
   - {fileID: 1086414617}
   - {fileID: 1004726816}
+  - {fileID: 951357355}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4578,6 +4570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb90c47ee4437394e99a22bf1716c95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveSkill: []
 --- !u!4 &951357355
 Transform:
   m_ObjectHideFlags: 0
@@ -4585,13 +4578,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951357353}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 902.44617, y: 679.3822, z: -1.6236928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 661904528}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996166623
 GameObject:
