@@ -63,7 +63,7 @@ public class gun : MonoBehaviour
             }
 
             NumEnermy++;
-            bossnum = Data.GetComponent<DataManager>().stagenum;
+            bossnum = GameManager.instance.bossnum;
             switch (bossnum)
             {
                 case 1:

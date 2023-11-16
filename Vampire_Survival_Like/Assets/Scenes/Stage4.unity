@@ -20331,7 +20331,7 @@ MonoBehaviour:
   eletePrefab:
   - {fileID: 1882503196277489394, guid: f7c2f0e9c58b053478cf5bbf82dfa283, type: 3}
   bossPrefab:
-  - {fileID: 1316198157688271814, guid: 4298d96feff10da43a26ed7e123740d5, type: 3}
+  - {fileID: 1004429518503900645, guid: 4298d96feff10da43a26ed7e123740d5, type: 3}
   spawnTime:
   - 0
   - 0
