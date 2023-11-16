@@ -218,7 +218,7 @@ MonoBehaviour:
   area: {fileID: 3001167459242122070}
   s_bullet: {fileID: 8329358929289875004, guid: 3d2146464444bf44a94c2f952cf640ff, type: 3}
   Enemy_L: {fileID: 4844167076624571308, guid: 35c7d0e4ddc60bd43b5a9679070d0971, type: 3}
-  boss_HP: 0
+  boss_HP: 3000
   current_boss_HP: 0
   spawn_police_time: 0
   attack_range: 4

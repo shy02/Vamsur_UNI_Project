@@ -20,7 +20,7 @@ public class Boss4 : MonoBehaviour
 
     public float fog_time = 0;
     public float cool_time;
-    float speed = 11;
+    float speed = 6;
     public int fog_count = 0;
     public int random_;
     public float distance;

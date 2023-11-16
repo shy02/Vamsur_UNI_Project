@@ -166,7 +166,7 @@ MonoBehaviour:
   spawnpoint:
   - {fileID: 4458086080773525772}
   - {fileID: 1778251201771144184}
-  boss_HP: 200
+  boss_HP: 30000
   current_boss_HP: 0
 --- !u!1 &5325192119182798708
 GameObject:

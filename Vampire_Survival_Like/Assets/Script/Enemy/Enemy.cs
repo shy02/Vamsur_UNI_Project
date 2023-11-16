@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float em_health = 10f;
     // Start is called before the first frame update
-    public float speed = 2;
+    public float Original_speed = 2;
     public float _speed;
     private GameObject gm;
     private Rigidbody2D target;
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
-        _speed = speed;
+        _speed = Original_speed;
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         gm = GameObject.Find("GameManager");
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     {
         Vector2 director = target.position - rigid.position;
 
-        Vector2 next = director.normalized * speed * Time.fixedDeltaTime;
+        Vector2 next = director.normalized * Original_speed * Time.fixedDeltaTime;
 
         rigid.MovePosition(rigid.position + next);
         target.velocity = Vector2.zero;
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
 
     public void Slow(float slowFactor)      //바나나밟으면 속도 감소 (추가)
     {
-        speed *= (slowFactor/100);
+        Original_speed *= (slowFactor/100);
         Invoke("ReturnSpeed", 2f+((2f/100)*GameManager.instance.player.GetComponent<Player_State>().WeaphoneTime));
     }
     public void KnockBack(){
@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
     }
     public void ReturnSpeed()
     {
-        speed = _speed;
+        Original_speed = _speed;
     }
 
 }

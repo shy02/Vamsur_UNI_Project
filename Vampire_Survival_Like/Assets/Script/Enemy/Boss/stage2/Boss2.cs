@@ -108,6 +108,7 @@ public class Boss2 : MonoBehaviour
     }
     public void GetDamage(float dmg)
     {
+        AudioManager.A_instance.PlaySfx(AudioManager.Sfx.e_hit);
         current_boss_HP = current_boss_HP - dmg;
     }
 

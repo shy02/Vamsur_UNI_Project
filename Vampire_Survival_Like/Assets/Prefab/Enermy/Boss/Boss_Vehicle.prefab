@@ -203,5 +203,5 @@ MonoBehaviour:
   v_bullet: {fileID: 123243078841057217, guid: b55d185debdde2142b3e131de620f2b6, type: 3}
   v_missile: {fileID: 4232454159979818302, guid: 98302a5bf06c4034ab66e3b8b8a494e5, type: 3}
   v_watercannon: {fileID: 5449478084856187074, guid: 69d56a401ed27604095c790e7b115366, type: 3}
-  boss_HP: 500
+  boss_HP: 13000
   current_boss_HP: 0

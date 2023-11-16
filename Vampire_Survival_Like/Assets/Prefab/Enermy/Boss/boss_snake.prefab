@@ -172,6 +172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tail: {fileID: 4411188647484895925, guid: 0e4d8b387bc939443a60423707fc724f, type: 3}
   fog: {fileID: 1546902084016879854, guid: c903c152f9711654bb926a4c076604ef, type: 3}
-  boss_HP: 0
+  boss_HP: 7000
   current_boss_HP: 0
   cooltime: 3

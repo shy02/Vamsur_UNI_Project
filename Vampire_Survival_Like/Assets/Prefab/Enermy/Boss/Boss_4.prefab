@@ -174,7 +174,7 @@ MonoBehaviour:
   random_: 0
   distance: 0
   i_distance: 0
-  boss_HP: 400
+  boss_HP: 20000
   current_boss_HP: 0
   is_fog: 0
   rnd_use: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3561688887259862262}
   - component: {fileID: -5885408418311993669}
   m_Layer: 8
-  m_Name: what_Five_boss
+  m_Name: REAL_REAL_FINAL_BOSS
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   bomb: {fileID: 4232454159979818302, guid: 98302a5bf06c4034ab66e3b8b8a494e5, type: 3}
   sniper: {fileID: 3850431346017149689, guid: 6c28644009429ba46b46ceb1c3ecb764, type: 3}
   cool: 0
-  boss_HP: 0
+  boss_HP: 50000
   current_boss_HP: 0
 --- !u!61 &-5885408418311993669
 BoxCollider2D:
