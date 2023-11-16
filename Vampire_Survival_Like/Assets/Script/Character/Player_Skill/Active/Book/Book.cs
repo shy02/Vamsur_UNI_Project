@@ -52,31 +52,31 @@ public class Book : MonoBehaviour
             }
 
             NumEnermy++;
-            other.GetComponent<Collider2D>().gameObject.GetComponent<Enemy>().GetDamage(damage);
-        }
-        switch (bossnum)
-        {
+            bossnum = GameManager.instance.bossnum;
+            switch (bossnum)
+            {
 
-            case 1:
-                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(damage);
-                break;
-            case 2:
-                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(damage);
-                break;
-            case 3:
-                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(damage);
-                break;
-            case 4:
-                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(damage);
-                break;
-            case 5:
-                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(damage);
-                break;
-            case 6:
-                other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(damage);
-                break;
-            default:
-                break;
+                case 1:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(damage);
+                    break;
+                case 2:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss2>().GetDamage(damage);
+                    break;
+                case 3:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss3>().GetDamage(damage);
+                    break;
+                case 4:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss4>().GetDamage(damage);
+                    break;
+                case 5:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss50>().GetDamage(damage);
+                    break;
+                case 6:
+                    other.GetComponent<Collider2D>().gameObject.GetComponent<Boss5>().GetDamage(damage);
+                    break;
+                default:
+                    break;
+            }
         }
 
 

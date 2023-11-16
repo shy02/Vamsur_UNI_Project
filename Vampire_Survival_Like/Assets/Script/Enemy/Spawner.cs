@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
-   // public GameObject Boss;
     public int enemy_count=0;
     float timer;
     int level;
@@ -16,6 +15,7 @@ public class Spawner : MonoBehaviour
     public GameObject[] eletePrefab;
     public GameObject[] bossPrefab;
     public float[] spawnTime = new float[5];
+    public bool isbossspawn=false;
 
     private Player player;
     void Awake()
@@ -30,10 +30,11 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
+        isbossspawn = GameManager.instance.bossisdead;
         gameObject.transform.position = player.transform.position;
         timer += Time.deltaTime;
         level = Mathf.FloorToInt(GameManager.instance.Timer.GetComponent<Timer_Manager>().GameTime_H / 6f);
-        if (GameManager.instance.bossnum != 6)
+        if (GameManager.instance.bossnum != 6||!isbossspawn)
         {
             if (timer > spawnTime[level])
             {

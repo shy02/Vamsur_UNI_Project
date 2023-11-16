@@ -10,6 +10,7 @@ public class Smart : MonoBehaviour
     private int NumEnermy; // 죽인 적수
     private float timer;
     private float lv;
+    public int bossnum;
     private GameObject Data;
     
 

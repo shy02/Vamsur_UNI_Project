@@ -35,7 +35,6 @@ public class Boss1 : MonoBehaviour
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         GM = GameObject.Find("Manager").transform.GetChild(0).gameObject;
 
-        boss_HP = 200;
         current_boss_HP = boss_HP;
         area.enabled = false; // 공격 범위 비활성화
     }

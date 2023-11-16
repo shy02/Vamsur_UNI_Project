@@ -11,7 +11,7 @@ public class Banana : MonoBehaviour
     public float Damage;
     private float lv;
     public bool isFinal;
-    public int stage = 1;
+    public int bossnum;
     private DataManager data;
 
     void Start()
@@ -51,7 +51,8 @@ public class Banana : MonoBehaviour
             {
                 finalDamage();
             }
-            switch (stage)
+            bossnum = GameManager.instance.bossnum;
+            switch (bossnum)
             {
                 case 1:
                     other.GetComponent<Collider2D>().gameObject.GetComponent<Boss1>().GetDamage(Damage);

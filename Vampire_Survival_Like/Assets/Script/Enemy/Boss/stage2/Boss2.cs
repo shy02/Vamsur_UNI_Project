@@ -31,7 +31,6 @@ public class Boss2 : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
-        boss_HP = 200;
         current_boss_HP = boss_HP;
     }
 

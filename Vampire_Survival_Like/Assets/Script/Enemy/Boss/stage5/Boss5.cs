@@ -15,7 +15,6 @@ public class Boss5 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boss_HP = 500;
         current_boss_HP = boss_HP;
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();

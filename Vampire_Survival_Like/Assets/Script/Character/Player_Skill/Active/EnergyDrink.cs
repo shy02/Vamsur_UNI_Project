@@ -54,7 +54,7 @@ public class EnergyDrink : MonoBehaviour
             }
 
             NumEnermy++;
-
+            bossnum = GameManager.instance.bossnum;
             switch (bossnum)
             {
                 case 1:

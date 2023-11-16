@@ -4791,7 +4791,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.0625, y: 0.0625, z: 0}
   m_MaxChunkCount: 16
@@ -6235,7 +6235,7 @@ MonoBehaviour:
   TimeText: {fileID: 1330075948}
   Timer_UI: {fileID: 1330075945}
   GM: {fileID: 1522602791}
-  Spawner_Boss: {fileID: 0}
+  Spawner: {fileID: 0}
   bossnum: 0
   Bossishere: 0
 --- !u!114 &1330075948
@@ -6877,7 +6877,9 @@ MonoBehaviour:
   DeadEnemyNum: {fileID: 932434013}
   Timer: {fileID: 1330075945}
   DeadNum: 0
+  bossnum: 1
   stagenum: 1
+  bossisdead: 0
 --- !u!114 &1522602793
 MonoBehaviour:
   m_ObjectHideFlags: 0

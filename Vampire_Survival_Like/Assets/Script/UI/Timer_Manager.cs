@@ -10,8 +10,9 @@ public class Timer_Manager : MonoBehaviour
     public Text TimeText;
     public GameObject Timer_UI;
     public GameObject GM;
-    public GameObject Spawner_Boss;
+    public GameObject Spawner;
     public int bossnum;
+    int spawn_enemy;
     public bool Bossishere = false;
     
     void Start()
@@ -27,53 +28,36 @@ public class Timer_Manager : MonoBehaviour
         bossnum = GameManager.instance.bossnum;
         if (GameTime_H == 6 && !Bossishere && bossnum == 1)
         {
-            Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            GameManager.instance.Enemy.SetActive(false);
-            GM.GetComponent<GameManager>().OnBlock();
-            Bossishere = true;
+            spawnBoss();
         }
 
         if (GameTime_H == 12 && !Bossishere && bossnum == 2)
         {
-            Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-            Bossishere = true;
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            GameManager.instance.Enemy.SetActive(false);
-            GM.GetComponent<GameManager>().OnBlock();
-            Bossishere = true;
+            spawnBoss();
         }
         if (GameTime_H == 18 && !Bossishere && bossnum == 3)
         {
-            Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            GameManager.instance.Enemy.SetActive(false);
-            GM.GetComponent<GameManager>().OnBlock();
-            Bossishere = true;
+            spawnBoss();
         }
         if (GameTime_H == 24 && !Bossishere && bossnum == 4)
         {
-            Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            GameManager.instance.Enemy.SetActive(false);
-            GM.GetComponent<GameManager>().OnBlock();
-            Bossishere = true;
+            spawnBoss();
         }
         if (GameTime_H == 27 && !Bossishere && bossnum == 5)
         {
-            Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            GameManager.instance.Enemy.SetActive(false);
-            GM.GetComponent<GameManager>().OnBlock();
-            Bossishere = true;
+            spawnBoss();
         }
         if (GameTime_H == 30 && !Bossishere && bossnum == 6)
         {
-            Spawner_Boss.GetComponent<Spawner>().Spawn_Boss();
-            gameObject.GetComponent<Timer_Manager>().enabled = false;
-            GameManager.instance.Enemy.SetActive(false);
-            GM.GetComponent<GameManager>().OnBlock();
-            Bossishere = true;
+            spawnBoss();
+        }
+        if (Bossishere)
+        {
+            spawn_enemy = GameManager.instance.Enemy.transform.childCount;
+            for (int i = 0; i < spawn_enemy; i++)
+            {
+                Destroy(GameManager.instance.Enemy.transform.GetChild(i).gameObject);
+            }
         }
         GameTime_sec += Time.deltaTime;
         if(GameTime_sec >= 60f){
@@ -83,5 +67,14 @@ public class Timer_Manager : MonoBehaviour
         
         TimeText.text = string.Format("{0:D2}:{1:D2}",GameTime_H,(int)GameTime_sec);
         
+    }
+    void spawnBoss()
+    {
+        Spawner.GetComponent<Spawner>().Spawn_Boss();
+        gameObject.GetComponent<Timer_Manager>().enabled = false;
+        GameManager.instance.Enemy.SetActive(false);
+        Spawner.SetActive(false);
+        GM.GetComponent<GameManager>().OnBlock();
+        Bossishere = true;
     }
 }

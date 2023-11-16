@@ -24,7 +24,7 @@ public class InitStage : MonoBehaviour
 
         player.transform.position = new Vector3(0, 0, 0);
         GameManager.instance.Player_HP = 100f;
-        timer.GetComponent<Timer_Manager>().Spawner_Boss = Spawner;
+        timer.GetComponent<Timer_Manager>().Spawner = Spawner;
         DDOL.transform.GetChild(4).gameObject.SetActive(false);
         Block.SetActive(false);
         GameManager.instance.Enemy = enemy;

@@ -15,7 +15,7 @@ public class Boss3 : MonoBehaviour
     public GameObject v_missile;
     public GameObject v_watercannon;
 
-    public float boss_HP=500;
+    public float boss_HP;
     public float current_boss_HP;
     bool isattack = false;
     float attack_time;

@@ -25,7 +25,7 @@ public class Boss4 : MonoBehaviour
     public int random_;
     public float distance;
     public int i_distance;
-    public float boss_HP=400;
+    public float boss_HP;
     public float current_boss_HP;
 
     public bool is_fog;

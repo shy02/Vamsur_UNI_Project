@@ -17,7 +17,7 @@ public class Boss50 : MonoBehaviour
     public GameObject bounce;
     public Transform[] spawnpoint;
 
-    public float boss_HP = 200;
+    public float boss_HP;
     public float current_boss_HP;
     bool isattack = false;
     float attack_time;
