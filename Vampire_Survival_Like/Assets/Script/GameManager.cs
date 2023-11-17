@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Ending");
+            EndingSelect.Endinginstance.endingSelct();
         }
 
     }

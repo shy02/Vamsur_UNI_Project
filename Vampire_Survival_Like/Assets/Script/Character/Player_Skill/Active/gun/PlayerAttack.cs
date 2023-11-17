@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
             }
             for (int i = 0; i < ballcount; i++)
             {
-                Invoke("shot", 0.1f);
+                Invoke("shot", 0.5f);
             }
             curtime = 0;
         }
