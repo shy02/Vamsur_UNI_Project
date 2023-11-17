@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
             {
                 Enemy.SetActive(true);
                 Timer.GetComponent<Timer_Manager>().enabled = true;
+                Timer.GetComponent<Timer_Manager>().Spawner.SetActive(true);
             }
             bossnum += 1;
         }
